@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://purl.org/dc/dcmitype/" 
+  xmlns:dcmi="http://purl.org/dc/dcmitype/"
+  xmlns:dcterms="http://purl.org/dc/terms/" 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  elementFormDefault="qualified">
+
+  <import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="DC.xsd" />
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  
+  <element name="Collection" type="dcmi:CollectionType"/>
+  
+  <complexType name="CollectionType2">
+    <sequence>
+      <element name="Collection" maxOccurs="unbounded" minOccurs="0"
+      	type="dcmi:CollectionType" />
+    </sequence>
+  </complexType>
+  
+  <complexType name="CollectionType">
+		<complexContent>
+      		<extension base="rdf:AboutType">
+        		<sequence>
+          			<element ref="dc:title" maxOccurs="unbounded" minOccurs="1" />
+          			<element ref="dc:description" maxOccurs="unbounded" minOccurs="1" />
+          		</sequence>
+          	</extension>
+          </complexContent>
+	</complexType>
+</schema>

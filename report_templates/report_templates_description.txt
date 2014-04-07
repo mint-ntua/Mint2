@@ -1,0 +1,38 @@
+
+simple xlsx detail reports:
+* mint2organization_transformation 1
+* mint2organization_publication 2
+* mint2organization_oaipublication 3
+* mint2organization_import 4 
+
+organization detaiils :  
+* 	mint2OrgDetailsubreport : 5
+	subreports : 
+	*	mint2uploadsubreport.jrxml 	
+		subreport : 
+		 	mint2derivedtransformationssubreport 7
+	*	mint2mappingsubreport.jrxml 8
+	*	mint2transformationssubreport.jrxml 9
+	*	mint2publicationssubreport.jrxml  10
+	*	mint2oaipublicationssubreport.jrxml 11
+	
+
+
+organization goals details:
+* 	mint2orgDetails3 : 12
+	subreports: 
+	*	mint2transformationssubreport2.jrxml 13
+	*	mint2publicationssubreport.jrxml -	
+	*	mint2oaipublicationssubreport.jrxml -
+	*	mint2goalssubreport.jrxml 14
+
+
+project goals overall :
+	* mint2progress 15
+
+project overall : 
+	* mint2OrgStatsubreport 16
+
+
+
+suma 16+ 2(common) = 18 files in dirs (16 different)

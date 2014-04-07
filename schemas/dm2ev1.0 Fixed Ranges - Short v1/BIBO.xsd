@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://purl.org/ontology/bibo/" 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+  elementFormDefault="qualified">
+  
+  <annotation>
+    <documentation>
+      EDM+ v 1: DM2E
+    </documentation>
+  </annotation>
+  
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+  <import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="FOAF.xsd"/>
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd" />
+  
+  <element name="numPages" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The number of pages contained in a document.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="numVolumes" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The number of volumes contained in a collection of documents (usually a series, periodical, etc.).</documentation>
+    </annotation>
+  </element>
+  
+  <element name="pages" type="rdf:LiteralType">
+    <annotation>
+      <documentation>A string of non-contiguous page spans that locate a Document within a Collection. Example: 23-25, 34, 54-56.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="volume" type="rdf:LiteralType">
+    <annotation>
+      <documentation>A volume number.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="isbn" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The ISBN number for the CHO of type book.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="issn" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The ISSN number for the CHO of type book.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="editor" type="foaf:PersonType2">
+    <annotation>
+      <documentation>A person having managerial and sometimes policy-making responsibility for the editorial part of a publishing firm or of a newspaper, magazine, or other publication</documentation>
+    </annotation>
+  </element>
+  
+  
+  <element name="recipient" type="edm:AgentType4">
+    <annotation>
+      <documentation>An agent that receives a communication document.</documentation>
+    </annotation>
+  </element>
+  
+</schema>

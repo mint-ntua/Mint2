@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:edm="http://www.europeana.eu/schemas/edm/" xmlns:p="http://xmlns.com/foaf/0.1/" xmlns:p1="http://www.w3.org/2002/07/owl#" xmlns:p2="http://rdvocab.info/ElementsGr2" xmlns:p3="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:p4="http://www.openarchives.org/ore/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns# EDM_Approach2.xsd ">
+  <edm:ProvidedCHO rdf:about="http://tempuri.org">
+    <dcterms:alternative>dcterms:alternative</dcterms:alternative>
+    <edm:currentLocation/>
+    <edm:hasMet>edm:hasMet</edm:hasMet>
+    <edm:hasType>
+    	<skos:Concept rdf:about="http:tempuri.org"></skos:Concept>
+    </edm:hasType>
+    <edm:incorporates rdf:resource="http://tempuri.org"/>
+    <edm:isDerivativeOf rdf:resource="http://tempuri.org"/>
+    <edm:isNextInSequence rdf:resource="http://tempuri.org"/>
+    <edm:isRelatedTo>edm:isRelatedTo</edm:isRelatedTo>
+    <edm:isRepresentationOf rdf:resource="http://tempuri.org"/>
+    <edm:isSimilarTo rdf:resource="http://tempuri.org"/>
+    <edm:isSuccessorOf rdf:resource="http://tempuri.org"/>
+    <edm:realizes/>
+    <edm:type>TEXT</edm:type>
+    <p1:sameAs rdf:resource="http://tempuri.org"/>
+  </edm:ProvidedCHO>
+  <edm:WebResource rdf:about="http://tempuri.org">
+    <dc:description>dc:description</dc:description>
+    <dc:format>dc:format</dc:format>
+    <dc:rights>dc:rights</dc:rights>
+    <dc:source>dc:source</dc:source>
+    <dcterms:extent>dcterms:extent</dcterms:extent>
+    <dcterms:issued>dcterms:issued</dcterms:issued>
+    <dcterms:conformsTo>dcterms:conformsTo</dcterms:conformsTo>
+    <dcterms:created>dcterms:created</dcterms:created>
+    <dcterms:isFormatOf>dcterms:isFormatOf</dcterms:isFormatOf>
+    <dcterms:hasPart>dcterms:hasPart</dcterms:hasPart>
+    <edm:isNextInSequence rdf:resource="http://tempuri.org"/>
+    <edm:rights>edm:rights</edm:rights>
+  </edm:WebResource>
+  <edm:Agent rdf:about="http://tempuri.org">
+    <edm:begin/>
+    <edm:end/>
+    <dc:date>dc:date</dc:date>
+    <dc:identifier>dc:identifier</dc:identifier>
+    <edm:hasMet>edm:hasMet</edm:hasMet>
+    <edm:isRelatedTo>edm:isRelatedTo</edm:isRelatedTo>
+    <p:name>p:name</p:name>
+    <p1:sameAs rdf:resource="http://tempuri.org"/>
+    <p2:biographicalInformation>p2:biographicalInformation</p2:biographicalInformation>
+    <p2:dateOfBirth>p2:dateOfBirth</p2:dateOfBirth>
+    <p2:dateOfEstablishment>p2:dateOfEstablishment</p2:dateOfEstablishment>
+    <p2:dateOfTermination>p2:dateOfTermination</p2:dateOfTermination>
+    <p2:gender>p2:gender</p2:gender>
+    <p2:professionOrOccupation>p2:professionOrOccupation</p2:professionOrOccupation>
+    <skos:altLabel>skos:altLabel</skos:altLabel>
+    <skos:note>skos:note</skos:note>
+    <skos:prefLabel>skos:prefLabel</skos:prefLabel>
+  </edm:Agent>
+  <edm:Place rdf:about="http://tempuri.org">
+    <dcterms:hasPart>dcterms:hasPart</dcterms:hasPart>
+    <dcterms:isPartOf>dcterms:isPartOf</dcterms:isPartOf>
+    <p1:sameAs rdf:resource="http://tempuri.org"/>
+    <skos:altLabel>skos:altLabel</skos:altLabel>
+    <skos:note>skos:note</skos:note>
+    <skos:prefLabel>skos:prefLabel</skos:prefLabel>
+    <p3:alt>p3:alt</p3:alt>
+    <p3:pos_long>0.0</p3:pos_long>
+    <p3:pos_lat>0.0</p3:pos_lat>
+  </edm:Place>
+  <edm:TimeSpan rdf:about="http://tempuri.org">
+    <edm:begin/>
+    <edm:end/>
+    <dcterms:isPartOf>dcterms:isPartOf</dcterms:isPartOf>
+    <dcterms:hasPart>dcterms:hasPart</dcterms:hasPart>
+    <p1:sameAs rdf:resource="http://tempuri.org"/>
+    <skos:altLabel>skos:altLabel</skos:altLabel>
+    <skos:note>skos:note</skos:note>
+    <skos:prefLabel>skos:prefLabel</skos:prefLabel>
+    <p3:pos_lat>0.0</p3:pos_lat>
+    <p3:pos_long>0.0</p3:pos_long>
+  </edm:TimeSpan>
+  <skos:Concept rdf:about="http://tempuri.org">
+    <skos:altLabel>skos:altLabel</skos:altLabel>
+    <skos:broader rdf:resource="http://tempuri.org"/>
+    <skos:broadMatch rdf:resource="http://tempuri.org"/>
+    <skos:closeMatch rdf:resource="http://tempuri.org"/>
+    <skos:exactMatch rdf:resource="http://tempuri.org"/>
+    <skos:narrowMatch rdf:resource="http://tempuri.org"/>
+    <skos:notation>skos:notation</skos:notation>
+    <skos:note>skos:note</skos:note>
+    <skos:prefLabel>skos:prefLabel</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="http://tempuri.org"/>
+  </skos:Concept>
+  <p4:Aggregation rdf:about="http://tempuri.org">
+    <dc:rights>dc:rights</dc:rights>
+    <edm:aggregatedCHO rdf:resource="http://tempuri.org"/>
+    <edm:dataProvider/>
+    <edm:hasView/>
+    <edm:isShownAt/>
+    <edm:isShownBy/>
+    <edm:object/>
+    <edm:provider/>
+    <edm:rights>edm:rights</edm:rights>
+    <edm:ugc>true</edm:ugc>
+  </p4:Aggregation>
+</rdf:RDF>

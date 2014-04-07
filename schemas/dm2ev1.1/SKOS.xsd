@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+targetNamespace="http://www.w3.org/2004/02/skos/core#" 
+xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+ xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+ xmlns:xml="http://www.w3.org/XML/1998/namespace" elementFormDefault="qualified" attributeFormDefault="qualified">
+  
+  
+
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  
+
+  <element name="prefLabel" type="rdf:LiteralType">
+  	<annotation>
+      <documentation>The preferred name of the agent, preferably in a normalized form. Only one preferred label per language tag is allowed!</documentation>
+    </annotation>
+  </element>
+
+  <element name="altLabel" type="rdf:LiteralType">
+   	<annotation>
+      <documentation>An alternative name, e.g. a former name or the name in another form.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="note" type="rdf:LiteralType">
+  	<annotation>
+      <documentation>Information related to the resource that cannot be modelled with other properties of the class.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="hiddenLabel" type="rdf:LiteralType">
+  	<annotation>
+      <documentation>Non-standard forms of the name, e.g. misspellings.</documentation>
+    </annotation>
+  </element>
+  
+  
+  
+  
+  <element name="Concept" type="skos:ConceptType">
+  	<annotation>
+  		<documentation>“A unit of thought or meaning that comes from an organised knowledge base (such as subject terms from a thesaurus or controlled vocabulary) where URIs or local identifiers have been created to represent each concept.” (EDM Mapping Guidelines v1.0.1, p. 23)</documentation>
+  	</annotation>
+  </element>
+  
+  <element name="broadMatch" type="rdf:ResourceType">
+  </element>
+  
+  <element name="narrowMatch" type="rdf:ResourceType">
+  </element>
+  
+  <element name="relatedMatch" type="rdf:ResourceType" />
+  <element name="exactMatch" type="rdf:ResourceType" />
+  <element name="closeMatch" type="rdf:ResourceType" />
+  <element name="notation" type="rdf:LiteralType">
+  	<annotation>
+  		<documentation>If available: A notation of the concept.</documentation>
+ 	</annotation>
+  </element>
+  
+  <element name="broader" type="rdf:ResourceType">
+  	<annotation>
+       <documentation>ID of the broader concept.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="narrower" type="rdf:ResourceType">
+  	<annotation>
+       <documentation>ID of the narrower concept.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="inScheme" type="rdf:ResourceType">
+    <annotation>
+  		<documentation>The URI of a concept scheme.</documentation>
+ 	</annotation>
+  </element>
+  
+  <element name="definition" type="rdf:LiteralType" />
+
+
+
+
+  <complexType name="ConceptType">
+    <complexContent>
+       <extension base="rdf:AboutType">
+         <sequence>
+           <element ref="skos:prefLabel" maxOccurs="1" minOccurs="0" />
+           <element ref="skos:altLabel" maxOccurs="unbounded" minOccurs="0" /> 
+           <element ref="skos:notation" maxOccurs="unbounded" minOccurs="0" /> 
+           
+           <element ref="skos:broader" maxOccurs="unbounded" minOccurs="0" /> 
+           <element ref="skos:narrower" maxOccurs="unbounded" minOccurs="0" /> 
+           
+           <element ref="skos:inScheme" maxOccurs="unbounded" minOccurs="0" /> 
+           
+           <element ref="rdf:type" maxOccurs="unbounded" minOccurs="0"/>
+         </sequence>
+       </extension>
+     </complexContent> 
+   </complexType>
+   
+  <complexType name="ConceptType2">
+    <annotation>
+      <documentation>Base class for WebResource implementations</documentation>
+    </annotation>
+    <sequence>
+      <element name="Concept" maxOccurs="1" minOccurs="0"
+      	type="skos:ConceptType" />
+    </sequence>
+  </complexType>
+</schema>

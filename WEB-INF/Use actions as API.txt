@@ -1,0 +1,68 @@
+1. How to create a user with a HTTP request
+
+send the following:
+
+Managment.action?
+and the following parameters
+isApi=true ; signals to our server its an API call and will generate a json response
+seluser.login= ; pass the desired login for the user to generate
+password= ; the desired password 
+passwordconf= ; confirmation is required at the moment
+
+seluser.firstName=  ; optional first name of user
+seluser.lastName = ; optional last name for user
+seluser.email= ; email needs to be different from other users
+seluser.workTelephone=  ; optional tel number
+seluser.jobRole= ;optional job role
+orgid= ; the id of the org this user belongs to
+seluser.mintRole= ; the role inside the project, one of ("data viewer", "superuser", "publisher", "annotator", "admin", "" )
+   ; this will define the rights of the user inside the organization he belongs to
+notice= ; ("true", "false") whether the user will receive email about this
+uaction=saveuser ; to determine the action on this URL. Mandatory!
+
+the response will be a json string with either
+
+result: { a user object in json format }
+error: { fieldname: problem, ... }
+exception: { message: "" , stack: "" }
+
+
+2. List all Mappings, Users, Organizations, Datasets, Transformations ..
+
+UrlApi?isApi=true&action=list&type=[Dataset, User, Organization, Mapping, DataUpload, Transformation]&organizationId=[1001]
+
+for paging support we have optional
+ maxResults=count
+ start=num
+
+so to see all Users, use UrlAPi?isApi=true&action=list&type=User
+
+if you use id=[some number] instead of action=list, you'll get the json for a single thing
+
+
+3. Download XSL from a mapping
+
+MappingOptions.action?selaction=downloadxsl&selectedMapping=1234&uploadId=1234&isApi=true
+
+This will retreive the xsl for given mapping and given dataUpload. The xsl for a mapping is generated 
+depending on the upload it is used upon.
+That means that giving an uploadId is mandatory.
+
+Caveat: The content-type will be application/json, this will be rectified, ignore it.
+
+
+
+4. Uploading a dataset
+
+Import?isApi=true&
+mth=urlupload&
+uploadUrl= Your URL
+uploaderOrg= which org this should go to
+
+isDirect=true if you want to define the schema
+directSchema= id of the schema you want to upload
+
+5. RDF
+
+Some UrlApi-actions can already return RDF when the Accept Header is set to some RDF data type.
+

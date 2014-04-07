@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="gr.ntua.ivml.mint.persistent.ValueEdit" table="value_edit">
+	    <id name="dbID" column="value_edit_id">
+		    <generator class="sequence">
+		    	<param name="sequence">seq_value_edit_id</param>
+		    </generator>
+	    </id>
+	    <property name="matchString" column="match_string" />
+	    <property name="replaceString" column="replace_string" />
+	    <property name="created" />
+	    
+		<many-to-one name="dataset" 
+        column="dataset_id"
+        not-null="true"/>
+		
+		<many-to-one name="xpathHolder" 
+        column="xpath_id"
+        not-null="true"/>
+		
+   </class>
+
+</hibernate-mapping>

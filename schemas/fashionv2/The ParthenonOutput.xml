@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:crm="http://www.cidoc-crm.org/rdfs/cidoc_crm_v5.0.2_english_label.rdfs#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:ore="http://www.openarchives.org/ore/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdaGr2="http://rdvocab.info/ElementsGr2/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:wgs84="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:xalan="http://xml.apache.org/xalan"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns# EDM_Approach2.xsd ">
+  <edm:ProvidedCHO rdf:about="http://dummyUri/108_0851b">
+    <dcterms:created>
+      <edm:TimeSpan rdf:about="http://www.sampleDate.gr">
+        <edm:begin>2013-09-14</edm:begin>
+      </edm:TimeSpan>
+    </dcterms:created>
+    <dc:title>The Parthenon</dc:title>
+    <edm:currentLocation>
+      <edm:Place rdf:about="http://dbpedia.org/resource/Athens">
+        <skos:prefLabel>Athens, Greece</skos:prefLabel>
+      </edm:Place>
+    </edm:currentLocation>
+    <edm:type>IMAGE</edm:type>
+    <edm:related>
+    <edm:ProvidedCHO rdf:about="http://dummyUri/108_0851b">
+	    <dcterms:created>
+	      <edm:TimeSpan rdf:about="http://www.sampleDate.gr">
+	        <edm:begin>2013-09-14</edm:begin>
+	      </edm:TimeSpan>
+	    </dcterms:created>
+	    <dc:title>The Parthenon</dc:title>
+	    <edm:currentLocation>
+	      <edm:Place rdf:about="http://dbpedia.org/resource/Athens">
+	        <skos:prefLabel>Athens, Greece</skos:prefLabel>
+	      </edm:Place>
+	    </edm:currentLocation>
+	    <edm:type>IMAGE</edm:type>
+	    <edm:related>
+    
+    </edm:related>
+  </edm:ProvidedCHO>
+    </edm:related>
+  </edm:ProvidedCHO>
+  <ore:Aggregation rdf:about="http://dummyUri/Aggregation_108_0851b">
+    <edm:aggregatedCHO rdf:resource="http://dummyUri/108_0851b"/>
+    <edm:dataProvider>
+      <edm:Agent>
+        <foaf:name>IVML</foaf:name>
+      </edm:Agent>
+    </edm:dataProvider>
+    <edm:isShownAt>
+      <edm:WebResource rdf:about="http://www.image.ntua.gr/~nsimou/EuPhoto/Image/108_0851b.jpeg"/>
+    </edm:isShownAt>
+    <edm:isShownBy>
+      <edm:WebResource rdf:about="http://www.image.ntua.gr/~nsimou/EuPhoto/Data/108_0851b.xml"/>
+    </edm:isShownBy>
+    <edm:provider>
+      <edm:Agent>
+        <foaf:name>Petros Katsaros</foaf:name>
+      </edm:Agent>
+    </edm:provider>
+    <edm:rights rdf:resource="http://www.europeana.eu/rights/rr-f/"/>
+  </ore:Aggregation>
+</rdf:RDF>

@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.europeana.eu/schemas/edm/"
+    xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:pro="http://purl.org/spar/pro/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcterms="http://purl.org/dc/terms/" 
+    xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:enrichment="http://www.europeana.eu/schemas/edm/enrichment/"
+    xmlns:ore="http://www.openarchives.org/ore/terms/"
+    xmlns:dm2e="http://onto.dm2e.eu/schemas/dm2e/1.1/"
+    xmlns:bibo="http://purl.org/ontology/bibo/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    elementFormDefault="qualified">
+	
+	<annotation>
+    	<documentation>
+     	 EDM+ v 1: DM2E
+    	</documentation>
+  	</annotation>
+
+    <import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="DC.xsd"/>
+    <import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="SKOS.xsd"/>
+    <import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd"/>
+    <import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="WGS84_POS.xsd"/>
+    <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+    <import namespace="http://www.europeana.eu/schemas/edm/enrichment/" schemaLocation="ENRICHMENT.xsd"/>
+    <import namespace="http://www.w3.org/2002/07/owl#" schemaLocation="OWL.xsd"/>
+    <import namespace="http://www.openarchives.org/ore/terms/" schemaLocation="ORE.xsd"/>
+    <import namespace="http://onto.dm2e.eu/schemas/dm2e/1.1/" schemaLocation="DM2E.xsd"/>
+    <import namespace="http://purl.org/ontology/bibo/" schemaLocation="BIBO.xsd"/>
+    <import namespace="http://purl.org/spar/pro/" schemaLocation="PRO.xsd"/>
+    <import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="FOAF.xsd"/>
+    <import namespace="http://rdfs.org/ns/void#" schemaLocation="VOID.xsd"/>
+    
+    
+	<element name="happenedAt" type="edm:PlaceType2">
+		<annotation>
+            <documentation>Connects an event to the place where this event happened at. An event may only happen at one place whereas a place may be involved in many different events.</documentation>
+        </annotation>
+	</element>
+    
+    
+    <element name="occurredAt" type="edm:TimeSpanType2">
+    	<annotation>
+            <documentation>Connects an event to a time span which overlaps with the occurrence of that event. The occurrence in time of an event may overlap with 0 to many disjoint time spans, and a time span may have 0 to many events whose occurrences overlap with it.</documentation>
+        </annotation>
+	</element>
+    
+     
+    <element name="isNextInSequence" type="rdf:ResourceType">
+        <annotation>
+            <documentation>Preceding same-level CHO, e.g. previous chapter. </documentation>
+        </annotation>
+    </element>
+    
+    
+    <complexType name="ProvidedCHOType">
+        <complexContent>
+            <extension base="rdf:AboutType">
+                <sequence minOccurs="1" maxOccurs="1">                        
+                        <element ref="edm:type" maxOccurs="1" minOccurs="1"/>
+                        <element ref="dc:type" maxOccurs="unbounded" minOccurs="1"/> 
+                    	<element ref="dcterms:title" maxOccurs="unbounded" minOccurs="1"/>                         
+                        <element ref="dm2e:subtitle" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dcterms:alternative" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:incipit" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dm2e:explicit" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dcterms:description" maxOccurs="unbounded" minOccurs="1"/>
+                        <element ref="dcterms:provenance" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dc:language" maxOccurs="unbounded" minOccurs="1"/>
+                        <element ref="dcterms:issued" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dcterms:spatial" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:publishedAt" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dm2e:printedAt" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dc:identifier" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="bibo:isbn" maxOccurs="1" minOccurs="0"/>
+                        <element ref="bibo:issn" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dm2e:callNumber" maxOccurs="1" minOccurs="0"/>
+                        <element ref="edm:currentLocation" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dm2e:shelfmarkLocation" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dc:rights"  maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dcterms:rightsHolder"  maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dc:subject"  maxOccurs="unbounded" minOccurs="1"/>
+                        <element ref="dcterms:extent"  maxOccurs="1" minOccurs="0"/>
+                        <element ref="dm2e:levelOfGenesis" maxOccurs="1" minOccurs="0"/>
+                        <element ref="bibo:numPages" maxOccurs="1" minOccurs="0"/>
+                        <element ref="bibo:numVolumes" maxOccurs="1" minOccurs="0"/>
+                        <element ref="bibo:pages" maxOccurs="1" minOccurs="0"/>
+                        <element ref="bibo:volume" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dcterms:tableOfContents" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dc:format" maxOccurs="unbounded" minOccurs="0"/> 
+                        <element ref="dm2e:isDerivativeOfCHO" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dcterms:isVersionOf" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dcterms:hasVersion" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:hasPartCHO" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:isPartOfCHO" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="edm:isNextInSequence" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dcterms:references" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:condition" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dm2e:watermark" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dm2e:illustration" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:restoration" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:support" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:cover" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="edm:isRelatedTo" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="edm:hasMet" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:pageDimension" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dm2e:writtenAreaDimensions" maxOccurs="1" minOccurs="0"/>
+                        <element ref="dm2e:refersTo" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:wasStudiedBy" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:wasTaughtBy" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dcterms:creator" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dc:publisher"  maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:artist" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="pro:author" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:composer" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dc:contributor" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:copyist" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="bibo:editor" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:honoree" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="pro:illustrator" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:mentioned" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:portrayed" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:misattributed" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:owner" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:previousOwner" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:painter" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:patron" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="pro:printer" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:principal" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="bibo:recipient" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:sponsor" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="pro:translator" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:writer" maxOccurs="unbounded" minOccurs="0"/>
+                        <element ref="dm2e:contributor" maxOccurs="unbounded" minOccurs="0"/>
+                        
+                        <element ref="rdf:type" maxOccurs="unbounded" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+        
+  <complexType name="ProvidedCHOType2">
+    <sequence>
+      <element name="ProvidedCHO" maxOccurs="1" minOccurs="1"
+      	type="edm:ProvidedCHOType" />
+    </sequence>
+  </complexType>
+  
+  <complexType name="ProvidedCHOType3">
+    <sequence>
+      <element name="ProvidedCHO" maxOccurs="1" minOccurs="1"
+      	type="rdf:AboutType" />
+    </sequence>
+  </complexType>
+  
+     
+    <element name="aggregatedCHO" type="edm:ProvidedCHOType2">
+        <annotation>
+            <documentation> The property edm:aggregatedCHO connects the ore:Aggregation with exactly one edm:ProvidedCHO. The property expresses what the Aggregation is about.</documentation>
+        </annotation>
+    </element>
+    
+    
+    <element name="provider" type="foaf:OrganisationType2">
+        <annotation>
+            <documentation>The property edm:provider holds the name or identifier of the organisation (foaf:Organization, see below) that provided the data, i.e. the aggregation, to Europeana. Note that this organisation is not necessarily owning the original or digitized object. Typically, edm:provider is an aggregator. The owner of the metadata record is recorded in edm:dataProvider. The values in edm:provider and edm:dataProvider can be the same. Note: In the context of DM2E the value for edm:provider is always “DM2E”. </documentation>
+        </annotation>
+    </element>
+    
+    
+    <element name="dataProvider" type="foaf:OrganisationType2">
+        <annotation>
+            <documentation> The property edm:dataProvider holds the name or identifier of the organisation (foaf:Organization, see below) that provided and owns the source metadata record for this aggregation. Note that this organisation is not necessarily owning the physical object which is described in the metadata record.</documentation>
+        </annotation>
+    </element>
+    
+     
+    <element name="hasView" type="edm:WebResourceType2">
+        <annotation>
+            <documentation> The property edm:hasView holds the URL of a edm:WebResource which shows, depicts or otherwise contains any kind of view of the ProvidedCHO.</documentation>
+        </annotation>
+    </element>
+    
+    
+    <element name="isShownBy" type="edm:WebResourceType2">
+        <annotation>
+            <documentation>The property edm:isShownBy holds the URL of a edm:WebResource which leads to a “plain“ image with any kind of view of the edm:ProvidedCHO. “Plain“ image means that the image must be without any information context, for example, the URL points to a plain JPG-image. Either edm:isShownBy or edm:isShownAt must be provided.</documentation>
+        </annotation>
+    </element>
+
+    
+    <element name="isShownAt" type="edm:WebResourceType2">
+        <annotation>
+            <documentation>The property edm:isShownAt holds the URL of a edm:WebResource which leads to a view of the digital object on the provider’s web site in its full information context (e.g. in a viewer application). Either edm:isShownBy or edm:isShownAt must be provided</documentation>
+        </annotation>
+    </element>
+   
+   <element name="object" type="edm:WebResourceType2">
+        <annotation>
+            <documentation>The property edm:object holds the URL of a edm:WebResource which leads to a thumbnail representing the digital object or, if there is no such thumbnail, the URL of the digital object in the best resolution available on the web site of the data provider from which a thumbnail could be generated. This will often be the same URL as given in edm:isShownBy.</documentation>
+        </annotation>
+    </element>
+    
+    <simpleType name="EdmType">
+    <annotation>
+    	<documentation>The Europeana material type of the resource. Must be one of the following: TEXT, VIDEO, SOUND, IMAGE, 3D.</documentation>
+    </annotation>
+        <restriction base="string">
+            <enumeration value="TEXT"/>
+            <enumeration value="VIDEO"/>
+            <enumeration value="IMAGE"/>
+            <enumeration value="SOUND"/>
+            <enumeration value="3D"/>
+        </restriction>
+    </simpleType>
+    
+    <element name="currentLocation" type="edm:PlaceType2">
+        <annotation>
+            <documentation>Current location of physical CHO, possibly a library building. If possible, use a resource here.</documentation>
+        </annotation>
+    </element>
+    
+     <element name="isRelatedTo" type="rdf:LiteralType">
+        <annotation>
+            <documentation>Any other related resource.</documentation>
+        </annotation>
+    </element>
+    
+    
+    
+    <element name="hasMet" type="rdf:ResourceType">
+        <annotation>
+            <documentation> Unites properties with the range edm:Agent like dcterms:creator or dc:contributor.</documentation>
+        </annotation>
+    </element>
+    
+    <element name="rights" type="rdf:RightsResourceType">
+        <annotation>
+            <documentation>URL of a resource describing licensing rights from the Guidelines for the Rights in Objects submitted to Europeana</documentation>
+        </annotation>
+    </element>
+    
+    <element name="wasPresentAt" type="edm:EventType2">
+        <annotation>
+			<documentation>An event where the agent was present at.</documentation>
+        </annotation>
+    </element>
+    
+       <element name="begin" type="dateTime">
+    	<annotation>
+            <documentation>The beginning of a timespan.</documentation>
+        </annotation>    
+    </element>
+    
+    <element name="end" type="dateTime">
+    	<annotation>
+            <documentation>The end of a timespan.</documentation>
+        </annotation>    
+    </element>
+    
+     <element name="type" type="edm:EdmType">
+        <annotation>
+            <documentation>An enumeration stating the type of EDM content provided</documentation>
+        </annotation>
+    </element>
+
+    <complexType name="EventType">
+        <annotation>
+            <documentation>“An event is a change ‘of states in cultural, social or physical systems, regardless of scale, brought about by a series or group of coherent physical, cultural, technological or legal phenomena’ (E5 Event in CIDOC CRM) or a ‘set of coherent phenomena or cultural manifestations bounded in time and space” (E4 Period in CIDOC CRM).’ (EDM Definitions 5.2.3, 2012:11). Note that Europeana to date (March 2013) does not support event-based modelling</documentation>
+        </annotation>
+        <complexContent>
+            <extension base="rdf:AboutType">
+                <sequence>
+                    <element ref="edm:happenedAt" maxOccurs="1" minOccurs="0"/>
+                    <element ref="edm:occurredAt" maxOccurs="1" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="EventType2">
+    	<annotation>
+            <documentation>“An event is a change ‘of states in cultural, social or physical systems, regardless of scale, brought about by a series or group of coherent physical, cultural, technological or legal phenomena’ (E5 Event in CIDOC CRM) or a ‘set of coherent phenomena or cultural manifestations bounded in time and space” (E4 Period in CIDOC CRM).’ (EDM Definitions 5.2.3, 2012:11). Note that Europeana to date (March 2013) does not support event-based modelling</documentation>
+        </annotation>
+    	<sequence>
+      		<element name="Event" maxOccurs="1" minOccurs="0" type="edm:EventType" />
+    	</sequence>
+  	</complexType>
+
+    <complexType name="WebResourceType">
+        <annotation>
+            <documentation>According to the EDM Definitions 5.2.3, WebResources are “Information Resources that have at least one Web Representation and at least a URI.” (EDM Definitions 5.2.3, 2012:15). The resource, which resembles any kind of view of the described CHO, is an instance of the class edm:WebResource. There must be at least one WebResource for each CHO. This mandatory WebResources is connected to the Aggregation via edm:isShownBy or edm:isShownAt.</documentation>
+        </annotation>
+        <complexContent>
+            <extension base="rdf:AboutType">
+                <sequence>
+                    <element ref="dcterms:description" maxOccurs="unbounded" minOccurs="0"/>
+                    <element ref="dc:format" maxOccurs="unbounded" minOccurs="0"/>
+                    <element ref="dcterms:rightsHolder" maxOccurs="unbounded" minOccurs="0"/>
+                    <element ref="dm2e:isDerivativeOfWebResource" maxOccurs="unbounded" minOccurs="0"/>
+                    <element ref="dcterms:created" maxOccurs="unbounded" minOccurs="0"/>
+                    <element ref="edm:rights" maxOccurs="1" minOccurs="0"/>
+                    <element ref="dm2e:hasPartWebResource" maxOccurs="unbounded" minOccurs="0"/>
+                    <element ref="dm2e:isPartOfWebResource" maxOccurs="unbounded" minOccurs="0"/>
+                    
+                    <element ref="edm:isNextInSequence" maxOccurs="unbounded" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="WebResourceType2">
+    	<annotation>
+            <documentation>According to the EDM Definitions 5.2.3, WebResources are “Information Resources that have at least one Web Representation and at least a URI.” (EDM Definitions 5.2.3, 2012:15). The resource, which resembles any kind of view of the described CHO, is an instance of the class edm:WebResource. There must be at least one WebResource for each CHO. This mandatory WebResources is connected to the Aggregation via edm:isShownBy or edm:isShownAt.</documentation>
+        </annotation>
+    	<sequence>
+      		<element name="WebResource" maxOccurs="1" minOccurs="0" type="edm:WebResourceType" />
+    	</sequence>
+  	</complexType>  
+  	
+  	<complexType name="WebResourceType3">
+    <sequence>
+      <element name="WebResource" maxOccurs="1" minOccurs="1"
+      	type="rdf:AboutType" />
+    </sequence>
+  </complexType>
+    
+    <complexType name="AgentType">
+    <annotation>
+      <documentation>This class comprises people, either individually or in groups, who have the potential to perform intentional actions for which they can be held responsible.” (EDM Definitions 5.2.3, 2012:9)</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="rdf:AboutType">
+        <sequence>
+          <element ref="skos:prefLabel" maxOccurs="1" minOccurs="0" />
+          <element ref="skos:altLabel" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="skos:note" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="skos:hiddenLabel" maxOccurs="unbounded" minOccurs="0" />
+          
+     	  <element ref="edm:wasPresentAt" maxOccurs="unbounded" minOccurs="0"/>
+     	  <element ref="edm:hasMet" maxOccurs="unbounded" minOccurs="0"/> 
+          <element ref="edm:isRelatedTo" maxOccurs="unbounded" minOccurs="0"/>
+          
+          <element ref="dc:date" maxOccurs="unbounded" minOccurs="0"/>
+          <element ref="dc:identifier" maxOccurs="unbounded" minOccurs="0"/>
+          
+          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <complexType name="AgentType2">
+  	<annotation>
+      <documentation>This class comprises people, either individually or in groups, who have the potential to perform intentional actions for which they can be held responsible.” (EDM Definitions 5.2.3, 2012:9)</documentation>
+    </annotation>
+    <choice>
+      <element name="Agent" maxOccurs="1" minOccurs="0" type="edm:AgentType" />
+      <element ref="foaf:Person" maxOccurs="1" minOccurs="0" />
+      <element ref="foaf:Organisation" maxOccurs="1" minOccurs="0"/>
+    </choice>
+  </complexType>
+  
+  <complexType name="AgentType3">
+  	<annotation>
+      <documentation>This class comprises people, either individually or in groups, who have the potential to perform intentional actions for which they can be held responsible.” (EDM Definitions 5.2.3, 2012:9)</documentation>
+    </annotation>
+    <choice>
+      <element name="Agent" maxOccurs="1" minOccurs="0" type="edm:AgentType" />
+    </choice>
+  </complexType>
+  
+  <complexType name="AgentType4">
+  <annotation>
+      <documentation>This class comprises people, either individually or in groups, who have the potential to perform intentional actions for which they can be held responsible.” (EDM Definitions 5.2.3, 2012:9)</documentation>
+    </annotation>
+    <sequence>
+      <element name="Agent" maxOccurs="1" minOccurs="1"
+      	type="rdf:AboutType" />
+    </sequence>
+  </complexType>
+  
+    <complexType name="PersonOrCHOType">
+  	<annotation>
+      <documentation>This class comprises people, either individually or in groups, who have the potential to perform intentional actions for which they can be held responsible.” (EDM Definitions 5.2.3, 2012:9)</documentation>
+    </annotation>
+    <choice>
+      <element name="Person" maxOccurs="1" minOccurs="0" type="foaf:PersonType" />
+      <element name="ProvidedCHO" maxOccurs="1" minOccurs="0" type="edm:ProvidedCHOType3" />
+    </choice>
+  </complexType>
+  
+   <complexType name="AgentOrEventType">
+  	<annotation>
+      <documentation>This class comprises people, either individually or in groups, who have the potential to perform intentional actions for which they can be held responsible.” (EDM Definitions 5.2.3, 2012:9)</documentation>
+    </annotation>
+    <choice>
+      <element name="Agent" maxOccurs="1" minOccurs="0" type="edm:AgentType" />
+      <element name="Person" maxOccurs="1" minOccurs="0" type="foaf:PersonType" />
+      <element name="Organisation" maxOccurs="1" minOccurs="0" type="foaf:OrganisationType" />
+      <element name="Event" maxOccurs="1" minOccurs="0" type="edm:EventType" />
+    </choice>
+  </complexType>
+  
+  <complexType name="TimeSpanType2">
+    <annotation>
+      <documentation>“The class of ‘abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration’ (CIDOC CRM)” (EDM Definitions 5.2.3, 2012:14).</documentation>
+    </annotation>
+    <sequence>
+      <element name="TimeSpan" maxOccurs="1" minOccurs="0"
+      	type="edm:TimeSpanType" />
+    </sequence>
+  </complexType>
+  
+  <complexType name="TimeSpanType3">
+  <annotation>
+      <documentation>“The class of ‘abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration’ (CIDOC CRM)” (EDM Definitions 5.2.3, 2012:14).</documentation>
+    </annotation>
+    <sequence>
+      <element name="TimeSpan" maxOccurs="1" minOccurs="1"
+      	type="rdf:AboutType" />
+    </sequence>
+  </complexType>
+  
+  <complexType name="TimeSpanOrPlaceType">
+    <choice>
+      <element name="TimeSpan" maxOccurs="1" minOccurs="0"
+      	type="edm:TimeSpanType" />
+     <element name="Place" maxOccurs="1" minOccurs="0"
+      	type="edm:PlaceType" />
+    </choice>
+  </complexType>
+
+  <complexType name="WebResourceOrPlaceType">
+    <choice>
+      <element name="WebResource" maxOccurs="1" minOccurs="0"
+      	type="edm:WebResourceType" />
+     <element name="Place" maxOccurs="1" minOccurs="0"
+      	type="edm:PlaceType" />
+    </choice>
+  </complexType>
+  
+  <complexType name="PlaceType">
+    <annotation>
+      <documentation>“An ‘extent in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter’ (CIDOC CRM)” (EDM Definitions 5.2.3, 2012:13).</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="rdf:AboutType">
+        <sequence>
+          <element ref="wgs84_pos:lat" maxOccurs="1" minOccurs="0" />
+          <element ref="wgs84_pos:long" maxOccurs="1" minOccurs="0" />
+          <element ref="wgs84_pos:alt" maxOccurs="1" minOccurs="0"/>
+          
+          <element ref="skos:prefLabel" maxOccurs="1" minOccurs="0" />
+          <element ref="skos:altLabel" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="skos:note" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="skos:hiddenLabel" maxOccurs="unbounded" minOccurs="0" />
+          
+          <element ref="dm2e:isPartOfPlace" maxOccurs="unbounded" minOccurs="0"/>
+          <element ref="dm2e:hasPartPlace" maxOccurs="unbounded" minOccurs="0" />
+         
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <complexType name="PlaceType2">
+  	<annotation>
+      <documentation>“An ‘extent in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter’ (CIDOC CRM)” (EDM Definitions 5.2.3, 2012:13).</documentation>
+    </annotation>
+    <sequence>
+      <element name="Place" maxOccurs="1" minOccurs="0"
+      	type="edm:PlaceType" />
+    </sequence>
+  </complexType>
+  
+    <complexType name="PlaceType3">
+    <annotation>
+      <documentation>“An ‘extent in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter’ (CIDOC CRM)” (EDM Definitions 5.2.3, 2012:13).</documentation>
+    </annotation>
+    <sequence>
+      <element name="Place" maxOccurs="1" minOccurs="1"
+      	type="rdf:AboutType" />
+    </sequence>
+  </complexType>
+
+
+  <complexType name="TimeSpanType">
+    <annotation>
+      <documentation>“The class of ‘abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration’ (CIDOC CRM)” (EDM Definitions 5.2.3, 2012:14).</documentation>
+    </annotation>
+    <complexContent>
+      <extension base="rdf:AboutType">
+        <sequence>
+          <element ref="skos:prefLabel" maxOccurs="1" minOccurs="0" />
+          <element ref="skos:altLabel" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="skos:note" maxOccurs="unbounded" minOccurs="0" />
+          
+          <element ref="dm2e:hasPartTimeSpan" maxOccurs="unbounded" minOccurs="0"/>
+          <element ref="dm2e:isPartOfTimeSpan" maxOccurs="unbounded" minOccurs="0" />
+          
+          <element ref="edm:begin" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="edm:end" maxOccurs="unbounded" minOccurs="0" />
+          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <element name="ProvidedCHO" type="edm:ProvidedCHOType">
+        <annotation>
+            <documentation>The EDM Definitions 5.2.3 describe the ProvidedCHO as follows: “This class comprises the Cultural Heritage objects that Europeana collects descriptions about.” (Definition of the Europeana Data Model elements Version 5.2.3, 2012:14). The resource representing the described cultural heritage object (CHO) must be an instance of edm:ProvidedCHO.</documentation>
+        </annotation>
+   </element>
+  
+  <element name="WebResource" type="edm:WebResourceType">
+        <annotation>
+            <documentation>According to the EDM Definitions 5.2.3, WebResources are “Information Resources that have at least one Web Representation and at least a URI.” (EDM Definitions 5.2.3, 2012:15). The resource, which resembles any kind of view of the described CHO, is an instance of the class edm:WebResource. There must be at least one WebResource for each CHO. This mandatory WebResources is connected to the Aggregation via edm:isShownBy or edm:isShownAt.</documentation>
+        </annotation>
+   </element>
+   
+   <element name="Agent" type="edm:AgentType">
+        <annotation>
+            <documentation>“This class comprises people, either individually or in groups, who have the potential to perform intentional actions for which they can be held responsible.” (EDM Definitions 5.2.3, 2012:9).</documentation>
+        </annotation>
+   </element>
+   
+    <element name="Place" type="edm:PlaceType">
+        <annotation>
+            <documentation>“An ‘extent in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter’ (CIDOC CRM)” (EDM Definitions 5.2.3, 2012:13).</documentation>
+        </annotation>
+   </element>
+   
+   <element name="Event" type="edm:EventType">
+        <annotation>
+            <documentation>“An event is a change ‘of states in cultural, social or physical systems, regardless of scale, brought about by a series or group of coherent physical, cultural, technological or legal phenomena’ (E5 Event in CIDOC CRM) or a ‘set of coherent phenomena or cultural manifestations bounded in time and space” (E4 Period in CIDOC CRM).’ (EDM Definitions 5.2.3, 2012:11). Note that Europeana to date (March 2013) does not support event-based modelling.</documentation>
+        </annotation>
+   </element>
+   
+   <element name="TimeSpan" type="edm:TimeSpanType">
+        <annotation>
+            <documentation>“The class of ‘abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration’ (CIDOC CRM)” (EDM Definitions 5.2.3, 2012:14).</documentation>
+        </annotation>
+   </element>
+   
+   <complexType name="RDF">
+     <sequence>
+     	<!--  <element name="ProvidedCHO" type="edm:ProvidedCHOType" maxOccurs="unbounded" minOccurs="1"/> -->
+        <element ref="ore:Aggregation" maxOccurs="unbounded" minOccurs="1"/>
+     </sequence>
+   </complexType>
+
+</schema>

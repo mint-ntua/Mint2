@@ -1,0 +1,685 @@
+.mapping-element {
+	background: #ccc;
+	width: 100%;
+	font-size: 1em;
+}
+
+.mapping-element select {
+	border: 1px solid silver;
+}
+
+.mapping-element-parent {
+	border-radius: 5px;
+	padding: 5px;
+	padding-left: 25px;
+	margin-bottom: 5px;
+	background: #eee;
+	background-repeat: no-repeat;
+	background-image: url(../../images/buttons/up.png);
+	background-position: 5px 5px;
+	cursor: pointer;
+}
+
+.mapping-element-parent:hover {
+	background-color: #efefef;
+}
+
+.mapping-element-header {
+	padding: 10px;
+	border: 1px solid transparent;
+	border-bottom: 1px solid #aaa;
+	background: #eee;
+	font-size: 150%;
+}
+
+.mapping-element-label {
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding: 5px;
+}
+
+.mapping-element-element {
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.mapping-element-prefix {
+	color: #555;
+}
+
+/* prefix separator */
+.mapping-element-prefix .span {
+	color: #777;
+}
+
+.mapping-element-name {
+}
+
+.mapping-element-mappings {
+	display: inline-block;
+	position: relative;
+	margin-left: 37px;
+	border-radius: 5px;
+	border: 1px solid silver;
+	background: #ddd;
+}
+
+.mapping-element-mappings-area {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.mapping-element-mappings-actions {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding: 9px;
+	min-width: 26px;
+}
+
+.mapping-element-right-actions {
+	float: right;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding: 5px;
+}
+
+.mapping-element-mapping {
+	border: 1px solid transparent;
+	min-width: 300px;
+}
+
+.fixed-mapping {
+	color: #aaa;
+}
+
+.unmapped-mapping {
+	color: #444;
+}
+
+.structural-mapping {
+	color: #444;
+}
+
+.constant-mapping {
+	font-weight: bold;
+}
+
+.constant-mapping .annotation {
+	color: blue;
+}
+
+.parameter-mapping {
+	font-weight: bold;
+	color: green;
+}
+
+.xpath-mapping {
+	color: #500;
+	font-style: italic;
+}
+
+.editable-mapping {
+}
+
+.mapping-element-mapping-area {
+	display:inline-block;
+	vertical-align: middle;
+	padding: 5px;
+	border-radius: 5px;
+	min-width: 220px;
+	border: 1px solid transparent;
+	background: #eee;
+}
+
+.mapping-element-header:hover .mapping-element-mapping-area {
+	background: #f5f5f0;
+}
+
+.mapping-element-header:hover .mapping-element-mapping-area:hover {
+	background: white;
+}
+
+.mapping-element-mapping-area button {
+	padding: 3px;
+}
+
+.mapping-element-children {
+	margin-left: 30px;
+}
+
+.mapping-element-attributes {
+	margin-left: 30px;
+}
+
+.mapping-element-attributes .mapping-element .mapping-element-header {
+	background: #ddd;
+}
+
+.mapping-element-attributes .mapping-element .mapping-element-header:hover {
+	background: #fffff5;
+}
+
+.mapping-element-header:hover {
+	background: #fffff5;
+}
+
+.mapping-element-header:hover .mapping-element-mappings {
+	border: 1px solid #d5d5d0;
+	background: #e5e5e0;
+}
+
+.mapping-element-button-empty {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+}
+
+.mapping-element-label .mapping-element-button-empty {
+	margin-right: 5px;
+}
+
+.mapping-element-children-toggle, .mapping-element-children-toggle-open {
+	background-image: url(../../images/buttons/expand.png);
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+
+.mapping-element-children-toggle-open {
+	background-image: url(../../images/buttons/collapse.png);
+}
+
+.mapping-element-attributes-toggle {
+	background-image: url(../../images/buttons/attributes_off.png);
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+
+.mapping-element-validation {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+
+.mapping-element-validation-ok {
+	background-image: url(../../images/buttons/validation_ok.png)  !important;
+}
+
+.mapping-element-validation-error {
+	background-image: url(../../images/buttons/validation_error.png)  !important;
+}
+
+.mapping-element-validation-warning {
+	background-image: url(../../images/buttons/validation_warning.png)  !important;
+}
+
+.mapping-element-attributes-validation-ok {
+	background-image: url(../../images/buttons/attributes_green.png)  !important;
+}
+
+.mapping-element-attributes-validation-error {
+	background-image: url(../../images/buttons/attributes_red.png)  !important;
+}
+
+.mapping-element-mapping-actions {
+	width: 64px;
+	height: 16px;
+	vertical-align: middle;
+	display: inline-block;
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.mapping-action-condition-on, .mapping-action-condition-off, .mapping-action-condition-off:hover {
+	background-image: url(../../images/buttons/condition_on.png) !important;
+	width: 16px;
+	height: 16px;
+}
+
+.mapping-action-condition-off {
+	background-image: url(../../images/buttons/condition_off.png)  !important;
+}
+
+.mapping-action-condition-else-on, .mapping-action-condition-else-off, .mapping-action-condition-else-off:hover {
+	background-image: url(../../images/buttons/condition_on.png) !important;
+	width: 16px;
+	height: 16px;
+}
+
+.mapping-action-duplicate, .mapping-action-remove-duplicate, .mapping-action-info {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+.mapping-action-duplicate {
+	background-image: url(../../images/buttons/add.png) !important;
+}
+
+.mapping-action-duplicate:hover {
+	background-image: url(../../images/buttons/add_hover.png)  !important;
+}
+
+.mapping-action-remove-duplicate {
+	background-image: url(../../images/buttons/delete.png) !important;
+}
+
+.mapping-action-remove-duplicate:hover {
+	background-image: url(../../images/buttons/delete_hover.png)  !important;
+}
+
+.mapping-action-info {
+	background-image: url(../../images/buttons/help.png) !important;
+}
+
+.mapping-action-info:hover {
+	background-image: url(../../images/buttons/help_hover.png) !important;
+}
+
+.mapping-action-function-on, .mapping-action-function-off:hover {
+	background-image: url(../../images/buttons/function_on.png)  !important;
+}
+
+.mapping-action-function-off {
+	background-image: url(../../images/buttons/function_off.png)  !important;
+}
+
+.mapping-action-values-on, .mapping-action-values-off:hover {
+	background-image: url(../../images/buttons/values_on.png)  !important;
+}
+
+.mapping-action-values-off {
+	background-image: url(../../images/buttons/values_off.png)  !important;
+}
+
+.mapping-action-add, .mapping-action-delete, .mapping-action-apply, .mapping-action-values-off, .mapping-action-values-on,
+.mapping-action-values-on, .mapping-action-function-on, .mapping-action-function-off, .mapping-action-search, .mapping-action-refresh,  .mapping-action-previous, .mapping-action-next {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	display: inline-block;
+}
+
+.mapping-action-add {
+	background-image: url(../../images/buttons/add.png)  !important;
+}
+
+.mapping-action-add:hover {
+	background-image: url(../../images/buttons/add_hover.png) !important;
+}
+
+.mapping-action-apply {
+	background-image: url(../../images/buttons/apply.png)  !important;
+}
+
+.mapping-action-apply:hover {
+	background-image: url(../../images/buttons/apply.png) !important;
+}
+
+.mapping-action-cancel {
+	background-image: url(../../images/buttons/cancel.png)  !important;
+}
+
+.mapping-action-cancel:hover {
+	background-image: url(../../images/buttons/cancel.png) !important;
+}
+
+.mapping-action-delete {
+	background-image: url(../../images/buttons/delete.png)  !important;
+}
+
+.mapping-action-delete:hover {
+	background-image: url(../../images/buttons/delete_hover.png) !important;
+}
+
+.mapping-action-search {
+	background-image: url(../../images/buttons/search.png)  !important;
+}
+
+.mapping-action-search:hover {
+	background-image: url(../../images/buttons/search_hover.png) !important;
+}
+
+.mapping-action-refresh {
+	background-image: url(../../images/buttons/refresh.png)  !important;
+}
+
+.mapping-action-refresh:hover {
+	background-image: url(../../images/buttons/refresh_hover.png) !important;
+}
+
+.mapping-action-next {
+	background-image: url(../../images/buttons/next.png)  !important;
+}
+
+.mapping-action-next:hover {
+	background-image: url(../../images/buttons/next_hover.png) !important;
+}
+
+.mapping-action-previous {
+	background-image: url(../../images/buttons/previous.png)  !important;
+}
+
+.mapping-action-previous:hover {
+	background-image: url(../../images/buttons/previous_hover.png) !important;
+}
+
+.mapping-function-container {
+}
+
+.mapping-function {
+	margin: 10px;
+}
+
+.mapping-function-header {
+	background: #e0e0e0;
+	min-height: 20px;
+	padding: 5px;
+	border-radius: 5px 5px 0px 0px;
+	font-weight: bold;
+}
+
+.mapping-function-body {
+	background: #eee;
+	padding: 5px;
+	min-height: 20px;
+}
+
+.mapping-function-footer {
+	background: #eee;
+	padding: 5px;
+	min-height: 20px;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.mapping-function-message, .mapping-function-warning {
+	font-style: oblique;
+	margin-bottom: 5px;
+	border-bottom: 1px solid silver;
+	padding-bottom: 5px;
+	color: #333;
+}
+
+.mapping-function-warning {
+	color: red;
+}
+
+.mapping-function-arguments {
+}
+
+.mapping-function-argument {
+	margin-bottom: 5px;
+}
+
+.mapping-function-argument input {
+	padding: 2px;
+}
+
+.mapping-function-argument-label {
+	display: inline-block;
+}
+
+.mapping-function-argument-value {
+	margin-left: 5px;
+}
+
+.mapping-function-values {
+	margin: 10px;
+	min-height: 100px;
+	height: 100%;
+}
+
+.mapping-values-container {
+}
+
+.mapping-values {
+	margin: 10px;
+	position: relative;
+}
+
+.mapping-values-new {
+	background: #eee;
+	min-height: 20px;
+	padding: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	font-weight: bold;
+	position: relative;
+}
+
+.mapping-values-new-row {
+	padding: 5px;
+}
+
+.mapping-values-new-row input {
+	padding: 2px;
+	margin-right: 5px;
+	vertical-align: middle;
+	width: 170px;
+}
+
+.mapping-values-new-row select {
+	width: 200px;
+}
+
+.mapping-values-new-row .mapping-values-label {
+	min-width: 50px;
+	display: inline-block;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.mapping-values-input-values {
+	width: 370px;
+	height: 400px;
+}
+
+.mapping-values-add {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+.mapping-values-list {
+	position: relative;
+	min-height: 400px;
+	border: 1px solid silver;
+}
+
+.mapping-condition {
+	background: #eee;
+	border-radius: 5px;
+	min-height: 26px;
+	margin: 1px;
+	position: relative;
+}
+
+.mapping-element-header:hover .mapping-condition {
+	background: #f5f5f0;
+}
+
+.mapping-element-header:hover .mapping-condition:hover {
+	background: white;
+}
+
+.mapping-condition-remove {
+	display: inline-block;
+	background-image: url(../../images/buttons/delete.png) !important;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+}
+
+.mapping-condition-remove:hover {
+	background-image: url(../../images/buttons/delete_hover.png)  !important;
+}
+
+.mapping-condition-add {
+	display: inline-block;
+	background-image: url(../../images/buttons/add.png) !important;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+}
+
+.mapping-condition-add:hover {
+	background-image: url(../../images/buttons/add_hover.png)  !important;
+}
+
+.mapping-condition-add-subcondition {
+	display: inline-block;
+	background-image: url(../../images/buttons/add_alt.png) !important;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+}
+
+.mapping-condition-add-subcondition:hover {
+	background-image: url(../../images/buttons/add_alt_hover.png)  !important;
+}
+
+.mapping-condition-xpath {
+	display: inline-block;
+	min-width: 0;
+	margin-left: 10px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.mapping-condition-operator {
+	position: relative;
+	display: inline-block;
+	margin-right: 10px;
+	top: 2px;
+	vertical-align: middle;
+}
+
+.mapping-condition-operator select {
+	width: 100%;
+}
+
+.mapping-condition-value {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.mapping-condition-clauses {
+	display: inline-block;
+	margin-left: 10px;
+	vertical-align:middle;
+}
+
+.mapping-condition-clause {
+	border: 1px solid transparent;
+	border-radius: 5px;
+	padding: 3px;
+	padding-left: 2px;
+	padding-right: 5px;
+}
+
+.mapping-condition-clause:hover {
+	border: 1px dashed silver;
+}
+
+.mapping-condition-logical {
+	display: inline-block;
+	padding: 2px;
+	position: relative;
+	top: 2px;
+	vertical-align: middle;
+}
+
+.mapping-condition-logical select {
+	width: 100%;
+}
+
+.mapping-condition-bracket {
+	position: absolute;
+	width: 12px;
+	top: 2px;
+	bottom: 2px;
+	left: 65px;
+	border-radius: 5px;	
+}
+
+.mapping-condition-actions {
+	display: inline-block; 
+}
+
+.mapping-element-bookmark {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.mapping-element-bookmark-on {
+	background: url(../../images/buttons/bookmarks.png) !important;
+}
+
+.mapping-element-bookmark-off:hover {
+	background: url(../../images/buttons/bookmarks_hover.png) !important;
+}
+
+.mapping-element-bookmark-off {
+	background: url(../../images/buttons/bookmarks_off.png) !important;
+}
+
+.mapping-tooltip {
+	font-size: 120%;
+}
+
+.mapping-tooltip .xpath {
+	font-weight: bold;
+}
+
+.mapping-tooltip .actions {
+	border-top: 1px solid black;
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+.mapping-tooltip .qtip-wrapper {
+/*	box-shadow: 0px 0px 10px black; */
+}
+
+.mapping-tooltip .action {
+	margin-right: 10px;
+	cursor: pointer;
+	display: inline-block
+}
+
+.mapping-tooltip .action span {
+	display: inline-block;
+	position: relative;
+}
+
+.mapping-element-loading {
+		background-image: url(../../images/buttons/loading.gif)  !important;
+		display: inline-block;
+}
+
+.mapping-active {
+	background: #f5f5f0;
+	border: 2px dashed black;
+	box-shadow: inset 0 0 10px white
+}
+
+.mapping-thesaurus-container {
+	padding: 10px;
+	height: 90%;
+}
+.mapping-active > .mapping-element-mapping-area {
+	background: none; !important
+}

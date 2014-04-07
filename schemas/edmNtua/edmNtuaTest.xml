@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF 
+	xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	xmlns:dcterms="http://purl.org/dc/terms/" 
+	xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+	xmlns:owl="http://www.w3.org/2002/07/owl#" 
+	xmlns:p3="http://www.w3.org/2003/01/geo/wgs84_pos#" 
+	xmlns:ore="http://www.openarchives.org/ore/terms/" 
+	xmlns:rdagr2="http://rdvocab.info/ElementsGr2/" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
+	xmlns:xml="http://www.w3.org/XML/1998/namespace" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns# edmNtua.xsd ">
+  <edm:ProvidedCHO rdf:about="http://providedCHO.com">
+    <dcterms:alternative xml:lang="en">dcterms:alternative</dcterms:alternative>
+    <edm:isNextInSequence rdf:resource="http://nextInSequenceCHO.com"/>
+    <edm:type>TEXT</edm:type>
+    <owl:sameAs rdf:resource="http://sameAsCHO.com"/>
+  </edm:ProvidedCHO>
+  <ore:Aggregation rdf:about="http://aggregation.com">
+    <dc:rights xml:lang="en">dc:rights</dc:rights>
+    <edm:aggregatedCHO rdf:resource="http://tempuri.org"/>
+    <edm:dataProvider>
+      <edm:Agent>
+        <edm:begin>1981</edm:begin>
+        <edm:end>2057</edm:end>
+        <dc:type>
+          <skos:Concept>
+          	<skos:prefLabel>A concept</skos:prefLabel>
+          </skos:Concept>
+        </dc:type>
+        <dc:relation xml:lang="en">dc:relation</dc:relation>
+        <dc:identifier xml:lang="en">dc:identifier</dc:identifier>
+        <foaf:basedNear>
+          <edm:Place>
+          	<skos:prefLabel>Athens</skos:prefLabel>
+          </edm:Place>
+        </foaf:basedNear>
+        <foaf:homepage>
+          <edm:WebResource rdf:about="http://homepage.org"/>
+        </foaf:homepage>
+        <owl:sameAs rdf:resource="http://sameAsAggregation.org"/>
+        <rdagr2:biographicalInformation xml:lang="en">rdagr2:biographicalInformation</rdagr2:biographicalInformation>
+        <rdagr2:gender>Male</rdagr2:gender>
+        <skos:altLabel xml:lang="en">Nikos</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Simou</skos:prefLabel>
+      </edm:Agent>
+    </edm:dataProvider>
+    <edm:hasView>
+      <edm:WebResource rdf:about="http://resource1.org">
+        <dc:rights xml:lang="en">dc:rights</dc:rights>
+        <edm:rights rdf:resource="http://www.europeana.eu/rights/rr-f/"/>
+      </edm:WebResource>
+    </edm:hasView>
+    <edm:isShownAt>
+      <edm:WebResource rdf:about="http://resource2.org">
+        <dc:rights xml:lang="en">dc:rights</dc:rights>
+        <edm:rights rdf:resource="http://www.europeana.eu/rights/rr-f/"/>
+      </edm:WebResource>
+    </edm:isShownAt>
+    <edm:isShownBy>
+      <edm:WebResource rdf:about="http://resource3.org">
+        <dc:rights xml:lang="en">dc:rights</dc:rights>
+        <edm:rights rdf:resource="http://www.europeana.eu/rights/rr-f/"/>
+      </edm:WebResource>
+    </edm:isShownBy>
+    <edm:object>
+      <edm:WebResource rdf:about="http://resource4.org">
+        <dc:rights xml:lang="en">dc:rights</dc:rights>
+        <edm:rights rdf:resource="http://www.europeana.eu/rights/rr-f/"/>
+      </edm:WebResource>
+    </edm:object>
+    <edm:provider>
+      <edm:Agent rdf:about="http://agentConcept.org">
+        <edm:begin>1981</edm:begin>
+        <edm:end>2057</edm:end>
+        <dc:type>
+          <skos:Concept rdf:about="http://skosConcept.org"/>
+        </dc:type>
+        <dc:relation xml:lang="en">dc:relation</dc:relation>
+        <dc:identifier xml:lang="en">dc:identifier</dc:identifier>
+        <foaf:basedNear>
+          <edm:Place rdf:about="http://place.org"/>
+        </foaf:basedNear>
+        <foaf:homepage>
+          <edm:WebResource rdf:about="http://homepage.org"/>
+        </foaf:homepage>
+        <owl:sameAs rdf:resource="http://tempuri.org"/>
+        <rdagr2:biographicalInformation xml:lang="en">rdagr2:biographicalInformation</rdagr2:biographicalInformation>
+        <rdagr2:gender>Male</rdagr2:gender>
+        <skos:altLabel xml:lang="en">skos:altLabel</skos:altLabel>
+        <skos:prefLabel xml:lang="en">skos:prefLabel</skos:prefLabel>
+      </edm:Agent>
+    </edm:provider>
+    <edm:rights rdf:resource="http://www.europeana.eu/rights/rr-f/"/>
+    <edm:ugc>true</edm:ugc>
+  </ore:Aggregation>
+</rdf:RDF>

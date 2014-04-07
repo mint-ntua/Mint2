@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="gr.ntua.ivml.mint.persistent.Item" table="item">
+	    <id name="dbID" column="item_id">
+		    <generator class="sequence">
+		    	<param name="sequence">seq_item_id</param>
+		    </generator>
+	    </id>
+
+		<timestamp name="lastModified" column="last_modified" />
+		<property name="gzippedXml" column="gzip_xml" />
+		<many-to-one name="dataset"
+     		column="dataset_id"
+		    not-null="true" />
+		<property name="persistentId" column="persistent_id" />
+		<many-to-one name="itemNode"
+			column="xml_node_id"
+			not-null="false" />
+		<many-to-one name="sourceItem"
+			column="source_item_id"
+			not-null="false" />
+		<property name="label" />
+		<property name="valid" />
+		
+   </class>
+</hibernate-mapping>

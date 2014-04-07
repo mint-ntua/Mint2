@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcmi="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dpla="http://dp.la/about/map/" xmlns:edm="http://www.europeana.eu/schemas/edm/" xmlns:gn="http://www.geonames.org/ontology#" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:p="http://xmlns.com/foaf/0.1/" xmlns:p1="http://rdvocab.info/ElementsGr2/" xmlns:p2="http://www.w3.org/2002/07/owl#" xmlns:p3="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns# DPLA.xsd ">
+  <dpla:SourceResource rdf:about="http://tempuri.org">
+    <dcterms:isPartOf rdf:resource="http://tempuri.org"/>
+    <dc:contributor rdf:lang="" rdf:resource="http://tempuri.org">dc:contributor</dc:contributor>
+    <dc:creator rdf:lang="" rdf:resource="http://tempuri.org">dc:creator</dc:creator>
+    <dc:date rdf:lang="">dc:date</dc:date>
+    <dc:description rdf:lang="">dc:description</dc:description>
+    <dcterms:extent rdf:lang="">dcterms:extent</dcterms:extent>
+    <dc:identifier rdf:lang="">dc:identifier</dc:identifier>
+    <dc:language rdf:lang="">dc:language</dc:language>
+    <edm:currentLocation rdf:resource="http://tempuri.org"/>
+    <dc:format rdf:lang="" rdf:resource="http://tempuri.org">dc:format</dc:format>
+    <dcterms:spatial rdf:lang="" rdf:resource="http://tempuri.org">dcterms:spatial</dcterms:spatial>
+    <dcterms:publisher rdf:lang="" rdf:resource="http://tempuri.org">dcterms:publisher</dcterms:publisher>
+    <dc:rights rdf:lang="" rdf:resource="http://tempuri.org">dc:rights</dc:rights>
+    <dc:subject rdf:lang="" rdf:resource="http://tempuri.org">dc:subject</dc:subject>
+    <dcterms:temporal rdf:lang="" rdf:resource="http://tempuri.org">dcterms:temporal</dcterms:temporal>
+    <dc:title rdf:lang="">dc:title</dc:title>
+    <dc:type rdf:lang="" rdf:resource="http://tempuri.org">dc:type</dc:type>
+  </dpla:SourceResource>
+</rdf:RDF>

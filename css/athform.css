@@ -1,0 +1,279 @@
+
+/* move to core*/
+  .block-nav form.quicksearch {
+    -moz-box-sizing: border-box;
+    background: -moz-linear-gradient(center top , #E8E8E8, #D1D1D1) repeat scroll 0 0 #D1D1D1;
+    height: 32px;
+    padding: 4px;
+    position: relative;
+    width: 100%;
+}
+
+   
+	form.athform img {
+	vertical-align: top;
+	padding-left: 8px;
+    }   
+
+    form.athform legend { padding-left: 0; }
+     
+     /*  
+    form.athform label {
+	color: #333;
+	width: 150px; 
+	align: right;
+	}*/
+
+	.tdLabel {
+	color: #333;
+	width: 150px; 
+	}
+	
+    form.athform fieldset {
+        border: none;
+       background-repeat: repeat;
+        }
+       
+    form.athform fieldset fieldset { background: none; }
+       
+   
+
+    form.athform text {
+        padding-left: 5px;
+        padding-right: 5px;
+		display: inline-block;
+		vertical-align: middle;
+		
+		}
+
+    form.athform fieldset { margin-bottom: 10px #FFFFFF; }
+   
+	form.athform legend {
+		padding: 0 2px;
+		font-weight: bold;
+		_margin: 0 -7px; /* IE Win */
+		}
+	
+	form.athform legend a img {
+	vertical-align: bottom;
+	
+    }      
+	
+
+	form.athform fieldset ol {
+		margin: 0;
+		padding: 0;
+		}
+	   
+	form.athform fieldset li {
+		list-style: none;
+		padding: 5px;
+		margin: 0;
+		}
+   form.athform fieldset a{
+		border:0;
+         vertical-align:top;
+		}
+
+  form.athform fieldset ol li ol{
+		margin: 0;
+		padding: 0;
+		}
+	   
+	form.athform fieldset li ol li{
+	    padding-left: 5px;
+        background: none;
+ 		list-style: none;
+		margin: 0;
+		}
+
+/* form.athform fieldset li ol li label { width: 220px; }*/
+
+	   
+	form.athform fieldset fieldset {
+		border: none;
+		margin: 3px 0 0;
+		}
+	   
+	form.athform fieldset fieldset legend {
+		padding: 0 0 5px;
+		font-weight: normal;
+
+		}
+	   
+	form.athform fieldset fieldset label {
+		display: block;
+		width: auto;
+		}
+	
+	form.athform em {
+	font-weight: normal;
+	font-style: normal;
+	color: #f00;
+	margin-left: 5px;
+		}
+	
+
+	form.athform fieldset fieldset label { margin-left: 123px; } /* Width plus 3 (html space) */
+
+	form.athform table {
+
+	}
+
+  form.athform fieldval {
+	margin: 0;
+	padding: 1px;
+	font-size: 100%;
+	font-family: inherit;	
+	color: #0000FF;
+    }
+
+
+form.athform fieldset label strong {  
+	display: block;  
+	color: #FF0000;  
+	font-size: 85%;  
+	font-weight: bold;  
+	text-transform: uppercase;
+	}
+
+
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+a.button {
+    background: transparent url('../images/bg_button_a.gif') no-repeat scroll top right;
+    color: #444444;
+    display: block;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+}
+
+a.button span {
+    background: transparent url('../images/bg_button_span.gif') no-repeat;
+    display: block;
+    line-height: 14px;
+    padding: 5px 0 5px 18px;
+} 
+
+a.button:active {
+    background-position: bottom right;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.button:active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px; /* push text down 1px */
+}
+
+
+
+ form.athform {
+        -moz-box-sizing: border-box;
+   
+    
+    padding: 4px;
+    position: relative;
+    width: 100%;
+        }
+        
+       
+        
+        form.athform .checks{
+          float:left;
+          display:inline-block;
+          width: auto;
+          height: auto;
+          border: none;
+          margin-top: 5px;
+        }
+        
+        form.athform .fitem{
+            background: #D3E0FA;
+            
+            background: -moz-linear-gradient(center top , #e7efff, #D3E0FA) repeat scroll 0 0 #D3E0FA;
+	        
+	        
+			   /* Chrome, Safari:*/
+		    background: -webkit-gradient(linear,
+		                left top, left bottom, from(#e7efff), to(#D3E0FA));
+		    /* MSIE */
+		    filter: progid:DXImageTransform.Microsoft.Gradient(
+		                StartColorStr='#e7efff', EndColorStr='#D3E0FA', GradientType=0);
+			        
+			        
+		    line-height: 15px;
+		    position: relative;
+		    width: 98%;
+		    border-radius: 5px 5px 5px 5px; 
+		    margin-bottom:4px;
+		    padding: 5px 0px 0px 5px;
+	    
+        }
+        
+       form.athform .container {
+      
+	    height: 100%;
+	    padding: 5px 22px 0px 5px;
+	    position: relative;
+	    width: 100%;
+	    background:white;
+	}
+       
+          
+	form.athform label {
+		display: inline-block;
+		line-height: 1.8;
+		vertical-align:top;
+		width: 35%;
+		max-width:200px;
+		font-weight: bold;
+		}
+		
+		 form.athform input,select{
+          
+	      background-color: white;
+		  border: 0 none;
+		  height: inherit;
+		  width:50%;
+	      
+	      border-radius: 5px 5px 5px 5px;
+		  height:20px;
+		  padding:0px 5px 0px 5px;
+		  margin:0 5px 4px 0;
+		  vertical-align:top;
+		 
+	       }
+		
+	form.athform	.tail
+{   position:absolute;
+	right: 5%;
+	visibility: hidden;
+}
+      	
+      	
+		
+
+     
+      .fieldError {
+	position:relative;
+	float:right;
+	color: #FF0000;
+	font-weight: normal;
+	margin-top: -35px;
+	vertical-align: top;
+	width:60%;
+	padding-bottom:5px;
+	
+}
+
+a.empty {background:#FFFFFF;text-decoration:none;}
+ 
+.empty a:hover{{background:#FFFFFF;text-decoration:none;}

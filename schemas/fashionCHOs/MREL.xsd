@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://id.loc.gov/vocabulary/relators/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" elementFormDefault="qualified">
+  <annotation>
+    <documentation>
+      EDMFP First Implementation Schema
+    </documentation>
+  </annotation>
+  
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="CONTEXTS.xsd" />
+  <import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="SKOS.xsd"/>
+  
+  <element name="aut" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Author
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="clb" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Collaborator
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="cur" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Curator
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="drt" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Director
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="dsr" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Designer
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="edt" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Editor
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="ill" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Illustrator
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="ive" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Interviewee
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="ivr" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Interviewer
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="pht" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Photographer
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="pro" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Producer
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="sds" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Sound Designer
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="spn" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Sponsor
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="std" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Set designer
+      </documentation>
+    </annotation>
+  </element>
+
+</schema>

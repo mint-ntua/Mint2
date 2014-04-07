@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="gr.ntua.ivml.mint.persistent.Dataset" table="dataset" discriminator-value="Dataset" lazy="false" >
+	    <id name="dbID" column="dataset_id">
+		    <generator class="sequence">
+		    	<param name="sequence">seq_dataset_id</param>
+		    </generator>
+	    </id>
+		<discriminator column="subtype" />
+		<timestamp name="lastModified" column="last_modified" />
+
+
+	    <property name="name" />
+
+	    <many-to-one name="schema" 
+        column="xml_schema_id"
+        not-null="false"/>
+        <property name="schemaStatus" column="schema_status" />
+
+	    <many-to-one name="data" 
+        column="blob_wrap_id"
+        unique="true"
+	    cascade="all,delete-orphan" />
+        
+        <property name="loadingStatus" column="loading_status" />
+        
+        
+	    <many-to-one name="itemRootXpath" 
+ 	    cascade="save-update"
+        column="item_root_path_id"
+        not-null="false"/>
+        
+	    <many-to-one name="itemLabelXpath" 
+ 	    cascade="save-update"
+        column="item_label_path_id"
+        not-null="false"/>
+        
+	    <many-to-one name="itemNativeIdXpath" 
+	    cascade="save-update"
+        column="item_native_id_path_id"
+        not-null="false"/>
+
+	    <many-to-one name="rootHolder" 
+	    cascade="save-update"
+        column="root_holder_id"
+        not-null="false"/>
+        
+		<property name="itemizerStatus" column="itemizer_status"/>
+		<property name="itemCount" column="item_count"/>
+		<property name="validItemCount" column="valid_item_count" />
+		<property name="nodeIndexerStatus" column="node_index_status"/>
+		<property name="nodeIndexName" column="node_index_name" />
+		<property name="nodeIndexSize" column="node_index_size" />
+		<property name="statisticStatus" column="statistic_status" />
+		
+		<property name="created" />
+
+		<many-to-one name="creator" 
+        column="creator_id"
+        not-null="false"/>
+		
+		<many-to-one name="organization" 
+        column="organization_id"
+        not-null="false"/>
+		
+		<property name="deleted" />
+		<property name="deletedDate" column="deleted_date"/>
+		
+		<property name="publishDate" column="publish_date" />
+		<property name="publicationStatus" column="publication_status" />
+		<property name="publishedItemCount" column="published_item_count" />
+		
+	    <subclass name="gr.ntua.ivml.mint.persistent.DataUpload"  discriminator-value="DataUpload"  >
+	    <join table="data_upload" >
+	    	<key column="dataset_id" />
+	    	<property name="noOfFiles" column="no_of_files" />
+	    	<property name="sourceURL" column="source_url" />
+	    	<property name="originalFilename" column="original_filename"/>
+            <property name="resumptionToken" column="resumption_token" />
+            <property name="structuralFormat" column="structural_format" />
+            <property name="uploadMethod" column="upload_method" />
+            <property name="csvHasHeader" column="csv_has_header" />
+            <property name="csvDelimiter" column="csv_delimiter" />
+            <property name="csvEsc" column="csv_esc" />
+			<property name="jsonFolders" column="json_folders" />
+            </join>
+ 	    </subclass>
+
+	    <subclass name="gr.ntua.ivml.mint.persistent.Transformation" discriminator-value="Transformation" >
+	    <join table="transformation" >
+	    	<key column="dataset_id" />
+			<many-to-one name="parentDataset" 
+             column="parent_dataset_id"
+             not-null="false"/>
+
+			<many-to-one name="mapping" 
+             column="mapping_id"
+             not-null="false"/>
+			<many-to-one name="crosswalk"
+			column="crosswalk_id"
+			not-null="false" />
+			
+	    <many-to-one name="invalid" 
+        column="invalid_id"
+        unique="true"
+	    cascade="all,delete-orphan" />
+ 
+			<property name="report" />
+			<property name="jsonMapping" column="json_mapping" />
+			</join>
+	    </subclass>
+		<!-- 
+	    <subclass name="gr.ntua.ivml.mint.persistent.Merge" discriminator-value="Merge" />
+			 probably Merge will be very similar to Publication -->
+		
+	    
+   </class>
+</hibernate-mapping>

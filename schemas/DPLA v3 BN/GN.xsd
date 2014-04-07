@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://www.geonames.org/ontology#" 
+  xmlns:gn="http://www.geonames.org/ontology#"
+  xmlns:dcterms="http://purl.org/dc/terms/" 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  elementFormDefault="qualified">
+
+  
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  
+   <element name="name" type="rdf:LiteralType">
+  	<annotation>
+        <documentation>The main international name of a feature. The value has no xml:lang tag.</documentation>
+     </annotation>
+  </element>
+  
+  <element name="featuredCode" type="rdf:ResourceType">
+  	<annotation>
+        <documentation>Type of the feature, as defined in geonames taxonomy.</documentation>
+     </annotation>
+  </element>
+  
+  <element name="parentFeature" type="rdf:ResourceType">
+  	<annotation>
+        <documentation>A feature parent of the current one, in either administrative or physical subdivision.</documentation>
+     </annotation>
+  </element>
+  
+    <element name="countryCode" type="rdf:LiteralType">
+  	<annotation>
+        <documentation>A two letters country code in the ISO 3166 list.</documentation>
+     </annotation>
+  </element>
+  
+  
+</schema>

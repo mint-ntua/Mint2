@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:edm="http://www.europeana.eu/schemas/edm/"
+    xmlns:dm2e="http://onto.dm2e.eu/schemas/dm2e/1.0/"
+    xmlns:rdaGr2="http://RDVocab.info/ElementsGr2/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    targetNamespace="http://xmlns.com/foaf/0.1/">
+
+    <annotation>
+    	<documentation>
+     	 EDM+ v 1: DM2E
+    	</documentation>
+  	</annotation>
+    
+    <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+    <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd" />
+    <import namespace="http://RDVocab.info/ElementsGr2/" schemaLocation="RDAGR2.xsd"/>
+    <import namespace="http://onto.dm2e.eu/schemas/dm2e/1.0/" schemaLocation="DM2E.xsd"/>
+    <import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="SKOS.xsd"/>
+    <import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="DC.xsd"/>
+
+    <element name="Person" type="foaf:PersonType">
+   		<annotation>
+  			<documentation>The Person class represents people. Something is a Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered 'agents' in FOAF.“ (FOAF Vocabulary Specification 0.98 (http://xmlns.com/foaf/spec/)).</documentation>
+  		</annotation>
+   	</element>
+   	
+   	<element name="Organisation" type="foaf:OrganisationType">
+   		<annotation>
+  			<documentation>“The Organization class represents a kind of Agent corresponding to social institutions such as companies, societies etc.” (FOAF Vocabulary Specification 0.98 (http://xmlns.com/foaf/spec/))</documentation>
+  		</annotation>
+   	</element>
+    
+   <complexType name="OrganisationType">
+		<complexContent>
+	       <extension base="rdf:AboutType">
+    	     <sequence>
+    	        <!-- Inherited from edm:Agent -->
+				<element ref="skos:prefLabel" maxOccurs="1" minOccurs="0" />
+	     	    <element ref="skos:altLabel" maxOccurs="unbounded" minOccurs="0" />
+    	      	<element ref="skos:note" maxOccurs="unbounded" minOccurs="0" />
+	            <element ref="skos:hiddenLabel" maxOccurs="unbounded" minOccurs="0" />
+    	 	    <element ref="edm:wasPresentAt" maxOccurs="unbounded" minOccurs="0"/>
+     		    <element ref="edm:hasMet" maxOccurs="unbounded" minOccurs="0"/> 
+	            <element ref="edm:isRelatedTo" maxOccurs="unbounded" minOccurs="0"/>
+    	        <element ref="dc:date" maxOccurs="unbounded" minOccurs="0"/>
+        		<element ref="dc:identifier" maxOccurs="unbounded" minOccurs="0"/>    	     
+    	     	<!-- Inherited from edm:Agent -->
+
+        	  	<element ref="rdaGr2:dateOfEstablishment" maxOccurs="1" minOccurs="0"/>
+          	  	<element ref="rdaGr2:dateOfTermination" maxOccurs="1" minOccurs="0"/>
+          	  	
+          	  	<element ref="rdf:type" maxOccurs="unbounded" minOccurs="0"/>
+	         </sequence>
+    	  	</extension>
+	    </complexContent> 
+   </complexType>
+   
+   
+   <complexType name="OrganisationType2">
+    <sequence>
+      <element name="OrganisationType" maxOccurs="1" minOccurs="1"
+      	type="foaf:OrganisationType" />
+    </sequence>
+  </complexType>
+  
+  <complexType name="PersonType">
+  		<annotation>
+  			<documentation>The Person class represents people. Something is a Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. The Person class is a sub-class of the Agent class, since all people are considered 'agents' in FOAF.“ (FOAF Vocabulary Specification 0.98 (http://xmlns.com/foaf/spec/)).</documentation>
+  		</annotation>
+		<complexContent>
+	       <extension base="rdf:AboutType">
+    	     <sequence>
+	    	     <!-- Inherited from edm:Agent -->
+				<element ref="skos:prefLabel" maxOccurs="1" minOccurs="0" />
+	     	    <element ref="skos:altLabel" maxOccurs="unbounded" minOccurs="0" />
+    	      	<element ref="skos:note" maxOccurs="unbounded" minOccurs="0" />
+	            <element ref="skos:hiddenLabel" maxOccurs="unbounded" minOccurs="0" />
+    	 	    <element ref="edm:wasPresentAt" maxOccurs="unbounded" minOccurs="0"/>
+     		    <element ref="edm:hasMet" maxOccurs="unbounded" minOccurs="0"/> 
+	            <element ref="edm:isRelatedTo" maxOccurs="unbounded" minOccurs="0"/>
+    	        <element ref="dc:date" maxOccurs="unbounded" minOccurs="0"/>
+        		<element ref="dc:identifier" maxOccurs="unbounded" minOccurs="0"/>    	     
+    	     	<!-- Inherited from edm:Agent -->
+    	     
+        	  	<element ref="rdaGr2:gender" maxOccurs="1" minOccurs="0"/>
+          		<element ref="rdaGr2:professionOrOccupation" maxOccurs="unbounded" minOccurs="0"/>
+          		<element ref="rdaGr2:biographicalInformation" maxOccurs="unbounded" minOccurs="0"/>
+          		<element ref="rdaGr2:dateOfBirth" maxOccurs="1" minOccurs="0"/>
+          		<element ref="rdaGr2:dateOfDeath" maxOccurs="1" minOccurs="0"/>
+         		<element ref="dm2e:influencedBy" maxOccurs="unbounded" minOccurs="0"/>
+          		<element ref="dm2e:studentOf" maxOccurs="unbounded" minOccurs="0"/>
+	         </sequence>
+    	   </extension>
+	     </complexContent> 
+   </complexType>
+   
+   <complexType name="PersonType2">
+    <sequence>
+      <element name="PersonType" maxOccurs="1" minOccurs="1"
+      	type="foaf:PersonType" />
+    </sequence>
+  </complexType>
+    
+    <element name="name" type="rdf:LiteralType">
+    </element>
+    
+    <element name="basedNear" type="edm:PlaceType2">
+    </element>
+    
+    <element name="homepage" type="edm:WebResourceType2">
+    </element>
+</schema>

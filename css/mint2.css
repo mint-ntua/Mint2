@@ -1,0 +1,134 @@
+/**
+ * Buttons
+ */
+ 
+.mint2-documentation {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+ 
+.mint2-documentation {
+	background-image: url(../images/buttons/help.png) !important;
+}
+
+.mint2-documentation:hover {
+	background-image: url(../images/buttons/help_hover.png) !important;
+}
+
+.mint2-topright {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+/**
+ *	Messages
+ */
+
+.mint-message {
+	padding: 10px;
+	margin-bottom: 5px;
+}
+
+.mint-message .ui-icon {
+	display: inline-block;
+}
+
+.mint-message-content {
+	display: inline-block;
+	margin-left: 8px;
+	width: 90%;
+	position: relative;
+	top: -4px;
+}
+
+/**
+ *	Item Preview
+ */
+
+.mint2-preview {
+	position: relative;
+	height: 100%;
+}
+
+.mint2-preview-control {
+	display: inline-block;
+	width: 98%;
+	vertical-align: top;
+	overflow: auto;
+}
+
+.mint2-preview-views {
+	background-color: #E8EDF5;
+	display: inline-block;
+	width: 98%;
+	margin-left: 10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.mint2-preview-options {
+	position: relative;
+	border: 1px solid #E0E0F0;
+	border-radius: 5px;
+	background: #E8EDF5;
+	margin-bottom: 10px;
+}
+
+.mint2-preview-option {
+	padding: 5px;
+}
+
+.mint2-preview-option div {
+	vertical-align: top;
+	margin-right: 5px;
+}
+
+.mint2-preview-option select {
+	float: right;
+	border: 1px solid silver;
+	border-radius: 5px;
+}
+
+.mint2-preview-column {
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: top;
+	overflow: auto;
+	width: 98%;
+}
+
+.mint2-box {
+	border: 1px solid #E0E0F0;
+	border-radius: 5px;
+	background: #E8EDF5;
+	margin-bottom: 5px;
+}
+
+.mint2-header {
+	font-weight: bold;
+	background: #D7E0EE;
+	padding: 5px;
+}
+
+.mint2-dataTable {
+	padding: 5px;
+}
+
+.mint2-dataTable-row {
+	padding: 5px;
+}
+
+.mint2-dataTable-row:hover {
+	background: #FAFBFD;
+}
+
+.mint2-label {
+	font-weight: bold;
+	margin-right: 10px;
+	display: inline-block;	
+}
+
+.mint2-value {
+}

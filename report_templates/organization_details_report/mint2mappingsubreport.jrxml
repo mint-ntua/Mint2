@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3700192d-60f4-4ca0-ae47-f805773a035d">
+	<property name="ireport.zoom" value="1.1000000000000065"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 3" fontSize="14" isBold="true"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="created" class="java.util.Date">
+		<fieldDescription><![CDATA[created]]></fieldDescription>
+	</field>
+	<field name="lastModified" class="java.util.Date">
+		<fieldDescription><![CDATA[lastModified]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="schemaName" class="java.lang.String">
+		<fieldDescription><![CDATA[schemaName]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9686d3c5-2787-42e2-b8b1-b318e6618963" style="Heading 3" x="0" y="0" width="202" height="20"/>
+				<textElement/>
+				<text><![CDATA[Mappings]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement uuid="cf1fb25f-655d-4d8b-8397-df71b2ca741f" mode="Opaque" x="0" y="0" width="802" height="19" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<staticText>
+					<reportElement uuid="4ad967de-0633-472e-add9-94eaaf15abab" x="54" y="0" width="202" height="19"/>
+					<box topPadding="3" leftPadding="4" bottomPadding="3" rightPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mapping Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="64fa61de-6ce1-4e03-ad28-db515d0d7c79" x="256" y="0" width="168" height="19"/>
+					<box topPadding="3" leftPadding="4" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Schema]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="b9c95c4c-3d1e-4de4-8371-4df60723754c" x="424" y="0" width="144" height="19"/>
+					<box topPadding="3" leftPadding="4" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Date Created]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="aafeacfd-7d8c-4933-888d-83e649367741" x="568" y="0" width="100" height="19"/>
+					<box topPadding="3" leftPadding="4" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Right">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Date Modified]]></text>
+				</staticText>
+			</frame>
+			<line>
+				<reportElement uuid="91e9b451-0d1e-4f0f-a147-fc49faf0ad36" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement uuid="c77f700f-5e5a-4b7f-aeab-0ee5075788e1" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement uuid="6c0e12fa-360f-406e-9a8a-2c58704a6d9b" style="Row" x="0" y="0" width="802" height="21"/>
+				<textField>
+					<reportElement uuid="262e398d-29d2-4519-80d2-cb750985bc08" x="256" y="0" width="168" height="21"/>
+					<box topPadding="3" leftPadding="4" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{schemaName}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement uuid="f61d9315-8345-494f-aa97-b8ffd775b2a7" x="424" y="0" width="144" height="21"/>
+					<box topPadding="3" leftPadding="4" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{created}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement uuid="adfa3f94-d4bf-41cf-8d04-f8252f91ad52" x="568" y="0" width="100" height="21"/>
+					<box topPadding="3" leftPadding="4" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{lastModified}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="e03b3a7d-48be-41db-99f8-914a9ea4cc9c" x="54" y="0" width="202" height="21"/>
+					<box topPadding="3" leftPadding="4" bottomPadding="3" rightPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch">
+			<line>
+				<reportElement uuid="cdd36aa3-e670-4591-8997-4b777a7b6bf6" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="4" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="8" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="6" splitType="Stretch"/>
+	</summary>
+</jasperReport>

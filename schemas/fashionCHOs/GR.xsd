@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.heppnetz.de/ontologies/goodrelations/v1#" 
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#" elementFormDefault="qualified">
+  
+  <import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="SKOS.xsd"/>
+  
+  <element name="color" type="skos:ConceptType3">
+    <annotation>
+      <documentation>
+      </documentation>
+    </annotation>
+  </element>
+  
+</schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcatProjectProperties>
+    <rootDir>/</rootDir>
+    <exportSource>true</exportSource>
+    <reloadable>true</reloadable>
+    <redirectLogger>false</redirectLogger>
+    <updateXml>true</updateXml>
+    <warLocation>C:\Users\christaki\Desktop\mint.war</warLocation>
+    <extraInfo></extraInfo>
+    <webPath>/mint2</webPath>
+</tomcatProjectProperties>

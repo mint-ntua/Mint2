@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dpla="http://dp.la" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" targetNamespace="http://dp.la" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://www.dublincore.org/schemas/xmls/qdc/dc.xsd"/>
+	<xs:complexType name="record">
+		<xs:sequence>
+			<xs:element ref="dc:title" maxOccurs="unbounded"/>
+			<xs:element ref="dc:creator" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dc:date" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dc:description" maxOccurs="unbounded"/>
+			<xs:element ref="dc:subject" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dc:publisher" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="dc:language" maxOccurs="unbounded"/>
+			<xs:element name="callNum" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The item's call number. Exact matching.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="height" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The item's physical height. Exact matching.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pageCount" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The number of pages contained in the item. Exact matching</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="dc:relation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="contentLink" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>A link to the item's content. Exact matching.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="dc:rights" minOccurs="0"/>
+			<xs:element name="dataSource" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The contributing partner. Exact matching.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resourceType">
+				<xs:annotation>
+					<xs:documentation>The resource's type. Common values include item and collection. Exact matching.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ITEM"/>
+						<xs:enumeration value="COLLECTION"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="isbn" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The item's ISBN. Exact matching.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="oclc" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The item's OCLC identifier. Exact matching.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lccn" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The item's LCCN. Exact matching.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="dc:identifier" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="record" type="dpla:record"/>
+	<xs:element name="Metadata">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="record" type="dpla:record" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

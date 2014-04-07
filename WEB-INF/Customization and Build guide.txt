@@ -1,0 +1,71 @@
+Customization and build guide!
+
+1. Introduction
+
+Under Customization we understand, that the same codebase in the source code repository can be used to build
+different projects. Partly this will be possible by selectively including parts in the build and partly this
+will be done, by accessing resources based on the projects NAME.
+
+It would be totally reasonable to just customize the project by selectively copying the parts for a certain
+project during the build and use a uniform access to the custom resources. We will not do this, to enable more
+convenient development cycle, that does not need a total rebuild with copy to a target directory.
+
+2. Custom resources
+
+Resources that will be modified in a project customization are listed below, with reasoning where they should be 
+placed and why. Any project based on this source will be consisting of a BASE part and CUSTOM part. Please consider 
+that any change in the BASE part will affect all projects (after redeploy). When you add a custom part, it is usually
+necessary to make modifications on some BASE part. This should be done in a way that it doesn't require the change
+of all the custom parts in all other projects.
+
+Custom parts will be split into two main locations. Where direct access from the web application is necessary,
+like images, css, js etc., They should reside in ROOT/custom/PROJECT-NAME/{css, js, images}. The BASE parts will
+be in ROOT/{css,js,images...}. Some resources should not be accessible from the outside and have to be located inside
+the WEB-INF folder (classes/java code, properties, jsps). So ROOT/WEB-INF/custom/PROJECT-NAME/ is the second location
+for custom parts of the projects.
+
+2.1 Java source code and classpath resources
+
+For simplicity all resources (mostly properties) should be located in their respective java folders. 
+
+2.1.1 BASE java code
+The base java source code will be located in ROOT/WEB-INF/src/java directory. After compilation it will be found,
+together with all other classpath resources in ROOT/WEB-INF/classes. 
+
+2.1.2 CUSTOM java code
+All customized java code should go to ROOT/WEB-INF/custom/PROJECT-NAME/java. During development this directory should
+be added to the source path. In a full deploy for a project, this code is selectively copied into the build system.
+The compiled code should go into ROOT/WEB-INF/classes.
+
+2.2 JSP code
+Should go to WEB-INF/jsp and WEB-INF/custom/PROJECT-NAME/jsp
+
+3. DEFAULT resources
+
+There might be the case, where some resource should be reasonably be supplied in all projects, yet cannot for some reason
+be included in the BASE part of the system. All custom resource acquiring should allow for the resource not to be customized.
+Either there should be no action, when there is no custom resource, or the system should look into the DEFAULT project custom
+folder and take the equally named resource from there. 
+
+This is not necessarily the best idea. Whenever possible the default 'whatever' should happen in the BASE part of the system,
+but maybe sometimes a DEFAULT project is just easier to implement.
+
+
+4. Development cycle and build/deploy system
+
+The normal development cycle should be working, by just defining the right folders as source folders during development. In a full
+build, the build system will select the right source and custom folders and include only those in the final build. Custom folders
+of unrelated projects will not be copied/ deployed.
+
+5. Specific customization issues
+
+5.1 How to customize an included image
+5.2 How to customize css
+5.3 How to customize an action
+5.4 How to customize a persistent class
+5.5 How to create a custom Publication
+5.6 How to use a slightly modified jsp
+5.7 How to use a totally different jsp in a standard action
+
+
+

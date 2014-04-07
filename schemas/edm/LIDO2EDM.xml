@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	xmlns:dcterms="http://purl.org/dc/terms/" 
+	xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+	xmlns:ore="http://www.openarchives.org/ore/terms/" 
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+	xmlns:p1="http://rdvocab.info/ElementsGr2/" 
+	xmlns:p2="http://www.w3.org/2002/07/owl#" 
+	xmlns:p3="http://www.w3.org/2003/01/geo/wgs84_pos#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
+	xmlns:xml="http://www.w3.org/XML/1998/namespace" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns# EDM.xsd ">
+   <edm:ProvidedCHO rdf:about="http://mint-projects.image.ntua.gr/Partage_Plus/ProvidedCHO/178">
+      <dc:contributor rdf:resource="http://partage.vocnet.org/part-wer20350017"/>
+      <dc:contributor xml:lang="el">Daum fivérek üveggyára, Nancy</dc:contributor>
+      <dc:contributor xml:lang="el">Michel, Eugéne</dc:contributor>
+      <dc:creator rdf:resource="http://partage.vocnet.org/part-wer20350017"/>
+      <dc:creator xml:lang="el">Daum fivérek üveggyára, Nancy</dc:creator>
+      <dc:date>1890/1900</dc:date>
+      <dc:description xml:lang="el">NTUA test description </dc:description>
+      <dc:description xml:lang="el">Περιγραφή </dc:description>
+      <dc:format rdf:resource="http://partage.vocnet.org/part00246"/>
+      <dc:identifier>53.382.1.</dc:identifier>
+      <dc:publisher rdf:resource="http://partage.vocnet.org/part-wer20350017_publisher"/>
+      <dc:publisher xml:lang="el">Daum fivérek üveggyára, Nancy publisher</dc:publisher>
+      <dc:rights>NTUA - Rights Work Wrap</dc:rights>
+      <dc:subject rdf:resource="http://subject.org/"/>
+      <dc:subject xml:lang="el">subject</dc:subject>
+      <dc:title xml:lang="el">Díszüveg</dc:title>
+      <dc:type rdf:resource="http://partage.vocnet.org/Classification"/>
+      <dc:type rdf:resource="http://partage.vocnet.org/Classification2"/>
+      <dc:type xml:lang="en">Classification</dc:type>
+      <dc:type xml:lang="el">Classification 2</dc:type>
+      <dc:type xml:lang="el">szecesszió</dc:type>
+      <dc:type rdf:resource="http://partage.vocnet.org/part00063"/>
+      <dc:type rdf:resource="http://partage.vocnet.org/part00066"/>
+      <dc:type xml:lang="el">glassware</dc:type>
+      <dc:type xml:lang="el">glassware PPRefiningObjectType</dc:type>
+      <dcterms:alternative xml:lang="el">Alternative Díszüveg</dcterms:alternative>
+      <dcterms:created>1890/1900</dcterms:created>
+      <dcterms:medium rdf:resource="http://partage.vocnet.org/part00246/material"/>
+      <dcterms:medium rdf:resource="http://partage.vocnet.org/part00246/material2"/>
+      <dcterms:medium xml:lang="el">üveg material</dcterms:medium>
+      <dcterms:medium xml:lang="el">üveg</dcterms:medium>
+      <dcterms:spatial>Museum of Applied Arts, Budapest</dcterms:spatial>
+      <dcterms:spatial>Nancy</dcterms:spatial>
+      <dcterms:spatial>Nancy</dcterms:spatial>
+      <edm:type>IMAGE</edm:type>
+   </edm:ProvidedCHO>
+   <edm:WebResource rdf:about="http://gyujtemeny.imm.hu/web/kis/53_382_KA.jpg"/>
+   <edm:WebResource rdf:about="http://gyujtemeny.imm.hu/gyujtemeny/diszuveg/177"/>
+   <edm:Agent rdf:about="http://partage.vocnet.org/part-wer20350017_publisher">
+      <skos:prefLabel xml:lang="en">Daum fivérek üveggyára, Nancy publisher</skos:prefLabel>
+      <skos:prefLabel xml:lang="el">Michel, Eugéne publisher</skos:prefLabel>
+   </edm:Agent>
+   <edm:Agent rdf:about="http://partage.vocnet.org/part-wer20350017">
+      <skos:prefLabel xml:lang="el">Daum fivérek üveggyára, Nancy</skos:prefLabel>
+      <skos:prefLabel xml:lang="el">Michel, Eugéne</skos:prefLabel>
+   </edm:Agent>
+   <edm:Agent rdf:about="http://partage.vocnet.org/part-wer20350017">
+      <skos:prefLabel xml:lang="el">Daum fivérek üveggyára, Nancy</skos:prefLabel>
+      <skos:prefLabel xml:lang="el">Michel, Eugéne</skos:prefLabel>
+   </edm:Agent>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00063">
+      <skos:prefLabel xml:lang="el">glassware</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00066">
+      <skos:prefLabel xml:lang="el">glassware PPRefiningObjectType</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/Classification">
+      <skos:prefLabel xml:lang="en">Classification</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/Classification2">
+      <skos:prefLabel xml:lang="el">Classification 2</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00246/material">
+      <skos:prefLabel xml:lang="en">üveg material</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00246/material2">
+      <skos:prefLabel xml:lang="el">üveg</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00246">
+      <skos:prefLabel xml:lang="el">üveg technique</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://subject.org/">
+      <skos:prefLabel xml:lang="el">subject</skos:prefLabel>
+   </skos:Concept>
+   <ore:Aggregation rdf:about="http://mint-projects.image.ntua.gr/Partage_Plus/Aggregation/178">
+      <edm:aggregatedCHO rdf:resource="http://mint-projects.image.ntua.gr/Partage_Plus/ProvidedCHO/178"/>
+      <edm:dataProvider>Museum of Applied Arts, Budapest</edm:dataProvider>
+      <edm:isShownAt rdf:resource="http://gyujtemeny.imm.hu/gyujtemeny/diszuveg/177"/>
+      <edm:isShownBy rdf:resource="http://gyujtemeny.imm.hu/web/kis/53_382_KA.jpg"/>
+      <edm:object rdf:resource="http://gyujtemeny.imm.hu/web/kis/53_382_KA.jpg"/>
+      <edm:provider>Partage Plus</edm:provider>
+      <edm:rights rdf:resource="http://www.europeana.eu/rights/rr-f/"/>
+   </ore:Aggregation>
+   <edm:ProvidedCHO rdf:about="http://mint-projects.image.ntua.gr/Partage_Plus/ProvidedCHO/177">
+      <dc:contributor rdf:resource="http://partage.vocnet.org/part-wer20350017"/>
+      <dc:contributor xml:lang="hu">Daum fivérek üveggyára, Nancy</dc:contributor>
+      <dc:contributor xml:lang="hu">Michel, Eugéne</dc:contributor>
+      <dc:creator rdf:resource="http://partage.vocnet.org/part-wer20350017"/>
+      <dc:creator xml:lang="hu">Daum fivérek üveggyára, Nancy</dc:creator>
+      <dc:date>1890/1900</dc:date>
+      <dc:description xml:lang="hu">NTUA test description </dc:description>
+      <dc:format rdf:resource="http://partage.vocnet.org/part00246"/>
+      <dc:identifier>53.382.1.</dc:identifier>
+      <dc:publisher rdf:resource="http://partage.vocnet.org/part-wer20350017_publisher"/>
+      <dc:publisher xml:lang="hu">Daum fivérek üveggyára, Nancy publisher</dc:publisher>
+      <dc:rights>NTUA - Rights Work Wrap</dc:rights>
+      <dc:subject rdf:resource="http://subject.org/"/>
+      <dc:subject xml:lang="hu">subject</dc:subject>
+      <dc:title xml:lang="hu">Díszüveg</dc:title>
+      <dc:type rdf:resource="http://partage.vocnet.org/Classification"/>
+      <dc:type rdf:resource="http://partage.vocnet.org/Classification2"/>
+      <dc:type xml:lang="en">Classification</dc:type>
+      <dc:type xml:lang="hu">Classification 2</dc:type>
+      <dc:type xml:lang="hu">szecesszió</dc:type>
+      <dc:type rdf:resource="http://partage.vocnet.org/part00063"/>
+      <dc:type rdf:resource="http://partage.vocnet.org/part00066"/>
+      <dc:type xml:lang="hu">glassware</dc:type>
+      <dc:type xml:lang="hu">glassware PPRefiningObjectType</dc:type>
+      <dcterms:alternative xml:lang="hu">Alternative Díszüveg</dcterms:alternative>
+      <dcterms:created>1890/1900</dcterms:created>
+      <dcterms:medium rdf:resource="http://partage.vocnet.org/part00246/material"/>
+      <dcterms:medium rdf:resource="http://partage.vocnet.org/part00246/material2"/>
+      <dcterms:medium xml:lang="hu">üveg material</dcterms:medium>
+      <dcterms:medium xml:lang="hu">üveg</dcterms:medium>
+      <dcterms:spatial>Museum of Applied Arts, Budapest</dcterms:spatial>
+      <dcterms:spatial>Nancy</dcterms:spatial>
+      <dcterms:spatial>Nancy</dcterms:spatial>
+      <edm:type>IMAGE</edm:type>
+   </edm:ProvidedCHO>
+   <edm:WebResource rdf:about="http://gyujtemeny.imm.hu/web/kis/53_382_KA.jpg"/>
+   <edm:WebResource rdf:about="http://gyujtemeny.imm.hu/gyujtemeny/diszuveg/177"/>
+   <edm:Agent rdf:about="http://partage.vocnet.org/part-wer20350017_publisher">
+      <skos:prefLabel xml:lang="en">Daum fivérek üveggyára, Nancy publisher</skos:prefLabel>
+      <skos:prefLabel xml:lang="hu">Michel, Eugéne publisher</skos:prefLabel>
+   </edm:Agent>
+   <edm:Agent rdf:about="http://partage.vocnet.org/part-wer20350017">
+      <skos:prefLabel xml:lang="hu">Daum fivérek üveggyára, Nancy</skos:prefLabel>
+      <skos:prefLabel xml:lang="hu">Michel, Eugéne</skos:prefLabel>
+   </edm:Agent>
+   <edm:Agent rdf:about="http://partage.vocnet.org/part-wer20350017">
+      <skos:prefLabel xml:lang="hu">Daum fivérek üveggyára, Nancy</skos:prefLabel>
+      <skos:prefLabel xml:lang="hu">Michel, Eugéne</skos:prefLabel>
+   </edm:Agent>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00063">
+      <skos:prefLabel xml:lang="hu">glassware</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00066">
+      <skos:prefLabel xml:lang="hu">glassware PPRefiningObjectType</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/Classification">
+      <skos:prefLabel xml:lang="en">Classification</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/Classification2">
+      <skos:prefLabel xml:lang="hu">Classification 2</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00246/material">
+      <skos:prefLabel xml:lang="en">üveg material</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00246/material2">
+      <skos:prefLabel xml:lang="hu">üveg</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://partage.vocnet.org/part00246">
+      <skos:prefLabel xml:lang="hu">üveg technique</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="http://subject.org/">
+      <skos:prefLabel xml:lang="hu">subject</skos:prefLabel>
+   </skos:Concept>
+   <ore:Aggregation rdf:about="http://mint-projects.image.ntua.gr/Partage_Plus/Aggregation/177">
+      <edm:aggregatedCHO rdf:resource="http://mint-projects.image.ntua.gr/Partage_Plus/ProvidedCHO/177"/>
+      <edm:dataProvider>Museum of Applied Arts, Budapest</edm:dataProvider>
+      <edm:isShownAt rdf:resource="http://gyujtemeny.imm.hu/gyujtemeny/diszuveg/177"/>
+      <edm:isShownBy rdf:resource="http://gyujtemeny.imm.hu/web/kis/53_382_KA.jpg"/>
+      <edm:object rdf:resource="http://gyujtemeny.imm.hu/web/kis/53_382_KA.jpg"/>
+      <edm:provider>Partage Plus</edm:provider>
+      <edm:rights rdf:resource="http://www.europeana.eu/rights/rr-f/"/>
+   </ore:Aggregation>
+</rdf:RDF>

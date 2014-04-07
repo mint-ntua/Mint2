@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.euscreen.eu/schemas/euscreen/" targetNamespace="http://www.euscreen.eu/schemas/euscreen/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="EUScreen">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="metadata" type="MetadataType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="MetadataType">
+		<xs:sequence>
+			<xs:element name="AdministrativeMetadata" type="AdministrativeMetadataType"/>
+			<xs:element name="ContentDescriptiveMetadata" type="ContentDescriptiveMetadataType"/>
+			<xs:element name="ObjectDescriptiveMetadata" type="ObjectDescriptiveMetadataType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContentDescriptiveMetadataType">
+		<xs:sequence>
+			<xs:element name="TitleSet" type="TitleSetType" minOccurs="0"/>
+			<xs:element name="originallanguage" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="langType">
+							<xs:attribute name="olcode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LocalKeyword" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="clipTitle" type="xs:string" minOccurs="0"/>
+			<xs:element name="summary" type="xs:string" minOccurs="0"/>
+			<xs:element name="summaryInEnglish" type="xs:string" minOccurs="0"/>
+			<xs:element name="ThesaurusTerm" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="thestermCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="genre" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="genreType">
+							<xs:attribute name="genreCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="topic" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="topicType">
+							<xs:attribute name="topicCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="extendedDescription" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ObjectDescriptiveMetadataType">
+		<xs:sequence>
+			<xs:element name="itemType"  minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="itemTypeType">
+							<xs:attribute name="itemCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="information" type="xs:string" minOccurs="0"/>
+			<xs:element name="contributor" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="relation" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="relationtype" type="relationTypeType"/>
+							<xs:attribute name="relationCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LanguageInformation" type="LanguageInformationType" minOccurs="0"/>
+			<xs:element name="SpatioTemporalInformation" type="SpatioTemporalInformationType" minOccurs="0"/>
+			<xs:element name="TechnicalInformation" type="TechnicalInformationType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdministrativeMetadataType">
+		<xs:sequence>
+			<xs:element name="provider" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="providersType">
+							<xs:attribute name="providerCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="publisherbroadcaster" type="xs:string" minOccurs="0"/>
+			<xs:element name="iprRestrictions" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="iprRestrictionsType">
+							<xs:attribute name="iprRestrictionsCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="rightsTermsAndConditions" type="xs:string" minOccurs="0"/>
+			<xs:element name="firstBroadcastChannel" type="xs:string" minOccurs="0"/>
+			<xs:element name="identifier" type="xs:string" minOccurs="0"/>
+			<xs:element name="uri" type="xs:string" minOccurs="0"/>
+			<xs:element name="originalIdentifier" type="xs:string" minOccurs="0"/>
+			<xs:element name="filename" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LanguageInformationType">
+		<xs:sequence>
+			<xs:element name="languageUsed" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="langType">
+							<xs:attribute name="luCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="subtitleLanguage" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="langType">
+							<xs:attribute name="slCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="metadatalanguage" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="langType">
+							<xs:attribute name="mlCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpatialInformationType">
+		<xs:sequence>
+			<xs:element name="GeographicalCoverage" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="geocovType">
+							<xs:attribute name="geocovCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CountryofProduction" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="countryType">
+							<xs:attribute name="copCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TemporalInformationType">
+		<xs:sequence>
+			<xs:element name="productionYear" type="xs:string" minOccurs="0"/>
+			<xs:element name="broadcastDate" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpatioTemporalInformationType">
+		<xs:sequence>
+			<xs:element name="SpatialInformation" type="SpatialInformationType" minOccurs="0"/>
+			<xs:element name="TemporalInformation" type="TemporalInformationType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TechnicalInformationType">
+		<xs:sequence>
+			<xs:element name="materialType" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="materialType">
+							<xs:attribute name="materialCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="itemDuration" type="xs:string" minOccurs="0"/>
+			<xs:element name="aspectRatio" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="aspectRatioType">
+							<xs:attribute name="ratioCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="itemColor" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="itemColourType">
+							<xs:attribute name="colorCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="itemSound" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="itemSoundType">
+							<xs:attribute name="soundCode" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TitleSetInOriginalLanguageType">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" minOccurs="0"/>
+			<xs:element name="seriesTitle" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TitleSetInEnglishType">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" minOccurs="0"/>
+			<xs:element name="seriesTitle" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TitleSetType">
+		<xs:sequence>
+			<xs:element name="TitleSetInOriginalLanguage" type="TitleSetInOriginalLanguageType" minOccurs="0"/>
+			<xs:element name="TitleSetInEnglish" type="TitleSetInEnglishType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ObjectDescriptiveMetadata" type="ObjectDescriptiveMetadataType"/>
+	<xs:element name="ContentDescriptiveMetadata" type="ContentDescriptiveMetadataType"/>
+	<xs:element name="AdministrativeMetadata" type="AdministrativeMetadataType"/>
+	<xs:element name="metadata" type="MetadataType"/>
+	<!-- CL_Types HERE-->
+	<xs:simpleType name="geocovType">
+		<xs:restriction base="xs:string">
+			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="genreType">
+		<xs:restriction base="xs:string">
+			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="topicType">
+		<xs:restriction base="xs:string">
+			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="countryType">
+		<xs:restriction base="xs:string">
+			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="langType">
+		<xs:restriction base="xs:string">
+			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="aspectRatioType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="4:3"/>
+			<xs:enumeration value="14:9"/>
+			<xs:enumeration value="16:9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="itemColourType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Black &amp; White"/>
+			<xs:enumeration value="Colour"/>
+			<xs:enumeration value="Mixed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="itemSoundType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Mute"/>
+			<xs:enumeration value="Mono"/>
+			<xs:enumeration value="Stereo"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="itemTypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Whole"/>
+			<xs:enumeration value="Part/extract"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="materialType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Video"/>
+			<xs:enumeration value="Still"/>
+			<xs:enumeration value="Audio"/>
+			<xs:enumeration value="Document"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="providersType">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="iprRestrictionsType">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="relationTypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="isVersionOf"/>
+			<xs:enumeration value="isPartOf"/>
+			<xs:enumeration value="isReferencedBy"/>
+			<xs:enumeration value="isRelated"/>
+			<!--sample -->
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

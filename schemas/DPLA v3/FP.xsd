@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.europeanafashion.eu/edmfp/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" elementFormDefault="qualified">
+  <annotation>
+    <documentation>
+      EDMFP First Implementation Schema
+    </documentation>
+  </annotation>
+  
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  <import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="SKOS.xsd"/>
+  
+  <element name="subject" type="rdf:ResourceType">
+    <annotation>
+      <documentation>A subject taken from the fashion domain.</documentation>
+    </annotation>
+  </element>
+  
+  
+</schema>

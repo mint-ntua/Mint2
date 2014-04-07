@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="http://purl.org/spar/pro/"
+  xmlns:pro="http://purl.org/spar/pro/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   elementFormDefault="qualified">
+  
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+  <import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="FOAF.xsd"/>
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd" />
+  
+  
+  <annotation>
+    <documentation>
+      EDM+ v 1: DM2E
+    </documentation>
+  </annotation>
+  
+  <element name="author" type="rdf:ResourceType">
+    <annotation>
+      <documentation>The author of the CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="author2" type="foaf:PersonType2">
+    <annotation>
+      <documentation>The author of the CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="illustrator" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Someone who has made the illustrations of a CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="illustrator2" type="edm:AgentType2">
+    <annotation>
+      <documentation>Someone who has made the illustrations of a CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="printer" type="rdf:ResourceType">
+    <annotation>
+      <documentation>A person or institution who printed the CHO. In the manuscript context especially used in works of the 16th and 17th century (rare books).</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="printer2" type="edm:AgentType2">
+    <annotation>
+      <documentation>A person or institution who printed the CHO. In the manuscript context especially used in works of the 16th and 17th century (rare books).</documentation>
+    </annotation>
+  </element>
+  
+  <element name="translator" type="rdf:ResourceType">
+    <annotation>
+      <documentation>A person or institution that translated the CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="translator2" type="edm:AgentType2">
+    <annotation>
+      <documentation>A person or institution that translated the CHO.</documentation>
+    </annotation>
+  </element>
+
+</schema>

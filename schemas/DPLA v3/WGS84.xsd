@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  targetNamespace="http://www.w3.org/2003/01/geo/wgs84_pos#" elementFormDefault="qualified" 
+  attributeFormDefault="qualified">
+  
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+  
+  <element name="lat" type="float">
+  	<annotation>
+  		<documentation>Latitude of feature.</documentation>
+  	</annotation>
+  </element>
+  
+  <element name="lat_long" type="rdf:LiteralType">
+  <annotation>
+  	<documentation>Latitudinal and longitudinal coordinates for the most specific geographic location provided.</documentation>
+  </annotation>
+  
+  </element>
+  <element name="long" type="float" />
+  	<annotation>
+  		<documentation>Longitude of feature.</documentation>
+  	</annotation>
+  <element name="alt" type="float" />
+
+</schema>

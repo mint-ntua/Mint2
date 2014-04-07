@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://purl.org/dc/terms/" 
+  xmlns:dcterms="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:edm="http://www.europeana.eu/schemas/edm/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" elementFormDefault="qualified">
+  <annotation>
+    <documentation>
+      EDM+ v 1: DM2E
+    </documentation>
+  </annotation>
+  
+  
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd" />
+  
+  
+  
+  
+  
+  <element name="rightsHolder" type="edm:AgentType2">
+    <annotation>
+      <documentation>The property dcterms:rightsHolder holds the name or identifier of the agent (a person or organisation) who owns or manages the rights of the physical object (the CHO) which is described in the source.</documentation>
+    </annotation>
+  </element>  
+  
+  <element name="created" type="dateTime">
+    <annotation>
+      <documentation>The property dcterms:created holds the creation date and time of the aggregation, i.e. the original source metadata record.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="modified" type="dateTime">
+    <annotation>
+      <documentation>The property dcterms:created holds the modification date and time of the aggregation, i.e. the original source metadata record.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="creator" type="edm:AgentType2">
+    <annotation>
+      <documentation>The property dcterms:creator holds the name or identifier of the agent (a person or organisation) who created the aggregation, i.e. the original source metadata record.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="title" type="rdf:LiteralType2">
+    <annotation>
+      <documentation> The property dcterms:titles gives the main title of the CHO. It is mandatory to provide either a dcterms:title or a dcterms:description for the CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="alternative" type="rdf:LiteralType2">
+    <annotation>
+      <documentation>An alternative name for the resource. Should not be used for subtitles in DM2E. Can be used if title and subtitle are in one field.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="description" type="rdf:LiteralType2">
+    <annotation>
+      <documentation>An account of the resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="issued" type="dateTime">
+    <annotation>
+      <documentation>Date of publication (of the described CHO, usually the original one).</documentation>
+    </annotation>
+  </element>
+  
+  <element name="spatial" type="edm:PlaceType2">
+    <annotation>
+      <documentation>This property can be used for not further specified places. If the place of publication or printing should be indicated, use dm2e:publishedAt or dme2e:printedAt instead.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="extent" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The size or duration of the resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="tableOfContents" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>Any kind of table of contents for the CHO.</documentation>
+    </annotation>
+  </element>
+  
+    <element name="isVersionOf" type="edm:ProvidedCHOType3">
+    <annotation>
+      <documentation>A related resource of which the described resource is a version, edition, or adaptation. Changes in version imply substantive changes in content rather than differences in format</documentation>
+    </annotation>
+  </element>
+  
+    <element name="hasVersion" type="edm:ProvidedCHOType3">
+    <annotation>
+      <documentation>A related resource that is a version, edition, or adaptation of the described resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="references" type="edm:ProvidedCHOType3">
+    <annotation>
+      <documentation>Another CHO referenced in the content of this CHO.</documentation>
+    </annotation>
+  </element>
+  
+</schema>

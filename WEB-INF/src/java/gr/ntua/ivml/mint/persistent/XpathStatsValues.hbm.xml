@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="gr.ntua.ivml.mint.persistent.XpathStatsValues"
+    	table="xpath_stats_values" >
+       <id name="dbID" column="xpath_stats_values_id" >
+       		 <generator class="sequence">
+		    	<param name="sequence">seq_xpath_stats_values_id</param>
+		    </generator>
+       </id>
+	    <many-to-one name="dataset" 
+        column="dataset_id"
+        not-null="false"/>
+
+	    <many-to-one name="holder" 
+        column="xpath_summary_id"
+        not-null="false"  />
+
+	   <property name="start" />
+	   <property name="count" />
+	   <property name="gzippedValues" column="gzipped_values" />
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Oaireport" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3700192d-60f4-4ca0-ae47-f805773a035d">
+	<property name="ireport.zoom" value="1.2100000000000077"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 3" fontSize="14" isBold="true"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="organizationName" class="java.lang.String">
+		<fieldDescription><![CDATA[organizationName]]></fieldDescription>
+	</field>
+	<field name="organizationId" class="java.lang.String">
+		<fieldDescription><![CDATA[organizationId]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[type]]></fieldDescription>
+	</field>
+	<field name="uniqueItems" class="java.lang.Integer">
+		<fieldDescription><![CDATA[uniqueItems]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9686d3c5-2787-42e2-b8b1-b318e6618963" style="Heading 3" x="0" y="0" width="258" height="20"/>
+				<textElement/>
+				<text><![CDATA[Oai  Current Status]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement uuid="cf1fb25f-655d-4d8b-8397-df71b2ca741f" mode="Opaque" x="0" y="0" width="802" height="20" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<staticText>
+					<reportElement uuid="42844011-aafc-4d30-b4f2-da32a1dbfe0d" x="0" y="0" width="161" height="20"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Namespace]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="9728aeac-cacb-4744-b0ac-2ef640b4706d" x="175" y="0" width="143" height="20"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Unique Items Commited]]></text>
+				</staticText>
+			</frame>
+			<line>
+				<reportElement uuid="235799f1-451c-422f-a0e9-5216ca83b4f6" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement uuid="bf160697-2779-4083-bf9e-28f71c178a26" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="1" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement uuid="df444789-0982-434e-93bd-3c63fc1fe63c" style="Row" x="0" y="0" width="802" height="21"/>
+				<textField>
+					<reportElement uuid="b6ea8492-f076-4658-984b-56d851f5a1ae" x="175" y="1" width="143" height="20"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{uniqueItems}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="595cba60-d5f6-4c39-9560-09c89104a080" x="0" y="0" width="161" height="21"/>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch">
+			<line>
+				<reportElement uuid="c8714a38-ce17-49be-adc4-02f2e5433623" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="6" splitType="Stretch"/>
+	</summary>
+</jasperReport>

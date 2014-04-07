@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report12" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="be718f10-f247-480f-824a-270221344ca0">
+	<property name="ireport.zoom" value="1.4641000000000088"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="DejaVu Sans" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="DejaVu Sans" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="DejaVu Sans" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="DejaVu Sans" fontSize="12"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="DemoSet" uuid="a170cb0d-3d94-4642-b31c-0d7b8cb72ae6">
+		<parameter name="sum valid" class="java.lang.String"/>
+		<parameter name="sum invalid" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="range" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="organizationName" class="java.lang.String">
+		<fieldDescription><![CDATA[organizationName]]></fieldDescription>
+	</field>
+	<field name="organizationId" class="java.lang.String">
+		<fieldDescription><![CDATA[organizationId]]></fieldDescription>
+	</field>
+	<field name="created" class="java.util.Date">
+		<fieldDescription><![CDATA[created]]></fieldDescription>
+	</field>
+	<field name="parentDataset" class="java.lang.String">
+		<fieldDescription><![CDATA[parentDataset]]></fieldDescription>
+	</field>
+	<field name="mappingUsed" class="java.lang.String">
+		<fieldDescription><![CDATA[mappingUsed]]></fieldDescription>
+	</field>
+	<field name="creatorId" class="java.lang.String">
+		<fieldDescription><![CDATA[creatorId]]></fieldDescription>
+	</field>
+	<field name="validItems" class="java.lang.Integer">
+		<fieldDescription><![CDATA[validItems]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="creatorName" class="java.lang.String">
+		<fieldDescription><![CDATA[creatorName]]></fieldDescription>
+	</field>
+	<field name="targetSchema" class="java.lang.String">
+		<fieldDescription><![CDATA[targetSchema]]></fieldDescription>
+	</field>
+	<field name="itemCount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[itemCount]]></fieldDescription>
+	</field>
+	<field name="itemizerStatus" class="java.lang.String">
+		<fieldDescription><![CDATA[itemizerStatus]]></fieldDescription>
+	</field>
+	<field name="lastModified" class="java.util.Date">
+		<fieldDescription><![CDATA[lastModified]]></fieldDescription>
+	</field>
+	<field name="invalidItems" class="java.lang.Integer">
+		<fieldDescription><![CDATA[invalidItems]]></fieldDescription>
+	</field>
+	<variable name="validItems_1" class="java.lang.Integer" resetType="Group" resetGroup="organizations" calculation="Sum">
+		<variableExpression><![CDATA[$F{validItems}]]></variableExpression>
+	</variable>
+	<variable name="invalidItems_1" class="java.lang.Integer" resetType="Group" resetGroup="organizations" calculation="Sum">
+		<variableExpression><![CDATA[$F{invalidItems}]]></variableExpression>
+	</variable>
+	<variable name="itemCount_1" class="java.lang.Integer" resetType="Group" resetGroup="organizations" calculation="Sum">
+		<variableExpression><![CDATA[$F{itemCount}]]></variableExpression>
+	</variable>
+	<group name="organizations" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{organizationId}.toString()]]></groupExpression>
+		<groupHeader>
+			<band height="15"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="15">
+				<textField>
+					<reportElement uuid="2f1c35ca-5533-437e-969b-109b583676da" x="341" y="0" width="64" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$V{validItems_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="0d5f5cb9-07f3-4514-9b66-dbdb6ae3487c" x="405" y="0" width="64" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$V{invalidItems_1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="bc6cffda-8979-488f-b6b6-76a42190e522" x="177" y="0" width="100" height="15"/>
+					<textElement/>
+					<text><![CDATA[Total :]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="e0e03294-1e56-46b6-a4ee-2082db95e180" x="277" y="0" width="64" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$V{itemCount_1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="15" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="83713ce0-1bde-4a8c-8a62-464395860d53" x="0" y="0" width="100" height="15"/>
+				<textElement/>
+				<text><![CDATA[Transformations]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="259f4a21-702a-4455-9cf1-760851b501e8" x="100" y="0" width="702" height="15">
+					<propertyExpression name="net.sf.jasperreports.export.xls.sheet.name"><![CDATA[$F{organizationName}]]></propertyExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{organizationName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2dba740a-ea35-4a1e-adc5-730f31282c5a" x="0" y="15" width="802" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{range}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="835816e0-ac74-40fd-966a-3c7bce3c5b08" x="0" y="0" width="177" height="15"/>
+				<textElement/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="551b9c0a-fe0e-46d9-8178-2785721fe850" x="341" y="0" width="64" height="15"/>
+				<textElement/>
+				<text><![CDATA[Valid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6ae02b53-f6a5-4cb6-8740-978091383aac" x="277" y="0" width="64" height="15"/>
+				<textElement/>
+				<text><![CDATA[Items]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a7a8f031-e691-4048-9952-cb29302bd888" x="405" y="0" width="64" height="15"/>
+				<textElement/>
+				<text><![CDATA[Invalid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c516786-f0ea-4aec-a830-9615ec07224b" x="669" y="0" width="133" height="15"/>
+				<textElement/>
+				<text><![CDATA[Parent Import Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7e50d9b8-3519-404a-84d2-c752d03e17ea" x="569" y="0" width="100" height="15"/>
+				<textElement/>
+				<text><![CDATA[Mapping used]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0c979794-15df-46ad-ad5f-905c7ce75d1f" x="177" y="0" width="100" height="15"/>
+				<textElement/>
+				<text><![CDATA[Date ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c92e9666-a67f-4148-8e7c-cb90a635670e" x="469" y="0" width="100" height="15"/>
+				<textElement/>
+				<text><![CDATA[Target schema]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement uuid="f7076905-c1d4-404c-b2d7-52535d49c1eb" x="469" y="0" width="100" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{targetSchema}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bd13394e-7f23-497a-bd3b-103a99c3ae78" x="277" y="0" width="64" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{itemCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="30c5c2d5-4800-4013-8bf5-0181757d19e1" x="341" y="0" width="64" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{validItems}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5341099c-4f09-4f98-a37b-a8c7a5561e24" x="0" y="0" width="177" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="f2da05c4-1471-4d3f-b292-16a29e8108fa" x="177" y="0" width="100" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{lastModified}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ffe9926b-620d-4318-b209-448d5ed8055c" x="669" y="0" width="133" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{parentDataset}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8e5e7a45-d787-44f3-9be3-36cfbf3ec791" x="569" y="0" width="100" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{mappingUsed}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="892f6bc2-5268-4fb1-81e0-cade1dd9d896" x="405" y="0" width="64" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{invalidItems}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

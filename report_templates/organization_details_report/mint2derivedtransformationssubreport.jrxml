@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" printOrder="Horizontal" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3700192d-60f4-4ca0-ae47-f805773a035d">
+	<property name="ireport.zoom" value="2.143588810000013"/>
+	<property name="ireport.x" value="64"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 3" fontSize="14" isBold="true"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="created" class="java.util.Date">
+		<fieldDescription><![CDATA[created]]></fieldDescription>
+	</field>
+	<field name="creatorId" class="java.lang.String">
+		<fieldDescription><![CDATA[creatorId]]></fieldDescription>
+	</field>
+	<field name="creatorName" class="java.lang.String">
+		<fieldDescription><![CDATA[creatorName]]></fieldDescription>
+	</field>
+	<field name="invalidItems" class="java.lang.Integer">
+		<fieldDescription><![CDATA[invalidItems]]></fieldDescription>
+	</field>
+	<field name="itemCount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[itemCount]]></fieldDescription>
+	</field>
+	<field name="itemizerStatus" class="java.lang.String">
+		<fieldDescription><![CDATA[itemizerStatus]]></fieldDescription>
+	</field>
+	<field name="lastModified" class="java.util.Date">
+		<fieldDescription><![CDATA[lastModified]]></fieldDescription>
+	</field>
+	<field name="mappingUsed" class="java.lang.String">
+		<fieldDescription><![CDATA[mappingUsed]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="organizationId" class="java.lang.String">
+		<fieldDescription><![CDATA[organizationId]]></fieldDescription>
+	</field>
+	<field name="organizationName" class="java.lang.String">
+		<fieldDescription><![CDATA[organizationName]]></fieldDescription>
+	</field>
+	<field name="parentDataset" class="java.lang.String">
+		<fieldDescription><![CDATA[parentDataset]]></fieldDescription>
+	</field>
+	<field name="targetSchema" class="java.lang.String">
+		<fieldDescription><![CDATA[targetSchema]]></fieldDescription>
+	</field>
+	<field name="validItems" class="java.lang.Integer">
+		<fieldDescription><![CDATA[validItems]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement uuid="ffccaf1e-eeaa-46ab-9574-99c9ce4ee9dd" x="0" y="0" width="177" height="19" isRemoveLineWhenBlank="true"/>
+				<box topPadding="4" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="46ec674e-25ac-4a6a-9769-85b2cfabeed2" x="177" y="-1" width="100" height="20"/>
+				<box topPadding="4" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{validItems}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

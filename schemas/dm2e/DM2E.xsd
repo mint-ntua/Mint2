@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://data.dm2e.eu/schemas/edmplus/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
+  xmlns:dm2e="http://data.dm2e.eu/schemas/edmplus/0.1/" elementFormDefault="qualified">
+  <annotation>
+    <documentation>
+      EDMFP First Implementation Schema
+    </documentation>
+  </annotation>
+  
+  <import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="DC.xsd" />
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="CONTEXTS.xsd" />
+  <import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="SKOS.xsd"/>
+  
+  <element name="artist" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Subproperty of dct:creator. The author of the CHO.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="author" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+        Subproperty of dct:creator
+      </documentation>
+    </annotation>
+  </element>
+  
+  
+  <element name="callNumber" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Subproperty of dc:identifier.The call number for some archival item.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="colophon" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+        Subproperty of dct:extent. A brief description of the manuscript.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="composer" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+       Person who has composed a CHO (e.g. a letter). Can be the same as the person who wrote the letter,
+        but can also be a different person, e.g. someone who has dictated but not wrote the letter.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="condition" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Description of the CHOs condition.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="contributor" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Subproperty of dc:contributor. A person that has contributed to the CHO (but is not the only creator).
+      </documentation>
+    </annotation>
+  </element>
+  
+  
+   <element name="copyist" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Someone who copied a CHO.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="copyrightHolder" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	The person or institution that holds the copyright.
+      </documentation>
+    </annotation>
+  </element>
+  
+   <element name="dateOfRemark" type="edm:TimeSpanType2">
+    <annotation>
+      <documentation>
+      	Date of remark. Can be a point in time or a timespan.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="editor" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	The editor of a book,  journal or series. Can be a person or organization.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="explicit" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Final words of a manuscript.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="hasVersion" type="dm2e:Version">
+    <annotation>
+      <documentation>
+      	URL of the creator of this aggregation (e.g. library staff member).
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="honoree" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	An honored person, for whom the book is published.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="illustrator" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Subproperty of dct:creator. Someone who has made the illustrations of a CHO.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="incipit" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Opening words of a manuscript.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="influencedBy" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Another agent by which the agent was influenced.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="isbn" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	"Subproperty of dc:identifier. The ISBN number for the CHO."
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="isPartOf" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>
+      	Related resource that includes this resource.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="levelOfGensis" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Subproperty of dct:extent.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="locatedIn" type="edm:PlaceType2">
+    <annotation>
+      <documentation>
+      	Final words of a manuscript.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="mentioned" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	A person or institution that is explicitly mentioned in the (textual) CHO.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="misattributed" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	A person or institution that is mentioned as the creator of the CHO although he is not the creator.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="owner" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Indicates the ownership of a CHO.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="pageDimension" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Page size. Please do also note the unit that was used!
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="painter" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Subproperty of dct:creator. A painter. 
+      	In the manuscript context especially used in works of the 16th and 17th century (rare books).
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="patron" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Subproperty of dm2e:contributor. A person who is honored within the text.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="portrayed" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	A person that is portrayed in the (textual or painted) CHO by its creator.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="printer" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	A person or institution who printed the CHO.
+      	  In the manuscript context especially used in works of the 16th and 17th century (rare books).
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="publishedAt" type="edm:PlaceType2">
+    <annotation>
+      <documentation>
+      	Subproperty of dct:spatial. The place of publication.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="recipient" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	The recipient of a CHO, e.g. a letter.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="referencedEdition" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	References to Editions.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="referencedPublication" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	References to Publications.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="refersTo" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	A person or CHO that is explicitly or implicitly mentioned in the (textual) CHO.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="relatedPublication" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Other Related Publications.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="restoration" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Description of the CHOs restoration. (MAB2 field 662e)
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="shelfmark" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Shelfmark location from the CHO.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="sponsor" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	A person or an institution who has sponsored (parts) of the CHOs creation.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="studentOf" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	A teacher of the agent.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="subjectOf" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Persons who are subjects of a CHO.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="subtitle" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Subproperty of dc:title. Any form of subtitle.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="subtitleTransliteration" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Subproperty of dm2e:subtitle. A subtitle transliteration.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="support" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Description of the CHOs support. (MAB2 field 662d)
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="titleTransliteration" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Subproperty of dc:title. A title transliteration.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="translator" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Someone who translated the CHO.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="wasStudiedBy" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	The CHO was studied by an Agent.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="wasTaughtBy" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	The CHO was taught by an Agent.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="watermark" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Description of the CHOs watermark.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="writer" type="edm:AgentType2">
+    <annotation>
+      <documentation>
+      	Subpropertry of dct:creator. Person who has written a CHO, e.g. a letter.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="writtenAreaDimensions" type="rdf:LiteralType">
+    <annotation>
+      <documentation>
+      	Size of writing or the part of the page where something is actually written. 
+      	Please do also note the unit that was used!
+      </documentation>
+    </annotation>
+  </element>
+  
+  <complexType name="Version">
+        <annotation>
+            <documentation>Base class for ProvidedCHO implementations</documentation>
+        </annotation>
+        <complexContent>
+            <extension base="rdf:AboutType">
+                <sequence>
+					<element ref="dc:date" maxOccurs="1" minOccurs="1"/>
+					<element ref="skos:note" maxOccurs="1" minOccurs="1"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+  
+  
+</schema>

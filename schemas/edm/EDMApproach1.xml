@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2007-2012 The Europeana Foundation
+ 
+   Licenced under the EUPL, Version 1.1 (the "Licence") and subsequent versions as approved
+   by the European Commission;
+   You may not use this work except in compliance with the Licence.
+  
+   You may obtain a copy of the Licence at:
+   http://joinup.ec.europa.eu/software/page/eupl
+ 
+   Unless required by applicable law or agreed to in writing, software distributed under
+   the Licence is distributed on an "AS IS" basis, without warranties or conditions of
+   any kind, either express or implied.
+   See the Licence for the specific language governing permissions and limitations under
+   the Licence.
+-->
+<!--
+  Sample EDM First Implementation data file.
+-->
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:edm="http://www.europeana.eu/schemas/edm/"
+  xmlns:enrichment="http://www.europeana.eu/schemas/edm/enrichment/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:wgs84="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:oai="http://www.openarchives.org/OAI/2.0/"
+  xmlns:ore="http://www.openarchives.org/ore/terms/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns# EDM.xsd">
+  <edm:ProvidedCHO rdf:about="http://dummyUri/108_0851b">
+    <dc:identifier>108_0851b</dc:identifier>
+    <dc:title>The Parthenon</dc:title>
+    <edm:type>IMAGE</edm:type>
+  </edm:ProvidedCHO>
+  <edm:WebResource rdf:about="http://www.image.ntua.gr/~nsimou/EuPhoto/Data/108_0851b.xml"/>
+  <edm:WebResource rdf:about="http://www.image.ntua.gr/~nsimou/EuPhoto/Image/108_0851b.jpeg"/>
+  <ore:Aggregation rdf:about="http://dummyUri/Aggregation_108_0851b">
+    <edm:aggregatedCHO rdf:resource="http://dummyUri/108_0851b"/>
+    <edm:dataProvider>IVML</edm:dataProvider>
+    <edm:isShownAt rdf:resource="http://www.image.ntua.gr/~nsimou/EuPhoto/Image/108_0851b.jpeg"/>
+    <edm:isShownBy rdf:resource="http://www.image.ntua.gr/~nsimou/EuPhoto/Data/108_0851b.xml"/>
+    <edm:provider>Petros Katsaros</edm:provider>
+    <edm:rights rdf:resource="http://www.europeana.eu/rights/rr-f/"/>
+  </ore:Aggregation>
+</rdf:RDF>

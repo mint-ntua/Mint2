@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://purl.org/dc/elements/1.1/" 
+  xmlns:dcterms="http://purl.org/dc/terms/" 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:edm="http://www.europeana.eu/schemas/edm/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/" elementFormDefault="qualified">
+  <annotation>
+    <documentation>
+      EDM First Implementation Schema: DC
+    </documentation>
+  </annotation>
+  <import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd" />
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM.xsd" />
+  
+  <element name="rights" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>Information about rights held in and over source resource. Typically, rights information includes a statement about various property rights associated with source resource, including intellectual property rights.
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="contributor" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>Entity responsible for making contributions to source resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="coverage" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant. This may be a named place, a location, a spatial coordinate, a period, date, date range or a named administrative entity. Example: <coverage>1995-1996</coverage> <coverage>Boston, MA</coverage> Type: String</documentation>
+    </annotation>
+  </element>
+  
+  <element name="creator" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>Entity primarily responsible for making source resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="date" type="edm:TimeSpanType2">
+    <annotation>
+      <documentation>Point or period of time associated with an event in lifecycle of source resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="description" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Includes but is not limited to: an abstract, a table of contents, or a free-text account of source resource.</documentation>
+    </annotation>
+  </element>
+  
+  
+  <element name="identifier" type="rdf:LiteralType">
+    <annotation>
+      <documentation>ID of source resource within a given context.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="format" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>File format, physical medium or dimensions of source resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="language" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Language(s) of source resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="publisher" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>
+        An entity responsible for making the resource available. Examples of a publisher include a person, an organisation and a service. Example:
+        <publisher>Oxford University Press</publisher>
+        Type: String
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="relation" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>
+        A related resource. The recommended best practice is to identify the resource using a formal identification scheme. Example:
+        <relation>maps.crace.1/33</relation>
+        (This is the shelf mark for a map held in the British Library's Crace Collection). Type: String
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="source" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>
+        A related resource from which the described resource is derived in whole or in part. Example:
+        <source>Security Magazine pp 3-12</source>
+        <source>BAM portal</source>
+        Type: String
+      </documentation>
+    </annotation>
+  </element>
+  
+  <element name="subject" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>Topic of source resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="title" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Name given to source resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="type" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>Nature or genre of source resource.</documentation>
+    </annotation>
+  </element>
+</schema>

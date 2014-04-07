@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+		targetNamespace="http://rdfs.org/ns/void#" 
+		xmlns:void="http://rdfs.org/ns/void#" 
+		xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+		xmlns:xml="http://www.w3.org/XML/1998/namespace" 
+		elementFormDefault="qualified" attributeFormDefault="qualified">
+	
+	
+ <!-- Changes exist-->		
+  <annotation>
+    <documentation>
+      EDM+ v 1: VOID
+    </documentation>
+  </annotation>
+
+
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+
+  <element name="Dataset" type="void:DatasetType">
+  	<annotation>
+  		<documentation>A void:Dataset represents a stable version of an RDF graph that contains descriptions of ore:Aggregations and edm:providedCHOs of one data provider. A dataset is typically not accessed directly, if dereferenced, a 303 redirect to an RDF description of the dataset is performed (NOT to the content of the dataset).</documentation>
+  	</annotation>
+  </element>
+  
+  
+  <element name="inDataset" type="rdf:ResourceType">
+  	<annotation>
+      <documentation>The dataset that contains the RDF statements provided in via this data resource.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this to inDataset -->
+  <element name="inDataset2" type="void:DatasetType2">
+  	<annotation>
+      <documentation>The dataset that contains the RDF statements provided in via this data resource.</documentation>
+    </annotation>
+  </element>
+
+
+  <complexType name="DatasetType">
+    <complexContent>
+       <extension base="rdf:AboutType">
+       </extension>
+     </complexContent> 
+   </complexType>
+    
+   
+  <complexType name="DatasetType2">
+    <sequence>
+      <element name="Dataset" maxOccurs="1" minOccurs="1"
+      	type="void:DatasetType" />
+    </sequence>
+  </complexType>
+</schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://purl.org/net7/korbo/vocab#" 
+  xmlns:edm="http://www.europeana.eu/schemas/edm/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  elementFormDefault="qualified">
+  
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd"/>
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+  
+  
+  <element name="hasAnnotableVersionAt" type="edm:WebResourceType2">
+    <annotation>
+      <documentation>The property korbo:hasAnnotableVersionAt holds a URL which leads to a HTML representations of their content, i.e. of the CHO aggregated by the current Aggregation, including markup to identify named-content (Annotable Versions). An HTML representation of an object can include a single named-content (in this case it represents a single atomic piece of content, e.g. the transcription of a page) or multiple named contents (e.g. marking up each single paragraph or picture). Deciding the granularity of named-content is up to each content provider.</documentation>
+    </annotation>
+  </element>
+  
+</schema>

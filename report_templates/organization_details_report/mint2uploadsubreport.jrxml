@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3700192d-60f4-4ca0-ae47-f805773a035d">
+	<property name="ireport.zoom" value="1.100000000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 3" fontSize="14" isBold="true"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/costas/jasperdemo/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="itemCount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[itemCount]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="creatorName" class="java.lang.String">
+		<fieldDescription><![CDATA[creatorName]]></fieldDescription>
+	</field>
+	<field name="organizationName" class="java.lang.String">
+		<fieldDescription><![CDATA[organizationName]]></fieldDescription>
+	</field>
+	<field name="lastModified" class="java.util.Date">
+		<fieldDescription><![CDATA[lastModified]]></fieldDescription>
+	</field>
+	<field name="created" class="java.util.Date">
+		<fieldDescription><![CDATA[created]]></fieldDescription>
+	</field>
+	<field name="derivedTransformations" class="java.util.List">
+		<fieldDescription><![CDATA[derivedTransformations]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9686d3c5-2787-42e2-b8b1-b318e6618963" style="Heading 3" x="0" y="0" width="212" height="24"/>
+				<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+				<textElement/>
+				<text><![CDATA[Imports]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement uuid="63b5ef15-4cc2-406c-919e-93ebe8caf728" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement uuid="cf1fb25f-655d-4d8b-8397-df71b2ca741f" mode="Opaque" x="0" y="0" width="802" height="19" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<staticText>
+					<reportElement uuid="0efb685c-9368-44db-b64e-0e2a3143cd1c" x="515" y="0" width="57" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Items]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="aa8f8853-d4b0-4330-a01c-e90b4e260ba7" x="0" y="0" width="100" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Import Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2250354a-5363-4701-8d0f-3ced9c5372c2" mode="Transparent" x="212" y="0" width="100" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[User Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="79a2df1f-10fb-44e2-a71b-7bf1258c4fce" x="312" y="0" width="103" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Date Created]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="aab4b3bd-18c4-4d23-b8a9-00e7676fff08" x="415" y="0" width="100" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Date Modified]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="b9c8fd0c-62eb-4017-9867-1d8de2d41bbe" x="572" y="0" width="158" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Derived Transform]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="bccd686d-7bb3-47d7-8fcc-7c64e9c4f784" x="730" y="0" width="72" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valid Items]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<frame>
+				<reportElement uuid="9de2601b-f236-41ff-86ec-ade8478c830b" style="Row" x="0" y="0" width="802" height="23"/>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement uuid="626a9e10-d5c3-4580-a49e-3b26a2133e00" x="312" y="0" width="103" height="22"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{created}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement uuid="2b1c3995-0ac1-4c1a-a34d-59771626d083" x="415" y="0" width="100" height="22"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{lastModified}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="5853feb4-307a-4a92-9f5b-2eef7a43a3f9" x="515" y="0" width="57" height="22"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{itemCount}]]></textFieldExpression>
+				</textField>
+				<subreport>
+					<reportElement uuid="ab5dfc3c-e3b5-486c-a3d6-18fa51753498" x="572" y="0" width="230" height="22"/>
+					<subreportParameter name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{derivedTransformations})]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "mint2derivedtransformationssubreport.jasper"]]></subreportExpression>
+				</subreport>
+				<textField>
+					<reportElement uuid="755501c7-1057-4362-9b49-5583d1753d4b" x="212" y="0" width="100" height="22"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{creatorName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="ffccaf1e-eeaa-46ab-9574-99c9ce4ee9dd" x="0" y="0" width="212" height="21"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="7c88bccf-b04c-4a28-a0a7-226e42fddf64" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="22" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement fill="Solid">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+					</graphicElement>
+				</line>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="11">
+			<line>
+				<reportElement uuid="bb23eb40-6e7b-4079-b6f1-81e7f26863ea" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="10" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>

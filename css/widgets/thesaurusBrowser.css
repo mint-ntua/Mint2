@@ -1,0 +1,169 @@
+.thesaurus-container {
+	border-radius: 5px;
+	background: #eee;
+	border: 1px solid silver;
+	z-index: 2;
+	overflow: hidden !important;
+	padding: 0px !important;
+	height: 100%;
+	position: relative;
+}
+
+.thesaurus-search {
+	background: #ddd;
+	padding: 5px;
+	box-shadow: 0 0 4px 0 black;
+}
+
+.thesaurus-search-box {
+	border-radius: 20px;
+	background: white;
+	border: 1px solid #aaa;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 16px;
+}
+
+.thesaurus-search-box input {
+	border: 0px solid transparent;
+	margin-left: 5px;
+	width: 85%;
+	height: 16px;
+	vertical-align: top;
+}
+
+.thesaurus-search-options {
+	margin-bottom: 5px;
+}
+
+.thesaurus-search-options label {
+	position: relative;
+	top: 3px;
+}
+
+.thesaurus-search-options select {
+	border: 1px solid silver;
+	margin-left: 5px;
+	width: 150px;
+}
+
+.thesaurus-concepts {
+	overflow-y: auto;
+	height: 82%;
+}
+
+.thesaurus-concept {
+	background: white;
+	border-bottom: 1px solid silver;
+	padding: 10px;
+}
+
+.thesaurus-concept:hover {
+	background: #e5efff;
+}
+
+.thesaurus-concept-label {
+	vertical-align: top;
+}
+
+
+.thesaurus-query-label {
+	padding: 5px;
+	color: #333;
+	border-bottom: 1px solid silver;
+}
+
+.thesaurus-query-message {
+	padding: 5px;
+	color: #333;
+	text-align: center;
+	border-bottom: 1px solid silver;
+}
+
+.thesaurus-action {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.thesaurus-action-search {
+	background-image: url(../../images/buttons/search.png)  !important;
+}
+
+.thesaurus-action-search:hover {
+	background-image: url(../../images/buttons/search_hover.png) !important;
+}
+
+.thesaurus-action-back {
+	background-image: url(../../images/buttons/previous.png);
+}
+
+.thesaurus-action-back:hover {
+	background-image: url(../../images/buttons/previous_hover.png);
+}
+
+.thesaurus-action-back-disabled,  .thesaurus-action-back-disabled:hover {
+	background-image: url(../../images/buttons/previous_disabled.png);
+}
+
+.thesaurus-action-narrower {
+	background-image: url(../../images/buttons/narrower.png);
+}
+
+.thesaurus-action-narrower:hover {
+	background-image: url(../../images/buttons/narrower_hover.png);
+}
+
+.thesaurus-action-broader {
+	background-image: url(../../images/buttons/broader.png);
+}
+
+.thesaurus-action-broader:hover {
+	background-image: url(../../images/buttons/broader_hover.png);
+}
+
+.thesaurus-action-related {
+	background-image: url(../../images/buttons/related.png);
+}
+
+.thesaurus-action-related:hover {
+	background-image: url(../../images/buttons/related_hover.png);
+}
+
+.thesaurus-action-info {
+	background-image: url(../../images/buttons/info.png);
+}
+
+.thesaurus-action-info:hover {
+	background-image: url(../../images/buttons/info_hover.png);
+}
+
+.thesaurus-action-all {
+	background-image: url(../../images/buttons/all_documents.png);
+}
+
+.thesaurus-action-top {
+	background-image: url(../../images/buttons/selected_documents.png);
+}
+
+.thesaurus-action-loading {
+		background-image: url(../../images/buttons/loading.gif)  !important;
+		display: inline-block;
+}
+
+.thesaurus-info {
+	margin-top: 5px;
+	border-top: 1px solid silver;
+	padding-top: 5px;
+}
+
+.thesaurus-info label {
+	margin-top: 5px;
+	font-weight: bold;
+	display: block;	
+}
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://purl.org/ontology/bibo/" 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" elementFormDefault="qualified">
+  
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+  
+  <element name="numPages" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The number of pages contained in a document.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="numVolumes" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The number of volumes contained in a collection of documents (usually a series, periodical, etc.).</documentation>
+    </annotation>
+  </element>
+  
+  <element name="pages" type="rdf:LiteralType">
+    <annotation>
+      <documentation>A string of non-contiguous page spans that locate a Document within a Collection. Example: 23-25, 34, 54-56.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="volume" type="rdf:LiteralType">
+    <annotation>
+      <documentation>A volume number.</documentation>
+    </annotation>
+  </element>
+  
+</schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://purl.org/net7/korbo/vocab#" 
+  xmlns:edm="http://www.europeana.eu/schemas/edm/" elementFormDefault="qualified">
+  
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd"/>
+  
+  <element name="hasAnnotableVersionAt" type="edm:WebResourceType2">
+    <annotation>
+      <documentation>An HTML representation of an object can include a single named-content 
+      (in this case it represents a single atomic piece of content, e.g. the transcription of a page)
+       or multiple named contents (e.g. marking up each single paragraph or picture). Deciding the granularity
+        of named-content is up to each content provider. For details on the allowed contents for this property confer the DM2E Wiki page: https://dm2e.hu-berlin.de/redmine/projects/wp3/wiki/Named_content_markup</documentation>
+    </annotation>
+  </element>
+  
+</schema>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3700192d-60f4-4ca0-ae47-f805773a035d">
+	<property name="ireport.zoom" value="1.2100000000000133"/>
+	<property name="ireport.x" value="59"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 3" fontSize="14" isBold="true"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="TargetItems" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="created" class="java.util.Date">
+		<fieldDescription><![CDATA[created]]></fieldDescription>
+	</field>
+	<field name="creatorId" class="java.lang.String">
+		<fieldDescription><![CDATA[creatorId]]></fieldDescription>
+	</field>
+	<field name="creatorName" class="java.lang.String">
+		<fieldDescription><![CDATA[creatorName]]></fieldDescription>
+	</field>
+	<field name="invalidItems" class="java.lang.Integer">
+		<fieldDescription><![CDATA[invalidItems]]></fieldDescription>
+	</field>
+	<field name="itemCount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[itemCount]]></fieldDescription>
+	</field>
+	<field name="itemizerStatus" class="java.lang.String">
+		<fieldDescription><![CDATA[itemizerStatus]]></fieldDescription>
+	</field>
+	<field name="lastModified" class="java.util.Date">
+		<fieldDescription><![CDATA[lastModified]]></fieldDescription>
+	</field>
+	<field name="mappingUsed" class="java.lang.String">
+		<fieldDescription><![CDATA[mappingUsed]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="organizationId" class="java.lang.String">
+		<fieldDescription><![CDATA[organizationId]]></fieldDescription>
+	</field>
+	<field name="organizationName" class="java.lang.String">
+		<fieldDescription><![CDATA[organizationName]]></fieldDescription>
+	</field>
+	<field name="parentDataset" class="java.lang.String">
+		<fieldDescription><![CDATA[parentDataset]]></fieldDescription>
+	</field>
+	<field name="targetSchema" class="java.lang.String">
+		<fieldDescription><![CDATA[targetSchema]]></fieldDescription>
+	</field>
+	<field name="validItems" class="java.lang.Integer">
+		<fieldDescription><![CDATA[validItems]]></fieldDescription>
+	</field>
+	<variable name="validItems_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{validItems}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9686d3c5-2787-42e2-b8b1-b318e6618963" style="Heading 3" x="0" y="0" width="170" height="20"/>
+				<textElement/>
+				<text><![CDATA[Transformations]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="19" splitType="Stretch">
+			<frame>
+				<reportElement uuid="cf1fb25f-655d-4d8b-8397-df71b2ca741f" mode="Opaque" x="0" y="0" width="802" height="19" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<staticText>
+					<reportElement uuid="552a2eb6-0eeb-471e-a5ea-8da755738ac1" mode="Transparent" x="731" y="0" width="70" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+						<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Invalid]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2d17450b-4089-406d-9171-7a3632c79a74" mode="Transparent" x="657" y="0" width="75" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+						<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Valid]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ced4fa79-cf75-4df7-88a5-cf8a6f569eb3" x="504" y="0" width="153" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mapping Used]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="802534cd-240d-4bc7-800e-7d91a155f990" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement fill="Solid">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement uuid="aa8f8853-d4b0-4330-a01c-e90b4e260ba7" x="0" y="0" width="130" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Transformation Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="aab4b3bd-18c4-4d23-b8a9-00e7676fff08" x="130" y="0" width="143" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Date Modified]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="364a4436-aa0e-42ad-8408-5808225ce7da" x="273" y="0" width="231" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Parent Import ]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement uuid="544a34ed-e763-4acc-905c-f920e9d9653c" style="Row" x="0" y="0" width="802" height="20"/>
+				<textField>
+					<reportElement uuid="4b259ba4-b420-4c68-8a6e-316a4e21e95f" x="732" y="0" width="69" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{invalidItems}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="4065e8fc-c837-4049-b5f0-ffa9957486b5" x="659" y="0" width="73" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{validItems}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="7d3b5bd3-ec27-4a50-a8fd-28614181c286" x="273" y="0" width="231" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{parentDataset}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="ffccaf1e-eeaa-46ab-9574-99c9ce4ee9dd" x="0" y="0" width="130" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="188c7a66-ee2c-4323-b9f7-4cefbbefee6a" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+					<graphicElement fill="Solid">
+						<pen lineWidth="0.5" lineColor="#999999"/>
+					</graphicElement>
+				</line>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement uuid="2b1c3995-0ac1-4c1a-a34d-59771626d083" x="130" y="0" width="143" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{lastModified}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="ffa3d12e-7c6c-49cd-9352-360b49cc631e" x="504" y="0" width="154" height="19"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{mappingUsed}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="6" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement uuid="01af0c75-87ff-45eb-ba9f-56a616011ab2" x="659" y="0" width="74" height="20"/>
+				<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{validItems_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="732bd48c-122d-4166-a4d4-fc2f4fa3ca72" x="357" y="0" width="251" height="20"/>
+				<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Estimated items ready for publication :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="39b48220-5bf3-4975-8628-e63307084e4a" x="14" y="20" width="719" height="34"/>
+				<box topPadding="4" leftPadding="3" bottomPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Number of items ready for publication is estimated roughly by the number of valid transformed  items without checking for duplicates .]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

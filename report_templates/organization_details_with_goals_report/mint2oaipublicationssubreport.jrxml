@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Oaireport" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3700192d-60f4-4ca0-ae47-f805773a035d">
+	<property name="ireport.zoom" value="0.8264462809917407"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 3" fontSize="14" isBold="true"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="organizationId" class="java.lang.Integer">
+		<fieldDescription><![CDATA[organizationId]]></fieldDescription>
+	</field>
+	<field name="datestamp" class="java.lang.Long">
+		<fieldDescription><![CDATA[datestamp]]></fieldDescription>
+	</field>
+	<field name="conflictedRecords" class="java.lang.Integer">
+		<fieldDescription><![CDATA[conflictedRecords]]></fieldDescription>
+	</field>
+	<field name="projectName" class="java.lang.String">
+		<fieldDescription><![CDATA[projectName]]></fieldDescription>
+	</field>
+	<field name="insertedRecords" class="java.lang.Integer">
+		<fieldDescription><![CDATA[insertedRecords]]></fieldDescription>
+	</field>
+	<field name="created" class="java.util.Date">
+		<fieldDescription><![CDATA[created]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9686d3c5-2787-42e2-b8b1-b318e6618963" style="Heading 3" x="0" y="0" width="258" height="20"/>
+				<textElement/>
+				<text><![CDATA[Oai Commits History]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement uuid="cf1fb25f-655d-4d8b-8397-df71b2ca741f" mode="Opaque" x="0" y="0" width="802" height="20" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<staticText>
+					<reportElement uuid="99d34933-079c-430c-8495-4808739b287b" x="0" y="0" width="187" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Publication Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="71b25eab-5d07-4eb7-bd1e-09b8eec9f5b7" x="187" y="0" width="133" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Records Inserted]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="96fcbedd-d628-4fc4-88d4-4c5d03abe9e3" x="320" y="0" width="140" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Records Conflicted]]></text>
+				</staticText>
+			</frame>
+			<line>
+				<reportElement uuid="235799f1-451c-422f-a0e9-5216ca83b4f6" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement uuid="bf160697-2779-4083-bf9e-28f71c178a26" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="1" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement uuid="df444789-0982-434e-93bd-3c63fc1fe63c" style="Row" x="0" y="0" width="802" height="21"/>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement uuid="ae4f02c2-d927-4c3e-b294-99264c3a75c3" x="0" y="0" width="187" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{created}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="4a657df0-c4ee-4db3-979c-0e588c26e3bd" x="320" y="0" width="140" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{conflictedRecords}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="e8fdced0-5c45-4b0f-b7e4-dd1b7d112373" x="187" y="0" width="133" height="20"/>
+					<box topPadding="4" leftPadding="3" bottomPadding="3" rightPadding="3"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{insertedRecords}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch">
+			<line>
+				<reportElement uuid="c8714a38-ce17-49be-adc4-02f2e5433623" positionType="FixRelativeToBottom" mode="Opaque" x="0" y="0" width="802" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="6" splitType="Stretch"/>
+	</summary>
+</jasperReport>

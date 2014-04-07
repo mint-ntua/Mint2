@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://onto.dm2e.eu/schemas/dm2e/1.0/" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  	xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+  	xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  	xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
+  	xmlns:dm2e="http://onto.dm2e.eu/schemas/dm2e/1.0/" 
+  	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  	xmlns:void="http://rdfs.org/ns/void#"
+  	elementFormDefault="qualified">
+  	
+  <annotation>
+    <documentation>
+      EDM+ v 1: DM2E
+    </documentation>
+  </annotation>
+
+
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  <import namespace="http://rdfs.org/ns/void#" schemaLocation="VOID.xsd"/>
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd" />
+  <import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="FOAF.xsd" />
+  
+  <element name="DataResource" type="dm2e:DataResoureType">
+  	<annotation>
+      <documentation>A data resource is a non-abstract information resource that provides RDF data. Therefore, it is a specialization of a foaf:Document. In DM2E, every dm2e:DataResource is connected to a void:Dataset by means of void:inDataset.</documentation>
+    </annotation>
+  </element>
+  
+  <complexType name="DataResoureType">
+    <complexContent>
+       <extension base="rdf:AboutType">
+         <sequence>
+           <element ref="void:inDataset" maxOccurs="1" minOccurs="1" />
+         </sequence>
+       </extension>
+     </complexContent> 
+   </complexType>
+   
+   <element name="titleTransliteration" type="rdf:LiteralType">
+    <annotation>
+      <documentation>A title transliteration.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="subtitle" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Any form of a subtitle.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="subtitleTransliteration" type="rdf:LiteralType">
+    <annotation>
+      <documentation>A subtitle transliteration.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="incipit" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Opening words of a manuscript.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="explicit" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Final words of a manuscript.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="publishedAt" type="rdf:ResourceType">
+    <annotation>
+            <documentation>The place of a physical publication or the Web resource of a Web publication.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+   <element name="publishedAt2" type="edm:PlaceType2">
+    <annotation>
+      <documentation>The place of a physical publication or the Web resource of a Web publication.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="printedAt" type="rdf:ResourceType">
+    <annotation>
+        <documentation>Indicates the place where the CHO was printed.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+   <element name="printedAt2" type="edm:PlaceType2">
+    <annotation>
+      <documentation>Indicates the place where the CHO was printed.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="callNumber" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The call number for some archival item.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="shelfmarkLocation" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Shelfmark location from the CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="levelOfGenesis" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The property holds additional information about the genesis of the CHO. Sometimes there are unfinished works or there are only drafts. This could be described more in detail here.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="isDerivativeOfCHO" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Original version from which this object has been derived.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="isDerivativeOfCHO2" type="edm:ProvidedCHOType2">
+    <annotation>
+      <documentation>Original version from which this object has been derived.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="hasPartPlace" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Reference to a part of this CHO, e.g. a chapter of a book.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="hasPartPlace2" type="edm:PlaceType2">
+    <annotation>
+		<documentation>Reference to a part of this CHO, e.g. a chapter of a book.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="hasPartCHO" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Reference to a part of this CHO, e.g. a chapter of a book.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="hasPartCHO2" type="edm:ProvidedCHOType2">
+    <annotation>
+		<documentation>Reference to a part of this CHO, e.g. a chapter of a book.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="hasPartTimeSpan" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Reference to a part of this CHO, e.g. a chapter of a book.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="hasPartTimeSpan2" type="edm:TimeSpanType2">
+    <annotation>
+		<documentation>Reference to a part of this CHO, e.g. a chapter of a book.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="isPartOfTimeSpan" type="rdf:ResourceType">
+    <annotation>
+      <documentation>A place of which this place is part of.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="isPartOfTimeSpan2" type="edm:TimeSpanType2">
+    <annotation>
+      <documentation>A place of which this place is part of.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="isPartOfPlace" type="rdf:ResourceType">
+    <annotation>
+      <documentation>A place of which this place is part of.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="isPartOfPlace2" type="edm:PlaceType2">
+    <annotation>
+      <documentation>A place of which this place is part of.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="isPartOfCHO" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Related resource that includes this resource.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="isPartOfCHO2" type="edm:ProvidedCHOType2">
+    <annotation>
+      <documentation>Related resource that includes this resource.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="condition" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Contains a description of the CHOs condition.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="watermark" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Contains a description of a watermark which the CHO carries.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="illustration" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Generic description of illustrations in the CHO.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="restoration" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Contains a information about the restoration status of the CHO.</documentation>
+    </annotation>
+  </element>
+  
+    <element name="pageDimension" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Page size. Please do also note the unit that was used!</documentation>
+    </annotation>
+  </element>
+  
+  <element name="writtenAreaDimensions" type="rdf:LiteralType">
+    <annotation>
+      <documentation>Size of writing or the part of the page where something is actually written. Please do also note the unit that was used!</documentation>
+    </annotation>
+  </element>
+  
+   <element name="refersTo" type="rdf:ResourceType">
+    <annotation>
+      <documentation>A person or CHO that is explicitly or implicitly mentioned in the (textual) CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="refersTo2" type="edm:ProvidedCHOType2">
+    <annotation>
+      <documentation>A person or CHO that is explicitly or implicitly mentioned in the (textual) CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="wasStudiedBy" type="rdf:ResourceType">
+    <annotation>
+      <documentation>The CHO was studied by an Agent.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="wasStudiedBy2" type="edm:AgentType2">
+    <annotation>
+      <documentation>The CHO was studied by an Agent.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="wasTaughtBy" type="rdf:ResourceType">
+    <annotation>
+      <documentation>The CHO was taught by an Agent.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="wasTaughtBy2" type="edm:AgentType2">
+    <annotation>
+      <documentation>The CHO was taught by an Agent.</documentation>
+    </annotation>
+  </element>
+  
+  
+  <element name="artist" type="rdf:ResourceType">
+    <annotation>
+      <documentation>An artist that has created (e.g. painted) the CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="artist2" type="foaf:PersonType2">
+    <annotation>
+      <documentation>An artist that has created (e.g. painted) the CHO.</documentation>
+    </annotation>
+  </element>
+  
+  
+  <element name="composer" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Person who has composed a CHO (e.g. a letter). Can be the same as the person who wrote the letter, but can also be a different person, e.g. someone who has dictated but not wrote the letter.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+   <element name="composer2" type="foaf:PersonType2">
+    <annotation>
+      <documentation>Person who has composed a CHO (e.g. a letter). Can be the same as the person who wrote the letter, but can also be a different person, e.g. someone who has dictated but not wrote the letter.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="copyist" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Someone who copied a CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="copyist2" type="foaf:PersonType2">
+    <annotation>
+      <documentation>Someone who copied a CHO.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="honoree" type="rdf:ResourceType">
+    <annotation>
+		<documentation>An honored person, for whom the CHO is published or created.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="honoree2" type="foaf:PersonType2">
+    <annotation>
+      <documentation>An honored person, for whom the CHO is published or created.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="mentioned" type="rdf:ResourceType">
+    <annotation>
+      <documentation>A person or institution that is explicitly mentioned in the (textual) CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="mentioned2" type="edm:AgentType2">
+    <annotation>
+      <documentation>A person or institution that is explicitly mentioned in the (textual) CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="portrayed" type="rdf:ResourceType">
+    <annotation>
+		<documentation>An honored person, for whom the CHO is published or created.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="portrayed2" type="foaf:PersonType2">
+    <annotation>
+      <documentation>A person that is portrayed in the (textual or painted) CHO by its creator.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="misattributed" type="rdf:ResourceType">
+    <annotation>
+      <documentation>A person or institution that is mentioned as the creator of the CHO although he is not the creator.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="misattributed2" type="edm:AgentType2">
+    <annotation>
+      <documentation>A person or institution that is mentioned as the creator of the CHO although he is not the creator.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="owner" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Indicates the ownership of a CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="owner2" type="edm:AgentType2">
+    <annotation>
+      <documentation>Indicates the ownership of a CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="previousOwner" type="rdf:ResourceType">
+    <annotation>
+       <documentation>A person or an institution that has owned the CHO before.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="previousOwner2" type="edm:AgentType2">
+    <annotation>
+      <documentation>A person or an institution that has owned the CHO before.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="painter" type="rdf:ResourceType">
+    <annotation>
+		<documentation>A painter. In the manuscript context especially used in works of the 16th and 17th century (rare books).</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="painter2" type="foaf:PersonType2">
+    <annotation>
+	<documentation>A painter. In the manuscript context especially used in works of the 16th and 17th century (rare books).</documentation>
+    </annotation>
+  </element>
+  
+  <element name="patron" type="rdf:ResourceType">
+    <annotation>
+		<documentation>A person who is honored within the text.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="patron2" type="foaf:PersonType2">
+    <annotation>
+	<documentation>A person who is honored within the text.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="principal" type="rdf:ResourceType">
+    <annotation>
+             <documentation>A person or an institution that gave the order to create the CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="principal2" type="edm:AgentType2">
+    <annotation>
+      <documentation>A person or an institution that gave the order to create the CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="sponsor" type="rdf:ResourceType">
+    <annotation>
+       <documentation>A person or an institution who has sponsored (parts) of the CHOs creation.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="sponsor2" type="edm:AgentType2">
+    <annotation>
+		<documentation>A person or an institution who has sponsored (parts) of the CHOs creation.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="writer" type="rdf:ResourceType">
+    <annotation>
+       <documentation>A person who has written a CHO, e.g. a letter.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="writer2" type="foaf:PersonType2">
+    <annotation>
+		<documentation>A person who has written a CHO, e.g. a letter.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="contributor" type="rdf:ResourceType">
+    <annotation>
+       <documentation>A person that is responsible for making contributions to the resource.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="contributor2" type="edm:AgentType2">
+    <annotation>
+		<documentation>A person that is responsible for making contributions to the resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="isDerivativeOfWebResource" type="rdf:ResourceType">
+    <annotation>
+       <documentation>A related resource from which this Web resource is derived in whole or in part (not the name of the content holder).</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="isDerivativeOfWebResource2" type="edm:WebResourceType2">
+    <annotation>
+		  <documentation>A related resource from which this Web resource is derived in whole or in part (not the name of the content holder).</documentation>
+    </annotation>
+  </element>
+  
+  <element name="hasPartWebResource" type="rdf:ResourceType">
+    <annotation>
+  <documentation>A resource that is included physically or logically in the WebResource, e.g. an image..</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="hasPartWebResource2" type="edm:WebResourceType2">
+    <annotation>
+		  <documentation>A resource that is included physically or logically in the WebResource, e.g. an image..</documentation>
+    </annotation>
+  </element>
+  
+  <element name="isPartOfWebResource" type="rdf:ResourceType">
+    <annotation>
+		  <documentation>A resource that includes this Web resource.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="isPartOfWebResource2" type="edm:WebResourceType2">
+    <annotation>
+		  <documentation>A resource that includes this Web resource.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="influencedBy" type="rdf:ResourceType">
+    <annotation>
+       <documentation>Another agent by which the agent was influenced.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="influencedBy2" type="foaf:PersonType2">
+    <annotation>
+		<documentation>Another agent by which the agent was influenced.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="studentOf" type="rdf:ResourceType">
+    <annotation>
+       <documentation>A teacher of the agent..</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="studentOf2" type="foaf:PersonType2">
+    <annotation>
+		<documentation>A teacher of the agent..</documentation>
+    </annotation>
+  </element>
+</schema>

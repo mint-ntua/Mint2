@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.openarchives.org/ore/terms/" 
+	xmlns:ore="http://www.openarchives.org/ore/terms/"
+	xmlns:dm2e="http://onto.dm2e.eu/schemas/dm2e/1.1/"
+	
+	xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:dcterms="http://purl.org/dc/terms/" 
+    xmlns:enrichment="http://www.europeana.eu/schemas/edm/enrichment/" 
+    xmlns:korbo="http://purl.org/net7/korbo/vocab#" 
+  	elementFormDefault="qualified">
+ 
+ <!-- Changes exist-->		
+  <annotation>
+    <documentation>
+      EDM+ v 1: ORE
+    </documentation>
+  </annotation>
+    
+    <import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="DC.xsd"/>
+    <import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd" />
+    <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+    <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd" />
+    <import namespace="http://purl.org/net7/korbo/vocab#" schemaLocation="KORBO.xsd" />
+    <import namespace="http://onto.dm2e.eu/schemas/dm2e/1.1/" schemaLocation="DM2E.xsd" />
+    
+   <element name="ResourceMap" type="ore:ResourceMapType">
+   	  <annotation>
+  		<documentation>A data resource is a non-abstract information resource that provides RDF data. Therefore, it is a specialization of a foaf:Document. In DM2E, every dm2e:DataResource is connected to a void:Dataset by means of void:inDataset.</documentation>
+  	  </annotation>
+	</element>
+   
+   <complexType name="ResourceMapType">
+    <complexContent>
+      <extension base="rdf:AboutType">
+        <sequence>
+          <element ref="ore:describes"  maxOccurs="1" minOccurs="1" />
+        </sequence>
+      </extension>
+    </complexContent>
+   </complexType>
+   
+    <element name="describes" type="rdf:ResourceType">
+    	<annotation>
+	      <documentation>This relationship asserts that the subject (a Resource Map) describes the object (an Aggregation).</documentation>
+    	</annotation>
+    </element>
+    
+    <!-- Change this -->
+    <element name="describes2" type="ore:AggregationType2">
+    	<annotation>
+	      <documentation>This relationship asserts that the subject (a Resource Map) describes the object (an Aggregation).</documentation>
+    	</annotation>
+    </element>
+          
+   <element name="Aggregation" type="ore:AggregationType">
+   	<annotation>
+  		<documentation>The class ore:Aggregation aggregates Web resources (edm:WebResource) as well as CHOs (edm:ProvidedCHO). Additionally, it can provide information about the data provider, metadata rights etc. As ore:Aggregation is an abstract resource, there will be a 303 redirect to an ore:ResourceMap that contains the RDF description of the aggregation and the CHO.</documentation>
+  	</annotation>
+   </element>
+  
+  <complexType name="AggregationType">
+    <complexContent>
+      <extension base="rdf:AboutType">
+        <sequence>
+         <element ref="edm:aggregatedCHO"  maxOccurs="1" minOccurs="1" />
+          <element ref="edm:provider" maxOccurs="1" minOccurs="1" />
+          <element ref="edm:dataProvider" maxOccurs="1" minOccurs="1" />
+          <element ref="dcterms:rightsHolder" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="edm:rights" maxOccurs="1" minOccurs="1" />
+          <element ref="edm:hasView" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="edm:isShownBy" maxOccurs="1" minOccurs="1" />
+          <element ref="edm:isShownAt" maxOccurs="1" minOccurs="0" />           
+          <element ref="edm:object" maxOccurs="1" minOccurs="0" />
+          <element ref="dm2e:hasAnnotableVersionAt" maxOccurs="1" minOccurs="0" />
+          <element ref="dcterms:created" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="dcterms:modified" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="dcterms:creator" maxOccurs="unbounded" minOccurs="0" />
+          <element ref="dc:contributor" maxOccurs="unbounded" minOccurs="0" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <complexType name="AggregationType2">
+    <sequence>
+      <element name="Aggregation" maxOccurs="1" minOccurs="1"
+      	type="ore:AggregationType" />
+    </sequence>
+  </complexType>
+
+    
+</schema>

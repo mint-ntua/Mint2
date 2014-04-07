@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:edm="http://www.europeana.eu/schemas/edm/"
+    xmlns:rdaGr2="http://RDVocab.info/ElementsGr2/"
+    targetNamespace="http://RDVocab.info/ElementsGr2/">
+
+
+	<annotation>
+    	<documentation>
+     	 EDM+ v 1: DM2E
+    	</documentation>
+  	</annotation>
+  	
+    <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd"/>
+    <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd"/>
+
+    <element name="dateOfBirth" type="rdf:LiteralType">
+      <annotation>
+        <documentation>The date the person was born.</documentation>
+   	  </annotation>
+    </element>
+    
+    <element name="dateOfDeath" type="rdf:LiteralType">
+      <annotation>
+        <documentation>The date the person died.</documentation>
+   	  </annotation>
+    </element>
+    
+    <element name="dateOfEstablishment" type="rdf:LiteralType">
+      <annotation>
+        <documentation>The date the institution was established.</documentation>
+   	  </annotation>
+    </element>
+    
+    <element name="dateOfTermination" type="rdf:LiteralType">
+       <annotation>
+        <documentation>The date the institution was terminated.</documentation>
+   	  </annotation>
+    </element>
+
+    <element name="professionOrOccupation" type="rdf:LiteralType2">
+	   <annotation>
+	   	<documentation>The profession or occupation in which the person works or has worked.</documentation>
+        </annotation>
+    </element>
+    
+    <element name="gender" type="rdaGr2:GenderType">
+    	<annotation>
+    		<documentation>Information related to the biography of the agent.</documentation>
+    	</annotation>
+    </element>
+    
+    
+    <element name="biographicalInformation" type="rdf:LiteralType2">
+    	<annotation>
+    		<documentation>Information related to the biography of the agent.</documentation>
+    	</annotation>
+    </element>
+
+	<simpleType name="GenderType">
+        <restriction base="string">
+            <enumeration value="Male"/>
+            <enumeration value="Female"/>
+            <enumeration value="Transgender"/>
+            <enumeration value="Unknown"/>
+            <enumeration value="Not applicable"/>
+        </restriction>
+    </simpleType>
+</schema>

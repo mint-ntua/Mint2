@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:edm="http://www.europeana.eu/schemas/edm/" elementFormDefault="qualified">
+  <annotation>
+    <documentation>
+      EDM+ v 1: DM2E
+    </documentation>
+  </annotation>
+  
+  <import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd" />
+  <import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+  <import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM-COMMON-MAIN.xsd" />
+  <import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="SKOS.xsd" />
+  
+  
+
+  <element name="contributor" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>The property dcterms:contributor holds the name or identifier of the agent (a person or organisation) who contributed to the creation of the aggregation, i.e. the original source metadata record.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="contributor2" type="edm:AgentType2">
+    <annotation>
+      <documentation>The property dcterms:contributor holds the name or identifier of the agent (a person or organisation) who contributed to the creation of the aggregation, i.e. the original source metadata record.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="type" type="rdf:ResourceType">
+    <annotation>
+      <documentation>The property dc:type provides a specific type that applies to the CHO. By type we mean either a physical form (e.g. book) or logical form (e.g. paragraph) as they are specified as subclasses of edm:PhysicalThing and skos:Concept respectively. At least one dc:type must be provided.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="identifier" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>Identifier of the resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="rights" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>URL of a resource describing licensing rights of the CHO.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="subject" type="rdf:ResourceType">
+    <annotation>
+      <documentation>Subject of the CHO. Can be taken from another vocabulary. May also relate to a person that is the subject of a CHO.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="format" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The file format, physical medium, or dimensions of the resource.</documentation>
+    </annotation>
+  </element>
+  
+  <element name="language" type="rdf:LiteralType">
+    <annotation>
+      <documentation>The property dc:language holds the most prominent language of the CHO. If an edm:type property with the value “TEXT” has been given, only then it is mandatory to provide at least one language. If several languages are present in the CHO then repeat dc:language for each language. ISO 639-2 should be used for this</documentation>
+    </annotation>
+  </element>
+  
+  
+  <element name="publisher" type="rdf:ResourceOrLiteralType">
+    <annotation>
+      <documentation>The property dcterms:contributor holds the name or identifier of the agent (a person or organisation) who contributed to the creation of the aggregation, i.e. the original source metadata record.</documentation>
+    </annotation>
+  </element>
+  
+  <!-- Change this -->
+  <element name="publisher2" type="edm:AgentType2">
+    <annotation>
+      <documentation>The property dcterms:contributor holds the name or identifier of the agent (a person or organisation) who contributed to the creation of the aggregation, i.e. the original source metadata record.</documentation>
+    </annotation>
+  </element>
+  
+   <element name="date" type="dateTime">
+    <annotation>
+      <documentation>A significant date associated with this agent. The date should be described with edm:Event.</documentation>
+    </annotation>
+  </element>
+</schema>

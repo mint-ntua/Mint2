@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://dp.la/about/map/"
+	xmlns:dpla="http://dp.la/about/map/" 
+	xmlns:edm="http://www.europeana.eu/schemas/edm/" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dcterms="http://purl.org/dc/terms/" 
+	xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:ore="http://www.openarchives.org/ore/terms/" 
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+	xmlns:dcmi="http://purl.org/dc/dcmitype/"
+	xmlns:edmfp="http://www.europeanafashion.eu/edmfp/"
+	elementFormDefault="qualified">
+	
+	<annotation>
+    	<documentation> Digital Public Library of America, Metadata application profile ingestion schema, version 3 </documentation>
+  	</annotation>
+
+	<import namespace="http://www.europeana.eu/schemas/edm/" schemaLocation="EDM.xsd"/>
+	<import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="RDF.xsd" />
+	<import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="SKOS.xsd" />
+	<!-- <import namespace="http://www.w3.org/2002/07/owl#" schemaLocation="OWL.xsd" /> -->
+	<import namespace="http://www.openarchives.org/ore/terms/" schemaLocation="ORE.xsd" />	
+	<import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="WGS84.xsd" />
+	<import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="DC.xsd" />
+	<import namespace="http://purl.org/dc/terms/" schemaLocation="DCTERMS.xsd" />	
+	<import namespace="http://purl.org/dc/dcmitype/" schemaLocation="DCMI.xsd" />	
+	<import namespace="http://www.europeanafashion.eu/edmfp/" schemaLocation="FP.xsd" />	
+	
+	
+	<complexType name="RDF">
+		<annotation>
+			<documentation> The RDF root element declaration </documentation>
+			<!-- Declared namespaces for schematron validation -->
+			<appinfo>
+				<sch:title>Schematron validation</sch:title>
+				<sch:ns prefix="edm" uri="http://www.europeana.eu/schemas/edm/" />
+				<sch:ns prefix="dc" uri="http://purl.org/dc/elements/1.1/" />
+				<sch:ns prefix="dct" uri="http://purl.org/dc/terms/" />
+				<sch:ns prefix="ore" uri="http://www.openarchives.org/ore/terms/" />
+				<sch:ns prefix="owl" uri="http://www.w3.org/2002/07/owl#" />
+				<sch:ns prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+				<sch:ns prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#" />
+				<sch:ns prefix="skos" uri="http://www.w3.org/2004/02/skos/core#" />
+			</appinfo>
+		</annotation>
+		<sequence minOccurs="0" maxOccurs="unbounded">
+			<choice>
+				<element name="SourceResource" type="dpla:SourceResourceType" />
+				<element ref="dcmi:Collection"/>
+				<element name="Place" type="dpla:PlaceType" />
+				<element ref="edm:TimeSpan"/> 
+				<element ref="edm:WebResource"/>
+				<element ref="ore:Aggregation"/>
+				<element ref="edm:Agent"/>
+				<element ref="edm:Place"/> 
+			</choice>
+		</sequence>
+	</complexType>
+
+	<complexType name="SourceResourceType">
+		<complexContent>
+			<annotation>
+				<documentation>This class is a subclass of "edm:ProvidedCHO," which comprises the source resources [in EDM called "cultural heritage objects"] about which DPLA collects descriptions. It is here that attributes of source resources are located, not the digital representations of them.</documentation>
+			</annotation>
+      		<extension base="rdf:AboutType">
+        		<sequence>
+          			<element ref="dcterms:isPartOf" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dc:contributor" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dc:creator" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dc:date" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dc:description" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dcterms:extent" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dc:identifier" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dc:language" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="edm:currentLocation" maxOccurs="1" minOccurs="0" />
+          			<element ref="dc:format" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dcterms:spatial" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dcterms:publisher" maxOccurs="unbounded" minOccurs="0" />
+          			
+          			<element ref="dc:rights" maxOccurs="unbounded" minOccurs="1" />
+          			<element ref="dc:subject" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dcterms:temporal" maxOccurs="unbounded" minOccurs="0" />
+          			<element ref="dc:title" maxOccurs="unbounded" minOccurs="1" />
+          			<element ref="dc:type" maxOccurs="unbounded" minOccurs="0" />
+          			
+          			<element ref="edmfp:subject" maxOccurs="unbounded" minOccurs="0" />
+          		</sequence>
+          	</extension>
+          </complexContent>
+	</complexType>
+	
+    <complexType name="PlaceType">
+    <complexContent>
+      <extension base="rdf:AboutType">
+        <sequence>
+          <element ref="dpla:city" maxOccurs="1" minOccurs="0" />
+          <element ref="dpla:state" maxOccurs="1" minOccurs="0" />
+          <element ref="dpla:county" maxOccurs="1" minOccurs="0"/>
+          <element ref="dpla:region" maxOccurs="1" minOccurs="0" />
+          <element ref="dpla:country" maxOccurs="1" minOccurs="0" />
+          <element ref="wgs84_pos:lat_long" maxOccurs="1" minOccurs="0" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <element name="city" type="rdf:LiteralType">
+     <annotation>
+        <documentation>Name of a city (literal).</documentation>
+     </annotation>
+  </element>
+  
+  <element name="state" type="rdf:LiteralType">
+     <annotation>
+        <documentation>ISO 3166-2 code for a U.S. state or territory.</documentation>
+     </annotation>
+  </element>
+  
+  <element name="originalRecord" type="rdf:LiteralType">
+  	<annotation>
+        <documentation>Complete original record.</documentation>
+     </annotation>
+  </element>
+  
+  <element name="county" type="rdf:LiteralType">
+     <annotation>
+        <documentation>Name of a  U.S. county  (literal).</documentation>
+     </annotation>
+  </element>
+  
+  <element name="region" type="rdf:LiteralType">
+     <annotation>
+        <documentation>Name of a region, e.g., "Upstate New York".</documentation>
+     </annotation>
+  </element>
+  
+  <element name="country" type="rdf:LiteralType">
+     <annotation>
+        <documentation>ISO 3166-1 code for a country.</documentation>
+     </annotation>
+  </element>
+
+</schema>
