@@ -463,6 +463,7 @@
 										<xs:enumeration value="CC BY-NC-ND-CONTENT"/>
 										<xs:enumeration value="CC BY-NC-SA-METADATA"/>
 										<xs:enumeration value="CC BY-NC-SA-CONTENT"/>
+										<xs:enumeration value="CP-WEBSITE"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
