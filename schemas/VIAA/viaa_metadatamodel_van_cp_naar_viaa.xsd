@@ -58,6 +58,17 @@
 						<xs:attribute ref="strategy" use="optional"/>
 					</xs:complexType>
 				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_relations">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="is_deel_van" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="bevat" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="is_verwant_aan" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
 				<xs:element maxOccurs="1" minOccurs="0" name="md5">
 					<xs:simpleType>
 						<xs:restriction base="xs:hexBinary">
