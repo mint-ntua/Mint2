@@ -98,9 +98,9 @@
 						<xs:attribute ref="strategy" use="optional"/>
 					</xs:complexType>
 				</xs:element>
-				<xs:element maxOccurs="1" minOccurs="0" name="dcterms_issued" type="xs:string"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="dcterms_created" type="xs:string"/>
-				<xs:element maxOccurs="1" minOccurs="0" name="date" type="xs:string"/>
+				<xs:element minOccurs="0" name="dcterms_issued" type="xs:string"/>
+				<xs:element minOccurs="1" name="dcterms_created" type="xs:string"/>
+				<xs:element minOccurs="0" name="date" type="xs:string"/>
 				<xs:element maxOccurs="1" minOccurs="0" name="ebu_objectType" type="xs:string"/>
 				<xs:element maxOccurs="1" minOccurs="0" name="dc_creators">
 					<xs:complexType>
