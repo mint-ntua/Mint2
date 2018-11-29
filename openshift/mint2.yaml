@@ -1,0 +1,153 @@
+apiVersion: v1
+kind: Template
+metadata:
+  creationTimestamp: null
+  name: mint2
+objects:
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: null
+    labels:
+      app: mint2
+    name: mint2
+  spec:
+    nodeSelector: null
+    output:
+      to:
+        kind: ImageStreamTag
+        name: mint2:latest
+    postCommit: {}
+    resources: {}
+    runPolicy: Serial
+    source:
+      git:
+        ref: master
+        uri: https://github.com/viaacode/Mint2.git
+      type: Git
+    strategy:
+      dockerStrategy:
+        from:
+          kind: ImageStreamTag
+          name: tomcat:6-jdk6
+      type: Docker
+    triggers:
+    - github:
+        secret: Kg3-vnu4H7tMAugjt-Db
+      type: GitHub
+    - generic:
+        secret: OKFgBe9BF9CZv6HMYFNb
+      type: Generic
+    - type: ConfigChange
+    - imageChange: {}
+      type: ImageChange
+  status:
+    lastVersion: 0
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: null
+    generation: 1
+    labels:
+      app: mint2
+    name: mint2
+  spec:
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: 172.30.130.49:5000/tools-and-services/mint2:latest
+      generation: null
+      importPolicy: {}
+      name: latest
+  status:
+    dockerImageRepository: ""
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: null
+    labels:
+      app: mint2
+    name: mint2
+  spec:
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: mint2
+      deploymentconfig: mint2
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: null
+    generation: 1
+    labels:
+      app: mint2
+    name: mint2
+  spec:
+    replicas: 1
+    selector:
+      app: mint2
+      deploymentconfig: mint2
+    strategy:
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        annotations:
+          openshift.io/generated-by: OpenShiftNewApp
+        creationTimestamp: null
+        labels:
+          app: mint2
+          deploymentconfig: mint2
+      spec:
+        containers:
+        - env:
+          - name: CATALINA_OPTS
+            value: -DPOSTGRES_HOST=do-qas-dbs-02.do.viaa.be -DPOSTGRES_PORT=5432 -DPOSTGRES_DATABASE=mint2_dieter
+              -DPOSTGRES_USERNAME=**** -DPOSTGRES_PASSWORD=********* -Xms512m -Xmx1024m
+          image: ''
+          imagePullPolicy: Always
+          name: mint2
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+    test: false
+    triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - mint2
+        from:
+          kind: ImageStreamTag
+          name: mint2:latest
+      type: ImageChange
+  status: {}
+
