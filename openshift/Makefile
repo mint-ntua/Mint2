@@ -41,7 +41,6 @@ buildimage:
 push:
 	docker push ${oc_registry}/${OC_PROJECT}/${APP_NAME}:${TAG}
 deploy:
-	docker build -t mint2 
 	oc create -f openshift/mint2.yaml
 delete:
 	oc delete project ${OC_PROJECT}
