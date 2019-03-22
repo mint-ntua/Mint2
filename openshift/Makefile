@@ -41,13 +41,14 @@ buildimage:
 push:
 	docker push ${oc_registry}/${OC_PROJECT}/${APP_NAME}:${TAG}
 deploy:
-	cd  /tmp/${GIT_NAME}/openshift && oc create -f mint2.yaml
+	cd  /tmp/${GIT_NAME}/openshift && oc apply -f mint2.yaml
 delete:
 	oc delete project ${OC_PROJECT}
 clean:
 	rm -rf /tmp/${GIT_NAME}
 podshell:
 	oc exec -ti `oc get pods | grep es-ingest | cut -d ' ' -f 1 |grep -v deploy|head -n1`  bash
-all:	clean login clone buildimage deploy   clean
+allfirsttime:	clean login clone buildimage deploy   clean
+all:   clean login clone buildimage push clean
 
 
