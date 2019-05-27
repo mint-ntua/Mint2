@@ -31,6 +31,7 @@
 				<xs:element maxOccurs="1" minOccurs="0" name="dc_identifier_localids">
 					<xs:complexType>
 						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Acquisition_number" type="xs:string"/>
 							<xs:element minOccurs="0" maxOccurs="unbounded" name="Adlib" type="xs:string"/>
 							<xs:element minOccurs="0" maxOccurs="unbounded" name="Alternative_number" type="xs:string"/>
 							<xs:element minOccurs="0" maxOccurs="unbounded" name="Analoge_drager" type="xs:string"/>
@@ -47,6 +48,8 @@
 							<xs:element minOccurs="0" maxOccurs="unbounded" name="Bestandsnaam" type="xs:string"/>
 							<xs:element minOccurs="0" maxOccurs="unbounded" name="Api" type="xs:string"/>
 							<xs:element minOccurs="0" maxOccurs="unbounded" name="Pdf" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="kp_productie_id" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="kp_show_id" type="xs:string"/>	
 							<xs:element minOccurs="0" maxOccurs="unbounded" name="Objectnaam" type="xs:string"/>
 							<xs:element minOccurs="0" maxOccurs="unbounded" name="Afbeelding" type="xs:string"/>
 							<xs:element minOccurs="0" maxOccurs="unbounded" name="Inventarisnummer" type="xs:string"/>
