@@ -1,0 +1,523 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:attribute name="strategy">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="overwrite"/>
+				<xs:enumeration value="OVERWRITE"/>
+				<xs:enumeration value="keep"/>
+				<xs:enumeration value="KEEP"/>
+				<xs:enumeration value="merge"/>
+				<xs:enumeration value="MERGE"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:whiteSpace value="collapse"/>
+				<xs:minLength value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:element name="VIAA">
+		<xs:complexType>
+			<xs:all>
+				<xs:element maxOccurs="1" minOccurs="1" name="CP" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="CP_id" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="Original_CP" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="dc_identifier_localid" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_identifier_localids">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Acquisition_number" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Adlib" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Afbeelding" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Alternative_number" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Analoge_drager" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Ardome" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Basis" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="DataPID" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Historical_carrier" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Historical_record_number" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Inventarisnummer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="MEDIA_ID" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Object_number" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Object_nummer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Objectnaam" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="PersistenteURI_Record" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="PersistenteURI_Werk" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Priref" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Word_ID" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="WorkPID" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Bestandsnaam" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Api" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Pdf" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="kp_productie_id" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="kp_show_id" type="xs:string"/>	
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_relations">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="is_deel_van" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="bevat" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="is_verwant_aan" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="is_versie_van" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="md5">
+					<xs:simpleType>
+						<xs:restriction base="xs:hexBinary">
+							<xs:pattern value="[0-9A-Fa-f]{32}"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_title" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_titles">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="serie" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="episode" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="aflevering" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="alternatief" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="programma" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="serienummer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="seizoen" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="seizoennummer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="archief" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="deelarchief" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="reeks" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="deelreeks" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="registratie" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="dcterms_issued" type="xs:string"/>
+				<xs:element minOccurs="0" name="dcterms_created" type="xs:string"/>
+				<xs:element minOccurs="0" name="date" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="ebu_objectType" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_creators">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Maker" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Archiefvormer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Auteur" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Acteur" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Cineast" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Componist" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Choreograaf" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Danser" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Documentairemaker" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Fotograaf" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Interviewer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Kunstenaar" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Muzikant" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Opdrachtgever" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Performer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Producer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Productiehuis" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="ProductionCompany" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Regisseur" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Schrijver" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_contributors">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Bijdrager" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Adviseur" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Arrangeur" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Archivaris" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Assistent" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Auteur" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Belichting" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Cameraman" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Co-producer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Commentator" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Componist" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Dirigent" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Fotografie" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Geluid" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Geluidsman" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Kunstenaar" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Make-up" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Muzikant" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Nieuwsanker" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Omroeper" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Onderzoeker" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Post-productie" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Presenter" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Producer" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Reporter" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Scenarist" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Soundtrack" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Sponsor" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Uitvoerder" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Vertaler" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Verteller" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Artistiek_directeur" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Decor_ontwerper" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Grafisch_ontwerper" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Kostuum_ontwerper" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Technisch_adviseur" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Aanwezig" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Afwezig" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Verontschuldigd" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Voorzitter" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_publishers">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Distributeur" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Exposant" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Persagentschap" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Publisher" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_subjects">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Trefwoord" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_description" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_description_lang" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_description_programme" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_description_cast" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_description_ondertitels" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_description_transcriptie" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_description_categorie" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_types">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="multiselect" minOccurs="0" maxOccurs="unbounded">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Actualiteit"/>
+										<xs:enumeration value="Animatie"/>
+										<xs:enumeration value="Concert"/>
+										<xs:enumeration value="Dans"/>
+										<xs:enumeration value="Docudrama"/>
+										<xs:enumeration value="Documentaire"/>
+										<xs:enumeration value="Documentatie"/>
+										<xs:enumeration value="Drama"/>
+										<xs:enumeration value="Educatief"/>
+										<xs:enumeration value="Entertainment"/>
+										<xs:enumeration value="Fictie"/>
+										<xs:enumeration value="Interview"/>
+										<xs:enumeration value="Komedie"/>
+										<xs:enumeration value="Kortfilm"/>
+										<xs:enumeration value="Kunstwerk"/>
+										<xs:enumeration value="Muziekopname"/>
+										<xs:enumeration value="Nieuws"/>
+										<xs:enumeration value="Non-fictie"/>
+										<xs:enumeration value="Opera"/>
+										<xs:enumeration value="Performance"/>
+										<xs:enumeration value="Quiz en spel"/>
+										<xs:enumeration value="Speelfilm"/>
+										<xs:enumeration value="Sport"/>
+										<xs:enumeration value="Sportverslaggeving"/>
+										<xs:enumeration value="Wetenschap"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_coverages">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="ruimte" type="xs:string"/>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="tijd" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_languages">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="multiselect" minOccurs="0" maxOccurs="unbounded">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="nl"/>
+										<xs:enumeration value="fr"/>
+										<xs:enumeration value="de"/>
+										<xs:enumeration value="it"/>
+										<xs:enumeration value="en"/>
+										<xs:enumeration value="es"/>
+										<xs:enumeration value="aa"/>
+										<xs:enumeration value="ab"/>
+										<xs:enumeration value="ae"/>
+										<xs:enumeration value="af"/>
+										<xs:enumeration value="ak"/>
+										<xs:enumeration value="am"/>
+										<xs:enumeration value="an"/>
+										<xs:enumeration value="ar"/>
+										<xs:enumeration value="as"/>
+										<xs:enumeration value="av"/>
+										<xs:enumeration value="ay"/>
+										<xs:enumeration value="az"/>
+										<xs:enumeration value="ba"/>
+										<xs:enumeration value="be"/>
+										<xs:enumeration value="bg"/>
+										<xs:enumeration value="bh"/>
+										<xs:enumeration value="bi"/>
+										<xs:enumeration value="bm"/>
+										<xs:enumeration value="bn"/>
+										<xs:enumeration value="bo"/>
+										<xs:enumeration value="br"/>
+										<xs:enumeration value="bs"/>
+										<xs:enumeration value="ca"/>
+										<xs:enumeration value="ce"/>
+										<xs:enumeration value="ch"/>
+										<xs:enumeration value="co"/>
+										<xs:enumeration value="cr"/>
+										<xs:enumeration value="cs"/>
+										<xs:enumeration value="cu"/>
+										<xs:enumeration value="cv"/>
+										<xs:enumeration value="cy"/>
+										<xs:enumeration value="da"/>
+										<xs:enumeration value="dv"/>
+										<xs:enumeration value="dz"/>
+										<xs:enumeration value="ee"/>
+										<xs:enumeration value="el"/>
+										<xs:enumeration value="eo"/>
+										<xs:enumeration value="et"/>
+										<xs:enumeration value="eu"/>
+										<xs:enumeration value="fa"/>
+										<xs:enumeration value="ff"/>
+										<xs:enumeration value="fi"/>
+										<xs:enumeration value="fj"/>
+										<xs:enumeration value="fo"/>
+										<xs:enumeration value="fy"/>
+										<xs:enumeration value="ga"/>
+										<xs:enumeration value="gd"/>
+										<xs:enumeration value="gl"/>
+										<xs:enumeration value="gn"/>
+										<xs:enumeration value="gu"/>
+										<xs:enumeration value="gv"/>
+										<xs:enumeration value="ha"/>
+										<xs:enumeration value="he"/>
+										<xs:enumeration value="hi"/>
+										<xs:enumeration value="ho"/>
+										<xs:enumeration value="hr"/>
+										<xs:enumeration value="ht"/>
+										<xs:enumeration value="hu"/>
+										<xs:enumeration value="hy"/>
+										<xs:enumeration value="hz"/>
+										<xs:enumeration value="ia"/>
+										<xs:enumeration value="id"/>
+										<xs:enumeration value="ie"/>
+										<xs:enumeration value="ig"/>
+										<xs:enumeration value="ii"/>
+										<xs:enumeration value="ik"/>
+										<xs:enumeration value="io"/>
+										<xs:enumeration value="is"/>
+										<xs:enumeration value="iu"/>
+										<xs:enumeration value="ja"/>
+										<xs:enumeration value="jv"/>
+										<xs:enumeration value="ka"/>
+										<xs:enumeration value="kg"/>
+										<xs:enumeration value="ki"/>
+										<xs:enumeration value="kj"/>
+										<xs:enumeration value="kk"/>
+										<xs:enumeration value="kl"/>
+										<xs:enumeration value="km"/>
+										<xs:enumeration value="kn"/>
+										<xs:enumeration value="ko"/>
+										<xs:enumeration value="kr"/>
+										<xs:enumeration value="ks"/>
+										<xs:enumeration value="ku"/>
+										<xs:enumeration value="kv"/>
+										<xs:enumeration value="kw"/>
+										<xs:enumeration value="ky"/>
+										<xs:enumeration value="la"/>
+										<xs:enumeration value="lb"/>
+										<xs:enumeration value="lg"/>
+										<xs:enumeration value="li"/>
+										<xs:enumeration value="ln"/>
+										<xs:enumeration value="lo"/>
+										<xs:enumeration value="lt"/>
+										<xs:enumeration value="lu"/>
+										<xs:enumeration value="lv"/>
+										<xs:enumeration value="mg"/>
+										<xs:enumeration value="mh"/>
+										<xs:enumeration value="mi"/>
+										<xs:enumeration value="mk"/>
+										<xs:enumeration value="ml"/>
+										<xs:enumeration value="mn"/>
+										<xs:enumeration value="mo"/>
+										<xs:enumeration value="mr"/>
+										<xs:enumeration value="ms"/>
+										<xs:enumeration value="mt"/>
+										<xs:enumeration value="my"/>
+										<xs:enumeration value="na"/>
+										<xs:enumeration value="nb"/>
+										<xs:enumeration value="nd"/>
+										<xs:enumeration value="ne"/>
+										<xs:enumeration value="ng"/>
+										<xs:enumeration value="nn"/>
+										<xs:enumeration value="no"/>
+										<xs:enumeration value="nr"/>
+										<xs:enumeration value="nv"/>
+										<xs:enumeration value="ny"/>
+										<xs:enumeration value="oc"/>
+										<xs:enumeration value="oj"/>
+										<xs:enumeration value="om"/>
+										<xs:enumeration value="or"/>
+										<xs:enumeration value="os"/>
+										<xs:enumeration value="pa"/>
+										<xs:enumeration value="pi"/>
+										<xs:enumeration value="pl"/>
+										<xs:enumeration value="ps"/>
+										<xs:enumeration value="pt"/>
+										<xs:enumeration value="qu"/>
+										<xs:enumeration value="rm"/>
+										<xs:enumeration value="rn"/>
+										<xs:enumeration value="ro"/>
+										<xs:enumeration value="ru"/>
+										<xs:enumeration value="rw"/>
+										<xs:enumeration value="sa"/>
+										<xs:enumeration value="sc"/>
+										<xs:enumeration value="sd"/>
+										<xs:enumeration value="se"/>
+										<xs:enumeration value="sg"/>
+										<xs:enumeration value="sh"/>
+										<xs:enumeration value="si"/>
+										<xs:enumeration value="sk"/>
+										<xs:enumeration value="sl"/>
+										<xs:enumeration value="sm"/>
+										<xs:enumeration value="sn"/>
+										<xs:enumeration value="so"/>
+										<xs:enumeration value="sq"/>
+										<xs:enumeration value="sr"/>
+										<xs:enumeration value="ss"/>
+										<xs:enumeration value="st"/>
+										<xs:enumeration value="su"/>
+										<xs:enumeration value="sv"/>
+										<xs:enumeration value="sw"/>
+										<xs:enumeration value="ta"/>
+										<xs:enumeration value="te"/>
+										<xs:enumeration value="tg"/>
+										<xs:enumeration value="th"/>
+										<xs:enumeration value="ti"/>
+										<xs:enumeration value="tk"/>
+										<xs:enumeration value="tl"/>
+										<xs:enumeration value="tn"/>
+										<xs:enumeration value="to"/>
+										<xs:enumeration value="tr"/>
+										<xs:enumeration value="ts"/>
+										<xs:enumeration value="tt"/>
+										<xs:enumeration value="tw"/>
+										<xs:enumeration value="ty"/>
+										<xs:enumeration value="ug"/>
+										<xs:enumeration value="uk"/>
+										<xs:enumeration value="ur"/>
+										<xs:enumeration value="uz"/>
+										<xs:enumeration value="ve"/>
+										<xs:enumeration value="vi"/>
+										<xs:enumeration value="vo"/>
+										<xs:enumeration value="wa"/>
+										<xs:enumeration value="wo"/>
+										<xs:enumeration value="xh"/>
+										<xs:enumeration value="yi"/>
+										<xs:enumeration value="yo"/>
+										<xs:enumeration value="za"/>
+										<xs:enumeration value="zh"/>
+										<xs:enumeration value="zu"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_rights_licenses">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="multiselect">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="VIAA-ONDERWIJS"/>
+										<xs:enumeration value="VIAA-ONDERZOEK"/>
+										<xs:enumeration value="VIAA-BIBLIOTHEKEN"/>
+										<xs:enumeration value="VIAA-INTRAMUROS"/>
+										<xs:enumeration value="VIAA-INTRA_CP-CONTENT"/>
+										<xs:enumeration value="VIAA-INTRA_CP-METADATA-ALL"/>
+										<xs:enumeration value="VIAA-PUBLIEK-METADATA-LTD"/>
+										<xs:enumeration value="VIAA-PUBLIEK-METADATA-ALL"/>
+										<xs:enumeration value="VIAA-PUBLIEK-CONTENT"/>
+										<xs:enumeration value="Publiek domein"/>
+										<xs:enumeration value="CC-BY-SA-METADATA"/>
+										<xs:enumeration value="CC-BY-SA-CONTENT"/>
+										<xs:enumeration value="CC BY-ND-METADATA"/>
+										<xs:enumeration value="CC BY-ND-CONTENT"/>
+										<xs:enumeration value="CC BY-NC-METADATA"/>
+										<xs:enumeration value="CC BY-NC-CONTENT"/>
+										<xs:enumeration value="CC BY-NC-ND-METADATA"/>
+										<xs:enumeration value="CC BY-NC-ND-CONTENT"/>
+										<xs:enumeration value="CC BY-NC-SA-METADATA"/>
+										<xs:enumeration value="CC BY-NC-SA-CONTENT"/>
+										<xs:enumeration value="CP-WEBSITE"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_rights_rightsOwners">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Auteursrechthouder" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_rights_rightsHolders">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="Licentiehouder" type="xs:string"/>
+						</xs:sequence>
+						<xs:attribute default="list" name="type" type="xs:string" use="optional"/>
+						<xs:attribute ref="strategy" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_rights_credit" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_rights_comment" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="dc_format" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="0" name="rights_owner" type="xs:string"/>
+			</xs:all>
+			<xs:attribute ref="name" use="optional"/>
+			<xs:attribute name="version" type="xs:decimal" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
