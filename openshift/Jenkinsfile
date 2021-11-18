@@ -8,7 +8,7 @@ pipeline {
         metadata:
           labels:
             component: builder
-            lang: ${getBaseImageName()}
+            lang: java6
             app: mint2
         spec:
           containers:
