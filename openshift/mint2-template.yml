@@ -1,0 +1,111 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  annotations:
+    tags: "exec"
+  name: "mint2"
+  labels:
+    app: "mint2"
+objects:
+  - kind: Service
+    apiVersion: v1
+    metadata:
+      name: "mint2-${env}"
+      namespace: "etl"
+      labels:
+        app: "mint2"
+        app.kubernetes.io/component: "mint2-${env}"
+        app.kubernetes.io/instance: "mint2-${env}"
+        app.kubernetes.io/name: "mint2"
+        app.kubernetes.io/part-of: "mint2"
+        app.openshift.io/runtime: "mint2"
+        app.openshift.io/runtime-version: "${env}"
+        env: ${env}
+    spec:
+      ports:
+        - protocol: TCP
+          port: ${{svc_port}}
+          targetPort: ${{svc_port}}
+          name: http
+      selector:
+        app: "mint2"
+        env: ${env}
+      clusterIP:
+      type: ClusterIP
+      sessionAffinity: None
+    status:
+      loadBalancer: {}
+  - kind: Deployment
+    apiVersion: apps/v1
+    metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: "*"
+      name: "mint2-${env}"
+      namespace: "etl"
+      labels:
+        app: "mint2"
+        app.kubernetes.io/component: "mint2-${env}"
+        app.kubernetes.io/instance: "mint2-${env}"
+        app.kubernetes.io/name: "mint2"
+        app.kubernetes.io/part-of: "mint2"
+        app.openshift.io/runtime: "mint2"
+        app.openshift.io/runtime-version: ${env}
+        env: ${env}
+    spec:
+      replicas: 0
+      selector:
+        matchLabels:
+          app: "mint2"
+          env: ${env}
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: "mint2"
+            deploymentconfig: "mint2-${env}"
+            env: ${env}
+          annotations:
+            openshift.io/generated-by: OpenShiftWebConsole
+        spec:
+          containers:
+            - name: "mint2-${env}"
+              terminationMessagePath: /dev/termination-log
+              resources:
+                limits:
+                  cpu: '${cpu_limit}m'
+                  memory: '${memory_limit}Mi'
+                requests:
+                  cpu: '${cpu_requested}m'
+                  memory: '${memory_requested}Mi'
+              ports:
+                - containerPort: ${{svc_port}}
+                  protocol: TCP
+              imagePullPolicy: IfNotPresent
+              terminationMessagePolicy: File
+              image: >-
+                image-registry.openshift-image-registry.svc:5000/etl/mint2:${env}
+          restartPolicy: Always
+          terminationGracePeriodSeconds: 30
+          dnsPolicy: ClusterFirst
+          securityContext: {}
+          schedulerName: default-scheduler
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
+          maxUnavailable: 25%
+          maxSurge: 25%
+      revisionHistoryLimit: 10
+      progressDeadlineSeconds: 600
+parameters:
+  - name: env
+    value: "env"
+  - name: "memory_requested"
+    value: "128"
+  - name: "memory_limit"
+    value: "1024"
+  - name: "cpu_requested"
+    value: "100"
+  - name: "cpu_limit"
+    value: "900"
+  - name: "svc_port"
+    value: "8080"
