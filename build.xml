@@ -85,7 +85,6 @@
 		    <format property="NOW" pattern="d-MMM-yyyy HH:mm:ss" locale="en,UK"/>
 		  </tstamp>
 		<echo file="build.properties" message="svn-revision=" />
-		<exec executable="svnversion" output="build.properties" append="true"/>
 		<echo file="build.properties" append="true" >appname=${appname}
 deploy_target=${deploy_target}
 build-time=${NOW}</echo>

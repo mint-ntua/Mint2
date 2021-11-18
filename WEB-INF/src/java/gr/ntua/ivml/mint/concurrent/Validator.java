@@ -5,6 +5,7 @@ import gr.ntua.ivml.mint.db.DB;
 import gr.ntua.ivml.mint.persistent.Dataset;
 import gr.ntua.ivml.mint.persistent.Item;
 import gr.ntua.ivml.mint.persistent.XmlSchema;
+import gr.ntua.ivml.mint.persistent.XpathHolder;
 import gr.ntua.ivml.mint.util.ApplyI;
 import gr.ntua.ivml.mint.util.StringUtils;
 
@@ -15,14 +16,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.validation.Schema;
 import javax.xml.validation.ValidatorHandler;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathFactory;
 
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorOutputStream;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.w3c.dom.Document;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -284,8 +292,23 @@ public class Validator implements Runnable {
 			if(!itemXml.startsWith("<?xml")) itemXml = "<?xml version=\"1.0\"  encoding=\"UTF-8\" ?>\n" + item.getXml();
 			IOUtils.write(itemXml, baos, "UTF-8" );
 			baos.close();
-			
-			write( baos.toByteArray(), datasetSubdir(dataset)+"/Item_" + item.getDbID() + ".xml", tos );
+			// TODO: Change all '/Item_X' to own field (dc_identifier_localid)
+			String filename = "Item_" + item.getDbID();
+			try {
+				DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+				DocumentBuilder builder = factory.newDocumentBuilder();
+				InputSource is = new InputSource();
+				is.setCharacterStream(new StringReader(itemXml));
+				Document doc = builder.parse(is);
+				XPathFactory xPathfactory = XPathFactory.newInstance();
+				XPath xpath = xPathfactory.newXPath();
+				XPathExpression expr = xpath.compile("/VIAA/dc_identifier_localid/text()");
+				filename = expr.evaluate(doc, XPathConstants.STRING).toString();
+			}
+			catch (Exception e) {
+				// Huehue an empty catch!
+			}
+			write( baos.toByteArray(), datasetSubdir(dataset) + "/" +filename + ".xml", tos );
 		} catch( Exception e ) {
 			log.error( "Failed to collect valid item ", e );
 		}
